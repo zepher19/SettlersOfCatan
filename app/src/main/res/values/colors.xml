@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+
+
+    <color name="lumber_green">#098700</color>
+    <color name="wool_green">#10F300</color>
+    <color name="brick_red">#C50000</color>
+    <color name="ore_gray">#6C6C6C</color>
+    <color name="grain_yellow">#FFD500</color>
+    <color name="desert_gray">#FFF6A4</color>
+
+
+</resources>

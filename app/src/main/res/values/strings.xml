@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">SettlersOfCatan</string>
+
+    <string name="Two">2\n:</string>
+    <string name="Three">3\n::</string>
+    <string name="Four">4\n:::</string>
+    <string name="Five">5\n::::</string>
+    <string name="Six">6\n:::::</string>
+    <string name="Eight">8\n:::::</string>
+    <string name="Nine">9\n::::</string>
+    <string name="Ten">10\n:::</string>
+    <string name="Eleven">11\n::</string>
+    <string name="Twelve">12\n:</string>
+
+    <string name="eight">8\n:::::</string>
+
+</resources>

@@ -1,0 +1,478 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ConstraintLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#B2FFFFFF"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/board_background"
+        android:layout_width="430dp"
+        android:layout_height="430dp"
+        android:layout_marginStart="-14dp"
+        android:layout_marginTop="170dp"
+        android:rotation="90"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/board_background" />
+
+    <ImageView
+        android:id="@+id/tile_1"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="164dp"
+        android:layout_marginTop="192dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/hexagon_tile" />
+
+    <ImageView
+        android:id="@+id/tile_18"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="236dp"
+        android:layout_marginTop="464dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/hexagon_tile" />
+
+    <ImageView
+        android:id="@+id/tile_5"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="164dp"
+        android:layout_marginTop="268dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/hexagon_tile" />
+
+    <ImageView
+        android:id="@+id/tile_8"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="236dp"
+        android:layout_marginTop="308dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/hexagon_tile" />
+
+    <ImageView
+        android:id="@+id/tile_7"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="96dp"
+        android:layout_marginTop="308dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/hexagon_tile" />
+
+    <ImageView
+        android:id="@+id/tile_17"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="96dp"
+        android:layout_marginTop="464dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/hexagon_tile" />
+
+    <ImageView
+        android:id="@+id/tile_14"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="424dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/hexagon_tile" />
+
+    <ImageView
+        android:id="@+id/tile_16"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="304dp"
+        android:layout_marginTop="424dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/hexagon_tile" />
+
+    <ImageView
+        android:id="@+id/tile_2"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="96dp"
+        android:layout_marginTop="228dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/hexagon_tile" />
+
+    <ImageView
+        android:id="@+id/tile_4"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="268dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/hexagon_tile" />
+
+    <ImageView
+        android:id="@+id/tile_15"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="164dp"
+        android:layout_marginTop="424dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/hexagon_tile" />
+
+    <ImageView
+        android:id="@+id/tile_11"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="304dp"
+        android:layout_marginTop="344dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/hexagon_tile" />
+
+    <ImageView
+        android:id="@+id/tile_19"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="164dp"
+        android:layout_marginTop="504dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/hexagon_tile" />
+
+    <ImageView
+        android:id="@+id/tile_13"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="236dp"
+        android:layout_marginTop="384dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/hexagon_tile" />
+
+    <ImageView
+        android:id="@+id/tile_10"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="164dp"
+        android:layout_marginTop="344dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/hexagon_tile" />
+
+    <ImageView
+        android:id="@+id/tile_6"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="304dp"
+        android:layout_marginTop="268dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/hexagon_tile" />
+
+    <ImageView
+        android:id="@+id/tile_12"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="96dp"
+        android:layout_marginTop="384dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/hexagon_tile" />
+
+    <ImageView
+        android:id="@+id/tile_3"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="236dp"
+        android:layout_marginTop="228dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/hexagon_tile" />
+
+    <ImageView
+        android:id="@+id/tile_9"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="344dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/hexagon_tile" />
+
+    <TextView
+        android:id="@+id/tile_19_num"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="186dp"
+        android:layout_marginTop="526dp"
+        android:background="@drawable/tile_number_background"
+        android:gravity="center"
+        android:text="@string/eight"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        android:textColor="@color/brick_red"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tile_18_num"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="260dp"
+        android:layout_marginTop="488dp"
+        android:background="@drawable/tile_number_background"
+        android:gravity="center"
+        android:text="@string/eight"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        android:textColor="@color/brick_red"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tile_17_num"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="120dp"
+        android:layout_marginTop="484dp"
+        android:background="@drawable/tile_number_background"
+        android:gravity="center"
+        android:text="@string/eight"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        android:textColor="@color/brick_red"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tile_16_num"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="324dp"
+        android:layout_marginTop="444dp"
+        android:background="@drawable/tile_number_background"
+        android:gravity="center"
+        android:text="@string/eight"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        android:textColor="@color/brick_red"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tile_15_num"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="186dp"
+        android:layout_marginTop="449dp"
+        android:background="@drawable/tile_number_background"
+        android:gravity="center"
+        android:text="@string/eight"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        android:textColor="@color/brick_red"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tile_14_num"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="444dp"
+        android:background="@drawable/tile_number_background"
+        android:gravity="center"
+        android:text="@string/eight"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        android:textColor="@color/brick_red"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tile_13_num"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="260dp"
+        android:layout_marginTop="399dp"
+        android:background="@drawable/tile_number_background"
+        android:gravity="center"
+        android:text="@string/eight"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        android:textColor="@color/brick_red"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tile_12_num"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="120dp"
+        android:layout_marginTop="404dp"
+        android:background="@drawable/tile_number_background"
+        android:gravity="center"
+        android:text="@string/eight"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        android:textColor="@color/brick_red"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tile_11_num"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="324dp"
+        android:layout_marginTop="368dp"
+        android:background="@drawable/tile_number_background"
+        android:gravity="center"
+        android:text="@string/eight"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        android:textColor="@color/brick_red"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tile_10_num"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="184dp"
+        android:layout_marginTop="360dp"
+        android:background="@drawable/tile_number_background"
+        android:gravity="center"
+        android:text="@string/eight"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        android:textColor="@color/brick_red"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tile_9_num"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="363dp"
+        android:background="@drawable/tile_number_background"
+        android:gravity="center"
+        android:text="@string/eight"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        android:textColor="@color/brick_red"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tile_8_num"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="260dp"
+        android:layout_marginTop="333dp"
+        android:background="@drawable/tile_number_background"
+        android:gravity="center"
+        android:text="@string/eight"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        android:textColor="@color/brick_red"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tile_7_num"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="120dp"
+        android:layout_marginTop="328dp"
+        android:background="@drawable/tile_number_background"
+        android:gravity="center"
+        android:text="@string/eight"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        android:textColor="@color/brick_red"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tile_6_num"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="324dp"
+        android:layout_marginTop="292dp"
+        android:background="@drawable/tile_number_background"
+        android:gravity="center"
+        android:text="@string/eight"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        android:textColor="@color/brick_red"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tile_5_num"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="184dp"
+        android:layout_marginTop="293dp"
+        android:background="@drawable/tile_number_background"
+        android:gravity="center"
+        android:text="@string/eight"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        android:textColor="@color/brick_red"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tile_4_num"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="292dp"
+        android:background="@drawable/tile_number_background"
+        android:gravity="center"
+        android:text="@string/eight"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        android:textColor="@color/brick_red"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tile_3_num"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="260dp"
+        android:layout_marginTop="252dp"
+        android:background="@drawable/tile_number_background"
+        android:gravity="center"
+        android:text="@string/eight"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        android:textColor="@color/brick_red"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tile_1_num"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="185dp"
+        android:layout_marginTop="213dp"
+        android:background="@drawable/tile_number_background"
+        android:gravity="center"
+        android:text="@string/eight"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        android:textColor="@color/brick_red"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tile_2_num"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="120dp"
+        android:layout_marginTop="248dp"
+        android:background="@drawable/tile_number_background"
+        android:gravity="center"
+        android:text="@string/eight"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        android:textColor="@color/brick_red"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
