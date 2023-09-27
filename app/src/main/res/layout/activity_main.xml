@@ -19,6 +19,61 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/board_background" />
 
+    <TextView
+        android:id="@+id/road_6"
+        android:layout_width="25dp"
+        android:layout_height="11dp"
+        android:layout_marginStart="156dp"
+        android:layout_marginTop="203dp"
+        android:background="@color/brick_red"
+        android:rotation="-60"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/road_5"
+        android:layout_width="25dp"
+        android:layout_height="11dp"
+        android:layout_marginStart="155dp"
+        android:layout_marginTop="243dp"
+        android:background="@color/brick_red"
+        android:rotation="60"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/road_1"
+        android:layout_width="25dp"
+        android:layout_height="11dp"
+        android:layout_marginStart="189dp"
+        android:layout_marginTop="184dp"
+        android:background="@color/brick_red"
+        android:rotation="0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/road_3"
+        android:layout_width="25dp"
+        android:layout_height="11dp"
+        android:layout_marginStart="223dp"
+        android:layout_marginTop="242dp"
+        android:background="@color/brick_red"
+        android:rotation="-60"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/road_4"
+        android:layout_width="25dp"
+        android:layout_height="11dp"
+        android:layout_marginStart="189dp"
+        android:layout_marginTop="264dp"
+        android:background="@color/brick_red"
+        android:rotation="0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <ImageView
         android:id="@+id/tile_1"
         android:layout_width="75dp"
@@ -472,6 +527,18 @@
         android:text="@string/eight"
         android:textAppearance="@style/TextAppearance.AppCompat.Small"
         android:textColor="@color/brick_red"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/road_2"
+        android:layout_width="25dp"
+        android:layout_height="11dp"
+        android:layout_marginStart="223dp"
+        android:layout_marginTop="204dp"
+        android:background="@color/brick_red"
+        android:rotation="60"
+        app:layout_constraintStart_toEndOf="@+id/road_1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
