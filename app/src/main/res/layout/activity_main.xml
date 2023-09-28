@@ -5,7 +5,7 @@
     android:id="@+id/ConstraintLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#B2FFFFFF"
+    android:background="@color/black"
     tools:context=".MainActivity">
 
     <ImageView
@@ -18,6 +18,207 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/board_background" />
+
+    <LinearLayout
+        android:id="@+id/card_slots_white"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="541dp"
+        android:orientation="horizontal"
+        android:rotation="30"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/brick_card_white"
+            android:layout_width="35dp"
+            android:layout_height="45dp"
+            android:background="@color/brick_red"
+            android:gravity="center"
+            android:text="@string/zero"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:textColor="#000000" />
+
+        <TextView
+            android:id="@+id/grain_card_white"
+            android:layout_width="35dp"
+            android:layout_height="45dp"
+            android:background="@color/grain_yellow"
+            android:gravity="center"
+            android:text="@string/zero"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:textColor="#000000" />
+
+        <TextView
+            android:id="@+id/wool_card_white"
+            android:layout_width="35dp"
+            android:layout_height="45dp"
+            android:background="@color/wool_green"
+            android:gravity="center"
+            android:text="@string/zero"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:textColor="#000000" />
+
+        <TextView
+            android:id="@+id/lumber_card_white"
+            android:layout_width="35dp"
+            android:layout_height="45dp"
+            android:background="@color/lumber_green"
+            android:gravity="center"
+            android:text="@string/zero"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:textColor="#000000" />
+
+        <TextView
+            android:id="@+id/ore_card_white"
+            android:layout_width="35dp"
+            android:layout_height="45dp"
+            android:background="@color/ore_gray"
+            android:gravity="center"
+            android:text="@string/zero"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:textColor="#000000" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/card_slots_purple"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="220dp"
+        android:layout_marginTop="540dp"
+        android:orientation="horizontal"
+        android:rotation="-30"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/brick_card_purple"
+            android:layout_width="35dp"
+            android:layout_height="45dp"
+            android:background="@color/brick_red"
+            android:gravity="center"
+            android:text="@string/zero"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:textColor="#000000" />
+
+        <TextView
+            android:id="@+id/grain_card_purple"
+            android:layout_width="35dp"
+            android:layout_height="45dp"
+            android:background="@color/grain_yellow"
+            android:gravity="center"
+            android:text="@string/zero"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:textColor="#000000" />
+
+        <TextView
+            android:id="@+id/wool_card_purple"
+            android:layout_width="35dp"
+            android:layout_height="45dp"
+            android:background="@color/wool_green"
+            android:gravity="center"
+            android:text="@string/zero"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:textColor="#000000" />
+
+        <TextView
+            android:id="@+id/lumber_card_purple"
+            android:layout_width="35dp"
+            android:layout_height="45dp"
+            android:background="@color/lumber_green"
+            android:gravity="center"
+            android:text="@string/zero"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:textColor="#000000" />
+
+        <TextView
+            android:id="@+id/ore_card_purple"
+            android:layout_width="35dp"
+            android:layout_height="45dp"
+            android:background="@color/ore_gray"
+            android:gravity="center"
+            android:text="@string/zero"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:textColor="#000000" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/card_slots_orange"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="217dp"
+        android:layout_marginTop="183dp"
+        android:orientation="horizontal"
+        android:rotation="210"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/brick_card_orange"
+            android:layout_width="35dp"
+            android:layout_height="45dp"
+            android:background="@color/brick_red"
+            android:gravity="center"
+            android:text="@string/zero"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:textColor="#000000" />
+
+        <TextView
+            android:id="@+id/grain_card_orange"
+            android:layout_width="35dp"
+            android:layout_height="45dp"
+            android:background="@color/grain_yellow"
+            android:gravity="center"
+            android:text="@string/zero"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:textColor="#000000" />
+
+        <TextView
+            android:id="@+id/wool_card_orange"
+            android:layout_width="35dp"
+            android:layout_height="45dp"
+            android:background="@color/wool_green"
+            android:gravity="center"
+            android:text="@string/zero"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:textColor="#000000" />
+
+        <TextView
+            android:id="@+id/lumber_card_orange"
+            android:layout_width="35dp"
+            android:layout_height="45dp"
+            android:background="@color/lumber_green"
+            android:gravity="center"
+            android:text="@string/zero"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:textColor="#000000" />
+
+        <TextView
+            android:id="@+id/ore_card_orange"
+            android:layout_width="35dp"
+            android:layout_height="45dp"
+            android:background="@color/ore_gray"
+            android:gravity="center"
+            android:text="@string/zero"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:textColor="#000000" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/settlement_build"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="192dp"
+        android:layout_marginTop="660dp"
+        android:background="@drawable/blue_settlement"
+        android:clickable="true"
+        android:rotation="0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/tile_1"
@@ -2772,6 +2973,81 @@
         android:rotation="0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/road_build"
+        android:layout_width="25dp"
+        android:layout_height="16dp"
+        android:layout_marginStart="193dp"
+        android:layout_marginTop="620dp"
+        android:background="@color/blue"
+        android:clickable="true"
+        android:rotation="0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/card_slots_blue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="7dp"
+        android:layout_marginTop="186dp"
+        android:orientation="horizontal"
+        android:rotation="150"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/brick_card_blue"
+            android:layout_width="35dp"
+            android:layout_height="45dp"
+            android:background="@color/brick_red"
+            android:gravity="center"
+            android:text="@string/zero"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:textColor="#000000" />
+
+        <TextView
+            android:id="@+id/grain_card_blue"
+            android:layout_width="35dp"
+            android:layout_height="45dp"
+            android:background="@color/grain_yellow"
+            android:gravity="center"
+            android:text="@string/zero"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:textColor="#000000" />
+
+        <TextView
+            android:id="@+id/wool_card_blue"
+            android:layout_width="35dp"
+            android:layout_height="45dp"
+            android:background="@color/wool_green"
+            android:gravity="center"
+            android:text="@string/zero"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:textColor="#000000" />
+
+        <TextView
+            android:id="@+id/lumber_card_blue"
+            android:layout_width="35dp"
+            android:layout_height="45dp"
+            android:background="@color/lumber_green"
+            android:gravity="center"
+            android:text="@string/zero"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:textColor="#000000" />
+
+        <TextView
+            android:id="@+id/ore_card_blue"
+            android:layout_width="35dp"
+            android:layout_height="45dp"
+            android:background="@color/ore_gray"
+            android:gravity="center"
+            android:text="@string/zero"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:textColor="#000000" />
+
+    </LinearLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

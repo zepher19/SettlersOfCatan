@@ -10,11 +10,13 @@ public class Tile {
 
     int tileNumber;
 
+
+    Settlement[] settlements;
+
     public Tile(int viewID, int textViewID, char tileType) {
         this.viewID = viewID;
         this.textViewID = textViewID;
         this.tileType = tileType;
-        this.tileNumber = tileNumber;
     }
 
 
@@ -42,5 +44,9 @@ public class Tile {
         this.tileNumber = tileNumber;
     }
 
+
+    public void setSettlements(Settlement[] settlements) {
+        this.settlements = settlements;
+    }
 }
 

@@ -18,16 +18,86 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             tile11, tile12, tile13, tile14, tile15, tile16, tile17, tile18, tile19;
 
 
+    View buildSelection;
+
+    TextView roadBuild, settlementBuild;
+
+    TextView brick_card_blue, grain_card_blue, wool_card_blue, lumber_card_blue, ore_card_blue;
+
+    TextView brick_card_orange, grain_card_orange, wool_card_orange, lumber_card_orange, ore_card_orange;
+
+    TextView brick_card_purple, grain_card_purple, wool_card_purple, lumber_card_purple, ore_card_purple;
+
+    TextView brick_card_white, grain_card_white, wool_card_white, lumber_card_white, ore_card_white;
+
+
+
+
 
     TextView road_0, road_1, road_2, road_3, road_4, road_5, road_6, road_7, road_8, road_9, road_10, road_11, road_12, road_13, road_14, road_15, road_16, road_17, road_18, road_19, road_20, road_21, road_22, road_23, road_24, road_25, road_26, road_27, road_28, road_29, road_30, road_31, road_32, road_33, road_34, road_35, road_36, road_37, road_38, road_39, road_40, road_41, road_42, road_43, road_44, road_45, road_46, road_47, road_48, road_49, road_50, road_51, road_52, road_53, road_54, road_55, road_56, road_57, road_58, road_59, road_60, road_61, road_62, road_63, road_64, road_65, road_66, road_67, road_68, road_69, road_70, road_71, road_72, road_73, road_74, road_75, road_76, road_77, road_78, road_79, road_80, road_81, road_82, road_83, road_84, road_85, road_86, road_87, road_88, road_89, road_90, road_91, road_92, road_93, road_94, road_95, road_96, road_97, road_98, road_99, road_100, road_101, road_102, road_103, road_104, road_105, road_106, road_107, road_108, road_109, road_110, road_111, road_112;
 
-    TextView settlement_0, settlement_1, settlement_2, settlement_3, settlement_4, settlement_5, settlement_6, settlement_7, settlement_8, settlement_9, settlement_10, settlement_11, settlement_12, settlement_13, settlement_14, settlement_15, settlement_16, settlement_17, settlement_18, settlement_19, settlement_20, settlement_21, settlement_22, settlement_23, settlement_24, settlement_25, settlement_26, settlement_27, settlement_28, settlement_29, settlement_30, settlement_31, settlement_32, settlement_33, settlement_34, settlement_35, settlement_36, settlement_37, settlement_38, settlement_39, settlement_40, settlement_41, settlement_42, settlement_43, settlement_44, settlement_45, settlement_46, settlement_47, settlement_48, settlement_49, settlement_50, settlement_51, settlement_52, settlement_53, settlement_54, settlement_55, settlement_56, settlement_57, settlement_58, settlement_59, settlement_60, settlement_61, settlement_62, settlement_63, settlement_64, settlement_65, settlement_66, settlement_67, settlement_68, settlement_69, settlement_70, settlement_71, settlement_72, settlement_73, settlement_74, settlement_75, settlement_76, settlement_77, settlement_78, settlement_79, settlement_80, settlement_81, settlement_82, settlement_83, settlement_84, settlement_85, settlement_86, settlement_87, settlement_88, settlement_89, settlement_90, settlement_91, settlement_92, settlement_93, settlement_94, settlement_95, settlement_96, settlement_97, settlement_98, settlement_99, settlement_100, settlement_101, settlement_102, settlement_103, settlement_104, settlement_105, settlement_106, settlement_107, settlement_108, settlement_109, settlement_110, settlement_111, settlement_112, settlement_113, settlement_114, settlement_115, settlement_116, settlement_117, settlement_118, settlement_119, settlement_120, settlement_121, settlement_122, settlement_123;
+    TextView settlement_0, settlement_1, settlement_2, settlement_3, settlement_4, settlement_5, settlement_6, settlement_7, settlement_8, settlement_9, settlement_10, settlement_11, settlement_12, settlement_13, settlement_14, settlement_15, settlement_17, settlement_19, settlement_20, settlement_21, settlement_22, settlement_23, settlement_39, settlement_40, settlement_41, settlement_42, settlement_45, settlement_46, settlement_47, settlement_48, settlement_51, settlement_53, settlement_54, settlement_55, settlement_57, settlement_59, settlement_60, settlement_61, settlement_62, settlement_63, settlement_65, settlement_66, settlement_67, settlement_68, settlement_69, settlement_72, settlement_73, settlement_74, settlement_75, settlement_76, settlement_77, settlement_80, settlement_82, settlement_84, settlement_85, settlement_88, settlement_89, settlement_95, settlement_99, settlement_100, settlement_101, settlement_104, settlement_105, settlement_106, settlement_107, settlement_108, settlement_109, settlement_110, settlement_111, settlement_112, settlement_113, settlement_114, settlement_115, settlement_116, settlement_117, settlement_118, settlement_119, settlement_120, settlement_121, settlement_122, settlement_123;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         boardModel = BoardModel.getInstance();
+
+
+
+
+        //build road button
+        roadBuild = findViewById(R.id.road_build);
+        roadBuild.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                buildSelection = v;
+                v.setBackgroundColor(getResources().getColor(R.color.white, getTheme()));
+            }
+        });
+
+
+        //build settlement button
+        settlementBuild = findViewById(R.id.settlement_build);
+        settlementBuild.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                buildSelection = v;
+                v.setBackgroundColor(getResources().getColor(R.color.white, getTheme()));
+            }
+        });
+
+
+
+
+        brick_card_blue = findViewById(R.id.brick_card_blue);
+        grain_card_blue = findViewById(R.id.grain_card_blue);
+        wool_card_blue = findViewById(R.id.wool_card_blue);
+        lumber_card_blue = findViewById(R.id.lumber_card_blue);
+        ore_card_blue = findViewById(R.id.ore_card_blue);
+
+        brick_card_orange = findViewById(R.id.brick_card_orange);
+        grain_card_orange = findViewById(R.id.grain_card_orange);
+        wool_card_orange = findViewById(R.id.wool_card_orange);
+        lumber_card_orange = findViewById(R.id.lumber_card_orange);
+        ore_card_orange = findViewById(R.id.ore_card_orange);
+
+        brick_card_purple = findViewById(R.id.brick_card_purple);
+        grain_card_purple = findViewById(R.id.grain_card_purple);
+        wool_card_purple = findViewById(R.id.wool_card_purple);
+        lumber_card_purple = findViewById(R.id.lumber_card_purple);
+        ore_card_purple = findViewById(R.id.ore_card_purple);
+
+        brick_card_white = findViewById(R.id.brick_card_white);
+        grain_card_white = findViewById(R.id.grain_card_white);
+        wool_card_white = findViewById(R.id.wool_card_white);
+        lumber_card_white = findViewById(R.id.lumber_card_white);
+        ore_card_white = findViewById(R.id.ore_card_white);
+
+
+
+
 
 
         tile1 = findViewById(R.id.tile_1);
@@ -680,19 +750,61 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
 
+    //TODO onclick
+
     @Override
     public void onClick(View v) {
-        //gets the type of view whether road or settlement
-        char viewType = v.getResources().getResourceName(v.getId()).charAt(30);
 
-        if (viewType == 's') {
-            v.setBackground(ResourcesCompat.getDrawable(getResources(), R.drawable.blue_settlement, getTheme()));
+        String viewType = v.getResources().getResourceName(v.getId()).substring(30);
+
+        Toast.makeText(this, viewType, Toast.LENGTH_SHORT).show();
+
+        /*
+
+
+        //check if a build has been selected
+        if (buildSelection != null) {
+
+            //gets the type of view whether road or settlement
+            char viewType = v.getResources().getResourceName(v.getId()).charAt(30);
+
+            //if road build is selected
+            if (buildSelection.getId() == R.id.road_build) {
+                //if clicked a road spot
+                if (viewType == 'r') {
+                    buildRoad(v);
+                }
+            }
+            //if build settlement is selected
+            else if (buildSelection.getId() == R.id.settlement_build) {
+                //if clicked a settlement spot
+                if (viewType == 's') {
+                    buildSettlement(v);
+                }
+            }
+            //upgrade to city is selected
+            else {
+
+            }
         }
 
-        if (viewType == 'r') {
-            v.setBackgroundColor(ResourcesCompat.getColor(getResources(), R.color.blue, getTheme()));
-        }
-
-        v.setAlpha(1);
+         */
     }
+
+    private void buildRoad(View v) {
+        v.setBackgroundColor(ResourcesCompat.getColor(getResources(), R.color.blue, getTheme()));
+        v.setAlpha(1);
+        buildSelection = null;
+        roadBuild.setBackgroundColor(getResources().getColor(R.color.blue, getTheme()));
+    }
+
+    private void buildSettlement(View v) {
+        v.setBackgroundResource(R.drawable.blue_settlement);
+        v.setAlpha(1);
+        buildSelection = null;
+        settlementBuild.setBackgroundResource(R.drawable.blue_settlement);
+
+    }
+
+
 }
