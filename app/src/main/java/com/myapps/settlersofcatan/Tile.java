@@ -48,5 +48,9 @@ public class Tile {
     public void setSettlements(Settlement[] settlements) {
         this.settlements = settlements;
     }
+
+    public Settlement[] getSettlements() {
+        return settlements;
+    }
 }
 

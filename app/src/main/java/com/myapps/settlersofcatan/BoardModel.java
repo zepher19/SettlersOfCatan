@@ -1,5 +1,6 @@
 package com.myapps.settlersofcatan;
 
+import android.view.View;
 import android.widget.TextView;
 
 import java.util.Collections;
@@ -11,9 +12,6 @@ public class BoardModel {
 
 
     //contains types of tiles, used to populate board
-
-
-
     //b = brick
     //w = wool
     //o = ore
@@ -30,6 +28,14 @@ public class BoardModel {
     LinkedList<Character> tileTypesLinkedList;
 
 
+
+    //create players
+    Player bluePlayer = new Player('b');
+    Player orangePlayer = new Player('o');
+    Player purplePlayer = new Player('p');
+    Player whitePlayer = new Player('w');
+
+
     Settlement settlement_0, settlement_1, settlement_2, settlement_3, settlement_4, settlement_5, settlement_6, settlement_7, settlement_8,
             settlement_9, settlement_10, settlement_11, settlement_12, settlement_13, settlement_14, settlement_15,
             settlement_17, settlement_19, settlement_20, settlement_21, settlement_22, settlement_23, settlement_39,
@@ -42,6 +48,8 @@ public class BoardModel {
             settlement_108, settlement_109, settlement_110, settlement_111, settlement_112, settlement_113, settlement_114,
             settlement_115, settlement_116, settlement_117, settlement_118, settlement_119, settlement_120, settlement_121,
             settlement_122, settlement_123;
+
+    Settlement[] settlementArray;
 
 
 
@@ -59,6 +67,7 @@ public class BoardModel {
 
         tileNumbersLinkedList = new LinkedList<>();
         Collections.addAll(tileNumbersLinkedList, tileNumbersArray);
+
 
 
         //create settlements
@@ -124,7 +133,6 @@ public class BoardModel {
         settlement_23 = new Settlement(R.id.settlement_23);
         settlement_22 = new Settlement(R.id.settlement_22);
         settlement_21 = new Settlement(R.id.settlement_21);
-
         settlement_0 = new Settlement(R.id.settlement_0);
         settlement_1 = new Settlement(R.id.settlement_1);
         settlement_2 = new Settlement(R.id.settlement_2);
@@ -146,14 +154,18 @@ public class BoardModel {
         settlement_20 = new Settlement(R.id.settlement_20);
 
 
-
-
-
-
-
-
-
-
+        settlementArray = new Settlement[]{settlement_0, settlement_1, settlement_2, settlement_3, settlement_4, settlement_5, settlement_6, settlement_7, settlement_8,
+                settlement_9, settlement_10, settlement_11, settlement_12, settlement_13, settlement_14, settlement_15,
+                settlement_17, settlement_19, settlement_20, settlement_21, settlement_22, settlement_23, settlement_39,
+                settlement_40, settlement_41, settlement_42, settlement_45, settlement_46, settlement_47, settlement_48,
+                settlement_51, settlement_53, settlement_54, settlement_55, settlement_57, settlement_59, settlement_60,
+                settlement_61, settlement_62, settlement_63, settlement_65, settlement_66, settlement_67, settlement_68,
+                settlement_69, settlement_72, settlement_73, settlement_74, settlement_75, settlement_76, settlement_77,
+                settlement_80, settlement_82, settlement_84, settlement_85, settlement_88, settlement_89, settlement_95,
+                settlement_99, settlement_100, settlement_101, settlement_104, settlement_105, settlement_106, settlement_107,
+                settlement_108, settlement_109, settlement_110, settlement_111, settlement_112, settlement_113, settlement_114,
+                settlement_115, settlement_116, settlement_117, settlement_118, settlement_119, settlement_120, settlement_121,
+                settlement_122, settlement_123};
 
 
 
@@ -169,6 +181,7 @@ public class BoardModel {
 
         Tile tile3 = new Tile(R.id.tile_3, R.id.tile_3_num, randomizeTileType());
         tile3.setTileNumber(randomizeTileNumber(tile3));
+        tile3.setSettlements(new Settlement[]{settlement_109, settlement_85, settlement_76, settlement_74, settlement_84, settlement_111});
 
         Tile tile4 = new Tile(R.id.tile_4, R.id.tile_4_num, randomizeTileType());
         tile4.setTileNumber(randomizeTileNumber(tile4));
@@ -283,4 +296,32 @@ public class BoardModel {
     public Tile[] getTileArray() {
         return tileArray;
     }
+
+
+    public Player getBluePlayer() {
+        return bluePlayer;
+    }
+
+    public Player getOrangePlayer() {
+        return orangePlayer;
+    }
+
+    public Player getPurplePlayer() {
+        return purplePlayer;
+    }
+
+    public Player getWhitePlayer() {
+        return whitePlayer;
+    }
+
+    public Settlement getSettlementFromViewID(View v) {
+        for (int i =0; i < settlementArray.length; i++) {
+            if (settlementArray[i].getViewID() == v.getId()) {
+                return settlementArray[i];
+            }
+        }
+        return null;
+    }
 }
+
+

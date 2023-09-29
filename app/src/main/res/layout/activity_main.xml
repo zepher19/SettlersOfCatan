@@ -8,6 +8,8 @@
     android:background="@color/black"
     tools:context=".MainActivity">
 
+
+
     <ImageView
         android:id="@+id/board_background"
         android:layout_width="430dp"
@@ -23,9 +25,11 @@
         android:id="@+id/card_slots_white"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="541dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="542dp"
+        android:background="@color/white"
         android:orientation="horizontal"
+        android:padding="3dp"
         android:rotation="30"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -85,6 +89,8 @@
     <LinearLayout
         android:id="@+id/card_slots_purple"
         android:layout_width="wrap_content"
+        android:padding="3dp"
+        android:background="@color/purple"
         android:layout_height="wrap_content"
         android:layout_marginStart="220dp"
         android:layout_marginTop="540dp"
@@ -150,8 +156,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="217dp"
-        android:layout_marginTop="183dp"
+        android:layout_marginTop="177dp"
+        android:background="@color/orange"
         android:orientation="horizontal"
+        android:padding="3dp"
         android:rotation="210"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -212,8 +220,8 @@
         android:id="@+id/settlement_build"
         android:layout_width="25dp"
         android:layout_height="25dp"
-        android:layout_marginStart="192dp"
-        android:layout_marginTop="660dp"
+        android:layout_marginStart="184dp"
+        android:layout_marginTop="668dp"
         android:background="@drawable/blue_settlement"
         android:clickable="true"
         android:rotation="0"
@@ -2978,8 +2986,8 @@
         android:id="@+id/road_build"
         android:layout_width="25dp"
         android:layout_height="16dp"
-        android:layout_marginStart="193dp"
-        android:layout_marginTop="620dp"
+        android:layout_marginStart="120dp"
+        android:layout_marginTop="668dp"
         android:background="@color/blue"
         android:clickable="true"
         android:rotation="0"
@@ -2988,11 +2996,14 @@
 
     <LinearLayout
         android:id="@+id/card_slots_blue"
+
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="7dp"
-        android:layout_marginTop="186dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="178dp"
+        android:background="@color/blue"
         android:orientation="horizontal"
+        android:padding="3dp"
         android:rotation="150"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -3048,6 +3059,77 @@
             android:textColor="#000000" />
 
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/current_player_color_text_view"
+        android:layout_width="140dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="130dp"
+        android:layout_marginTop="25dp"
+        android:background="@drawable/blue_circle"
+        android:clickable="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextSwitcher
+
+        android:id="@+id/die_0"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="148dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/white_dice"
+        android:gravity="center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/die_0_text_view0"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textColor="#000000" />
+
+        <TextView
+            android:id="@+id/die_0_text_view1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textColor="#000000" />
+    </TextSwitcher>
+
+
+    <TextSwitcher
+
+        android:id="@+id/die_1"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="200dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/white_dice"
+        android:gravity="center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/die_1_text_view0"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textColor="#000000" />
+
+        <TextView
+            android:id="@+id/die_1_text_view1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textColor="#000000" />
+    </TextSwitcher>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

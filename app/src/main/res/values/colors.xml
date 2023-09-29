@@ -12,8 +12,10 @@
     <color name="grain_yellow">#FFD500</color>
     <color name="desert_gray">#FFF6A4</color>
 
-
+    <color name="orange">#FF9800</color>
     <color name="blue">#0046D5</color>
+    <color name="purple">#9C27B0</color>
+
 
 
 </resources>

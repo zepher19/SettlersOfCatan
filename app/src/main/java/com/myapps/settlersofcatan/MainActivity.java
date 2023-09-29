@@ -4,10 +4,15 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.res.ResourcesCompat;
 
 import android.os.Bundle;
+import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextSwitcher;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import java.util.Random;
 
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
@@ -30,21 +35,26 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     TextView brick_card_white, grain_card_white, wool_card_white, lumber_card_white, ore_card_white;
 
+    TextSwitcher die_0, die_1;
 
 
+    TextView die0TextView0, die0TextView1, die1TextView0, die1TextView1;
 
+    TextView currentPlayerTextView;
 
     TextView road_0, road_1, road_2, road_3, road_4, road_5, road_6, road_7, road_8, road_9, road_10, road_11, road_12, road_13, road_14, road_15, road_16, road_17, road_18, road_19, road_20, road_21, road_22, road_23, road_24, road_25, road_26, road_27, road_28, road_29, road_30, road_31, road_32, road_33, road_34, road_35, road_36, road_37, road_38, road_39, road_40, road_41, road_42, road_43, road_44, road_45, road_46, road_47, road_48, road_49, road_50, road_51, road_52, road_53, road_54, road_55, road_56, road_57, road_58, road_59, road_60, road_61, road_62, road_63, road_64, road_65, road_66, road_67, road_68, road_69, road_70, road_71, road_72, road_73, road_74, road_75, road_76, road_77, road_78, road_79, road_80, road_81, road_82, road_83, road_84, road_85, road_86, road_87, road_88, road_89, road_90, road_91, road_92, road_93, road_94, road_95, road_96, road_97, road_98, road_99, road_100, road_101, road_102, road_103, road_104, road_105, road_106, road_107, road_108, road_109, road_110, road_111, road_112;
 
     TextView settlement_0, settlement_1, settlement_2, settlement_3, settlement_4, settlement_5, settlement_6, settlement_7, settlement_8, settlement_9, settlement_10, settlement_11, settlement_12, settlement_13, settlement_14, settlement_15, settlement_17, settlement_19, settlement_20, settlement_21, settlement_22, settlement_23, settlement_39, settlement_40, settlement_41, settlement_42, settlement_45, settlement_46, settlement_47, settlement_48, settlement_51, settlement_53, settlement_54, settlement_55, settlement_57, settlement_59, settlement_60, settlement_61, settlement_62, settlement_63, settlement_65, settlement_66, settlement_67, settlement_68, settlement_69, settlement_72, settlement_73, settlement_74, settlement_75, settlement_76, settlement_77, settlement_80, settlement_82, settlement_84, settlement_85, settlement_88, settlement_89, settlement_95, settlement_99, settlement_100, settlement_101, settlement_104, settlement_105, settlement_106, settlement_107, settlement_108, settlement_109, settlement_110, settlement_111, settlement_112, settlement_113, settlement_114, settlement_115, settlement_116, settlement_117, settlement_118, settlement_119, settlement_120, settlement_121, settlement_122, settlement_123;
+
+    int dieTotal;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         boardModel = BoardModel.getInstance();
-
-
 
 
         //build road button
@@ -67,6 +77,34 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 v.setBackgroundColor(getResources().getColor(R.color.white, getTheme()));
             }
         });
+
+
+        currentPlayerTextView = findViewById(R.id.current_player_color_text_view);
+        currentPlayerTextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                rollDice();
+                drawCards();
+            }
+        });
+
+
+
+        //dice roll
+        die0TextView0 = findViewById(R.id.die_0_text_view0);
+        die0TextView1 = findViewById(R.id.die_0_text_view1);
+        die_0 = findViewById(R.id.die_0);
+        //animation for die roll
+        die_0.setInAnimation(getApplicationContext(), android.R.anim.slide_in_left);
+        die_0.setOutAnimation(getApplicationContext(), android.R.anim.slide_out_right);
+
+        //dice roll
+        die1TextView0 = findViewById(R.id.die_1_text_view0);
+        die1TextView1 = findViewById(R.id.die_1_text_view1);
+        die_1 = findViewById(R.id.die_1);
+        //animation for die roll
+        die_1.setInAnimation(getApplicationContext(), android.R.anim.slide_in_left);
+        die_1.setOutAnimation(getApplicationContext(), android.R.anim.slide_out_right);
 
 
 
@@ -94,9 +132,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         wool_card_white = findViewById(R.id.wool_card_white);
         lumber_card_white = findViewById(R.id.lumber_card_white);
         ore_card_white = findViewById(R.id.ore_card_white);
-
-
-
 
 
 
@@ -616,43 +651,81 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         settlement_123.setOnClickListener(this);
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         drawBoardTiles();
+    }
 
+    private void drawCards() {
+        //scan through tiles for tile numbers that correspond to the dice roll
+        //then scan through that tile's settlements to see if any of those players
+        //need to collect cards
+        for (int i = 0; i < boardModel.getTileArray().length; i++) {
+            if (boardModel.getTileArray()[i].getTileNumber() == dieTotal) {
+                char cardType = boardModel.getTileArray()[i].getTileType();
+                for (int j= 0; j < boardModel.getTileArray()[i].getSettlements().length; j++) {
+                    if (boardModel.getTileArray()[i].getSettlements()[j].getColor() == 'b') {
+                        if (cardType == 'b') {
+                            //prevents drawing more than 9 cards of a type
+                            if(boardModel.getBluePlayer().getBrickCards() < 9) {
+                                boardModel.getBluePlayer().setBrickCards(boardModel.getBluePlayer().getBrickCards() + 1);
+                                brick_card_blue.setText(Integer.toString(boardModel.getBluePlayer().getBrickCards()));
+                                brick_card_blue.setGravity(Gravity.CENTER);
+                            }
+                        }
+                        if (cardType == 'g') {
+                            //prevents drawing more than 9 cards of a type
+                            if(boardModel.getBluePlayer().getGrainCards() < 9) {
+                                boardModel.getBluePlayer().setGrainCards(boardModel.getBluePlayer().getGrainCards() + 1);
+                                grain_card_blue.setText(Integer.toString(boardModel.getBluePlayer().getGrainCards()));
+                                grain_card_blue.setGravity(Gravity.CENTER);
+                            }
+                        }
+                        if (cardType == 'w') {
+                            //prevents drawing more than 9 cards of a type
+                            if(boardModel.getBluePlayer().getWoolCards() < 9) {
+                                boardModel.getBluePlayer().setWoolCards(boardModel.getBluePlayer().getWoolCards() + 1);
+                                wool_card_blue.setText(Integer.toString(boardModel.getBluePlayer().getWoolCards()));
+                                wool_card_blue.setGravity(Gravity.CENTER);
+                            }
+                        }
+                        if (cardType == 'l') {
+                            //prevents drawing more than 9 cards of a type
+                            if(boardModel.getBluePlayer().getLumberCards() < 9) {
+                                boardModel.getBluePlayer().setLumberCards(boardModel.getBluePlayer().getLumberCards() + 1);
+                                lumber_card_blue.setText(Integer.toString(boardModel.getBluePlayer().getLumberCards()));
+                                lumber_card_blue.setGravity(Gravity.CENTER);
+                            }
+                        }
+                        if (cardType == 'o') {
+                            //prevents drawing more than 9 cards of a type
+                            if(boardModel.getBluePlayer().getOreCards() < 9) {
+                                boardModel.getBluePlayer().setOreCards(boardModel.getBluePlayer().getOreCards() + 1);
+                                ore_card_blue.setText(Integer.toString(boardModel.getBluePlayer().getOreCards()));
+                                ore_card_blue.setGravity(Gravity.CENTER);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    private void rollDice() {
+        Random random = new Random();
+        int[] diceFaces = {1,2,3,4,5,6};
+
+        int die0Result = diceFaces[random.nextInt(6)];
+        int die1Result = diceFaces[random.nextInt(6)];
+
+
+        dieTotal = die0Result + die1Result;
+
+        die_0.setText(Integer.toString(die0Result));
+        die0TextView0.setGravity(Gravity.CENTER);
+        die0TextView1.setGravity(Gravity.CENTER);
+
+        die_1.setText(Integer.toString(die1Result));
+        die1TextView0.setGravity(Gravity.CENTER);
+        die1TextView1.setGravity(Gravity.CENTER);
     }
 
 
@@ -661,7 +734,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         TextView tempTextView;
 
         for (int i = 0; i < boardModel.getTileArray().length; i++) {
-            //create temp view for checking values
+            //create temps for checking values
             temp = findViewById(boardModel.getTileArray()[i].getViewID());
             tempTextView = findViewById(boardModel.getTileArray()[i].getTextViewID());
 
@@ -755,13 +828,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v) {
 
-        String viewType = v.getResources().getResourceName(v.getId()).substring(30);
-
-        Toast.makeText(this, viewType, Toast.LENGTH_SHORT).show();
-
-        /*
-
-
         //check if a build has been selected
         if (buildSelection != null) {
 
@@ -787,8 +853,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             }
         }
-
-         */
     }
 
     private void buildRoad(View v) {
@@ -801,9 +865,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private void buildSettlement(View v) {
         v.setBackgroundResource(R.drawable.blue_settlement);
         v.setAlpha(1);
+        boardModel.getSettlementFromViewID(v).setColor('b');
         buildSelection = null;
         settlementBuild.setBackgroundResource(R.drawable.blue_settlement);
-
     }
 
 
