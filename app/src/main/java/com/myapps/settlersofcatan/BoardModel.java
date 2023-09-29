@@ -30,10 +30,10 @@ public class BoardModel {
 
 
     //create players
-    Player bluePlayer = new Player('b');
-    Player orangePlayer = new Player('o');
-    Player purplePlayer = new Player('p');
-    Player whitePlayer = new Player('w');
+    private Player bluePlayer = new Player('b');
+    private Player orangePlayer = new Player('o');
+    private Player purplePlayer = new Player('p');
+    private Player whitePlayer = new Player('w');
 
 
     Settlement settlement_0, settlement_1, settlement_2, settlement_3, settlement_4, settlement_5, settlement_6, settlement_7, settlement_8,
@@ -50,6 +50,11 @@ public class BoardModel {
             settlement_122, settlement_123;
 
     Settlement[] settlementArray;
+
+
+    char playerTurn;
+    char[] players = {'b', 'o', 'p', 'w'};
+
 
 
 
@@ -321,6 +326,32 @@ public class BoardModel {
             }
         }
         return null;
+    }
+
+    public void randomizePlayer() {
+        Random random = new Random();
+        playerTurn = players[random.nextInt(4)];
+    }
+
+
+    public char getPlayerTurn() {
+        return playerTurn;
+    }
+
+
+    public void switchPlayer() {
+        if (playerTurn == 'b') {
+            playerTurn = 'o';
+        }
+        else if (playerTurn == 'o') {
+            playerTurn = 'p';
+        }
+        else if (playerTurn == 'p') {
+            playerTurn = 'w';
+        }
+        else if (playerTurn == 'w') {
+            playerTurn = 'b';
+        }
     }
 }
 

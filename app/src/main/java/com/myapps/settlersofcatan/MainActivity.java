@@ -4,13 +4,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.res.ResourcesCompat;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextSwitcher;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.Random;
 
@@ -48,6 +47,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     int dieTotal;
 
+    Button endTurn;
+
+    View constraintLayout;
+
+    TextView city_build;
+
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,13 +65,66 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         boardModel = BoardModel.getInstance();
 
 
+
+        //used to unselect the build selection by clicking off the board
+        constraintLayout = findViewById(R.id.ConstraintLayout);
+        constraintLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                buildSelection = null;
+
+                int color = 0;
+                int drawable = 0;
+                int cityDrawable = 0;
+
+
+                if (boardModel.getPlayerTurn() == 'b') {
+                    color = R.color.blue;
+                    drawable = R.drawable.blue_circle;
+                    cityDrawable = R.drawable.blue_city;
+                }
+                else if (boardModel.getPlayerTurn() == 'o') {
+                    color = R.color.orange;
+                    drawable = R.drawable.orange_circle;
+                    cityDrawable = R.drawable.orange_city;
+                }
+                else if (boardModel.getPlayerTurn() == 'p') {
+                    color = R.color.purple;
+                    drawable = R.drawable.purple_circle;
+                    cityDrawable = R.drawable.purple_city;
+                }
+                else if (boardModel.getPlayerTurn() == 'w') {
+                    drawable = R.drawable.white_circle;
+                    color = R.color.white;
+                    cityDrawable = R.drawable.white_city;
+                }
+                roadBuild.setBackgroundColor(ResourcesCompat.getColor(getResources(), color, getTheme()));
+                settlementBuild.setBackgroundResource(drawable);
+                city_build.setBackgroundResource(cityDrawable);
+            }
+        });
+
+
+        endTurn = findViewById(R.id.end_turn_button);
+        endTurn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                boardModel.switchPlayer();
+                updateCurrentPlayerGraphic();
+            }
+        });
+
+
         //build road button
         roadBuild = findViewById(R.id.road_build);
         roadBuild.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                buildSelection = v;
-                v.setBackgroundColor(getResources().getColor(R.color.white, getTheme()));
+                //if build selection is not selected select, prevents mutltiple selections
+                if (buildSelection == null) {
+                    buildSelection = v;
+                    v.setBackgroundColor(getResources().getColor(R.color.yellow, getTheme()));
+                }
             }
         });
 
@@ -73,8 +134,22 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         settlementBuild.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                buildSelection = v;
-                v.setBackgroundColor(getResources().getColor(R.color.white, getTheme()));
+                if (buildSelection == null) {
+                    buildSelection = v;
+                    v.setBackground(ResourcesCompat.getDrawable(getResources(), R.drawable.yellow_circle, getTheme()));
+                }
+            }
+        });
+
+
+        city_build = findViewById(R.id.city_build);
+        city_build.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (buildSelection == null) {
+                    buildSelection = v;
+                    v.setBackground(ResourcesCompat.getDrawable(getResources(), R.drawable.yellow_circle, getTheme()));
+                }
             }
         });
 
@@ -652,9 +727,43 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
         drawBoardTiles();
+        boardModel.randomizePlayer();
+        updateCurrentPlayerGraphic();
+    }
+
+    private void updateCurrentPlayerGraphic() {
+        if (boardModel.getPlayerTurn() == 'b') {
+            currentPlayerTextView.setBackground(ResourcesCompat.getDrawable(getResources(), R.drawable.blue_circle, getTheme()));
+            roadBuild.setBackgroundColor(ResourcesCompat.getColor(getResources(), R.color.blue, getTheme()));
+            settlementBuild.setBackground(ResourcesCompat.getDrawable(getResources(), R.drawable.blue_circle, getTheme()));
+            city_build.setBackgroundResource(R.drawable.blue_city);
+
+        }
+        if (boardModel.getPlayerTurn() == 'o') {
+            currentPlayerTextView.setBackground(ResourcesCompat.getDrawable(getResources(), R.drawable.orange_circle, getTheme()));
+            roadBuild.setBackgroundColor(ResourcesCompat.getColor(getResources(), R.color.orange, getTheme()));
+            settlementBuild.setBackground(ResourcesCompat.getDrawable(getResources(), R.drawable.orange_circle, getTheme()));
+            city_build.setBackgroundResource(R.drawable.orange_city);
+        }
+        if (boardModel.getPlayerTurn() == 'p') {
+            currentPlayerTextView.setBackground(ResourcesCompat.getDrawable(getResources(), R.drawable.purple_circle, getTheme()));
+            roadBuild.setBackgroundColor(ResourcesCompat.getColor(getResources(), R.color.purple, getTheme()));
+            settlementBuild.setBackground(ResourcesCompat.getDrawable(getResources(), R.drawable.purple_circle, getTheme()));
+            city_build.setBackgroundResource(R.drawable.purple_city);
+
+        }
+        if (boardModel.getPlayerTurn() == 'w') {
+            currentPlayerTextView.setBackground(ResourcesCompat.getDrawable(getResources(), R.drawable.white_circle, getTheme()));
+            roadBuild.setBackgroundColor(ResourcesCompat.getColor(getResources(), R.color.white, getTheme()));
+            settlementBuild.setBackground(ResourcesCompat.getDrawable(getResources(), R.drawable.white_circle, getTheme()));
+            city_build.setBackgroundResource(R.drawable.white_city);
+
+        }
     }
 
     private void drawCards() {
+        int cardsToAdd = 0;
+
         //scan through tiles for tile numbers that correspond to the dice roll
         //then scan through that tile's settlements to see if any of those players
         //need to collect cards
@@ -662,46 +771,132 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             if (boardModel.getTileArray()[i].getTileNumber() == dieTotal) {
                 char cardType = boardModel.getTileArray()[i].getTileType();
                 for (int j= 0; j < boardModel.getTileArray()[i].getSettlements().length; j++) {
+
+                    //check if city and determine cards to add for city vs settlement
+                    if (boardModel.getTileArray()[i].getSettlements()[j].isCity()) {
+                        cardsToAdd = 2;
+                    }
+                    else {
+                        cardsToAdd = 1;
+                    }
+
+                    //if blue has a settlement
                     if (boardModel.getTileArray()[i].getSettlements()[j].getColor() == 'b') {
                         if (cardType == 'b') {
-                            //prevents drawing more than 9 cards of a type
-                            if(boardModel.getBluePlayer().getBrickCards() < 9) {
-                                boardModel.getBluePlayer().setBrickCards(boardModel.getBluePlayer().getBrickCards() + 1);
-                                brick_card_blue.setText(Integer.toString(boardModel.getBluePlayer().getBrickCards()));
-                                brick_card_blue.setGravity(Gravity.CENTER);
-                            }
+                            boardModel.getBluePlayer().setBrickCards(boardModel.getBluePlayer().getBrickCards() + cardsToAdd);
+                            brick_card_blue.setText(Integer.toString(boardModel.getBluePlayer().getBrickCards()));
+                            brick_card_blue.setGravity(Gravity.CENTER);
                         }
                         if (cardType == 'g') {
-                            //prevents drawing more than 9 cards of a type
-                            if(boardModel.getBluePlayer().getGrainCards() < 9) {
-                                boardModel.getBluePlayer().setGrainCards(boardModel.getBluePlayer().getGrainCards() + 1);
-                                grain_card_blue.setText(Integer.toString(boardModel.getBluePlayer().getGrainCards()));
-                                grain_card_blue.setGravity(Gravity.CENTER);
-                            }
+                            boardModel.getBluePlayer().setGrainCards(boardModel.getBluePlayer().getGrainCards() + cardsToAdd);
+                            grain_card_blue.setText(Integer.toString(boardModel.getBluePlayer().getGrainCards()));
+                            grain_card_blue.setGravity(Gravity.CENTER);
                         }
                         if (cardType == 'w') {
-                            //prevents drawing more than 9 cards of a type
-                            if(boardModel.getBluePlayer().getWoolCards() < 9) {
-                                boardModel.getBluePlayer().setWoolCards(boardModel.getBluePlayer().getWoolCards() + 1);
-                                wool_card_blue.setText(Integer.toString(boardModel.getBluePlayer().getWoolCards()));
-                                wool_card_blue.setGravity(Gravity.CENTER);
-                            }
+                            boardModel.getBluePlayer().setWoolCards(boardModel.getBluePlayer().getWoolCards() + cardsToAdd);
+                            wool_card_blue.setText(Integer.toString(boardModel.getBluePlayer().getWoolCards()));
+                            wool_card_blue.setGravity(Gravity.CENTER);
                         }
                         if (cardType == 'l') {
-                            //prevents drawing more than 9 cards of a type
-                            if(boardModel.getBluePlayer().getLumberCards() < 9) {
-                                boardModel.getBluePlayer().setLumberCards(boardModel.getBluePlayer().getLumberCards() + 1);
-                                lumber_card_blue.setText(Integer.toString(boardModel.getBluePlayer().getLumberCards()));
-                                lumber_card_blue.setGravity(Gravity.CENTER);
-                            }
+                            boardModel.getBluePlayer().setLumberCards(boardModel.getBluePlayer().getLumberCards() + cardsToAdd);
+                            lumber_card_blue.setText(Integer.toString(boardModel.getBluePlayer().getLumberCards()));
+                            lumber_card_blue.setGravity(Gravity.CENTER);
                         }
                         if (cardType == 'o') {
-                            //prevents drawing more than 9 cards of a type
-                            if(boardModel.getBluePlayer().getOreCards() < 9) {
-                                boardModel.getBluePlayer().setOreCards(boardModel.getBluePlayer().getOreCards() + 1);
-                                ore_card_blue.setText(Integer.toString(boardModel.getBluePlayer().getOreCards()));
-                                ore_card_blue.setGravity(Gravity.CENTER);
-                            }
+                            boardModel.getBluePlayer().setOreCards(boardModel.getBluePlayer().getOreCards() + cardsToAdd);
+                            ore_card_blue.setText(Integer.toString(boardModel.getBluePlayer().getOreCards()));
+                            ore_card_blue.setGravity(Gravity.CENTER);
+                        }
+                    }
+
+
+                    //if orange has a settlement
+                    if (boardModel.getTileArray()[i].getSettlements()[j].getColor() == 'o') {
+                        if (cardType == 'b') {
+                            boardModel.getOrangePlayer().setBrickCards(boardModel.getOrangePlayer().getBrickCards() + cardsToAdd);
+                            brick_card_orange.setText(Integer.toString(boardModel.getOrangePlayer().getBrickCards()));
+                            brick_card_orange.setGravity(Gravity.CENTER);
+                        }
+                        if (cardType == 'g') {
+                            boardModel.getOrangePlayer().setGrainCards(boardModel.getOrangePlayer().getGrainCards() + cardsToAdd);
+                            grain_card_orange.setText(Integer.toString(boardModel.getOrangePlayer().getGrainCards()));
+                            grain_card_orange.setGravity(Gravity.CENTER);
+                        }
+                        if (cardType == 'w') {
+                            boardModel.getOrangePlayer().setWoolCards(boardModel.getOrangePlayer().getWoolCards() + cardsToAdd);
+                            wool_card_orange.setText(Integer.toString(boardModel.getOrangePlayer().getWoolCards()));
+                            wool_card_orange.setGravity(Gravity.CENTER);
+                        }
+                        if (cardType == 'l') {
+                            boardModel.getOrangePlayer().setLumberCards(boardModel.getOrangePlayer().getLumberCards() + cardsToAdd);
+                            lumber_card_orange.setText(Integer.toString(boardModel.getOrangePlayer().getLumberCards()));
+                            lumber_card_blue.setGravity(Gravity.CENTER);
+                        }
+                        if (cardType == 'o') {
+                            boardModel.getOrangePlayer().setOreCards(boardModel.getOrangePlayer().getOreCards() + cardsToAdd);
+                            ore_card_orange.setText(Integer.toString(boardModel.getOrangePlayer().getOreCards()));
+                            ore_card_orange.setGravity(Gravity.CENTER);
+                        }
+                    }
+
+
+                    //if purple has a settlement
+                    if (boardModel.getTileArray()[i].getSettlements()[j].getColor() == 'p') {
+                        if (cardType == 'b') {
+                            boardModel.getPurplePlayer().setBrickCards(boardModel.getPurplePlayer().getBrickCards() + cardsToAdd);
+                            brick_card_purple.setText(Integer.toString(boardModel.getPurplePlayer().getBrickCards()));
+                            brick_card_purple.setGravity(Gravity.CENTER);
+                        }
+                        if (cardType == 'g') {
+                            boardModel.getPurplePlayer().setGrainCards(boardModel.getPurplePlayer().getGrainCards() + cardsToAdd);
+                            grain_card_purple.setText(Integer.toString(boardModel.getPurplePlayer().getGrainCards()));
+                            grain_card_purple.setGravity(Gravity.CENTER);
+                        }
+                        if (cardType == 'w') {
+                            boardModel.getPurplePlayer().setWoolCards(boardModel.getPurplePlayer().getWoolCards() + cardsToAdd);
+                            wool_card_purple.setText(Integer.toString(boardModel.getPurplePlayer().getWoolCards()));
+                            wool_card_purple.setGravity(Gravity.CENTER);
+                        }
+                        if (cardType == 'l') {
+                            boardModel.getPurplePlayer().setLumberCards(boardModel.getPurplePlayer().getLumberCards() + cardsToAdd);
+                            lumber_card_purple.setText(Integer.toString(boardModel.getPurplePlayer().getLumberCards()));
+                            lumber_card_purple.setGravity(Gravity.CENTER);
+                        }
+                        if (cardType == 'o') {
+                            boardModel.getPurplePlayer().setOreCards(boardModel.getPurplePlayer().getOreCards() + cardsToAdd);
+                            ore_card_purple.setText(Integer.toString(boardModel.getPurplePlayer().getOreCards()));
+                            ore_card_purple.setGravity(Gravity.CENTER);
+                        }
+                    }
+
+
+
+                    //if white has a settlement
+                    if (boardModel.getTileArray()[i].getSettlements()[j].getColor() == 'w') {
+                        if (cardType == 'b') {
+                            boardModel.getWhitePlayer().setBrickCards(boardModel.getWhitePlayer().getBrickCards() + cardsToAdd);
+                            brick_card_white.setText(Integer.toString(boardModel.getWhitePlayer().getBrickCards()));
+                            brick_card_white.setGravity(Gravity.CENTER);
+                        }
+                        if (cardType == 'g') {
+                            boardModel.getWhitePlayer().setGrainCards(boardModel.getWhitePlayer().getGrainCards() + cardsToAdd);
+                            grain_card_white.setText(Integer.toString(boardModel.getWhitePlayer().getGrainCards()));
+                            grain_card_white.setGravity(Gravity.CENTER);
+                        }
+                        if (cardType == 'w') {
+                            boardModel.getWhitePlayer().setWoolCards(boardModel.getWhitePlayer().getWoolCards() + cardsToAdd);
+                            wool_card_white.setText(Integer.toString(boardModel.getWhitePlayer().getWoolCards()));
+                            wool_card_white.setGravity(Gravity.CENTER);
+                        }
+                        if (cardType == 'l') {
+                            boardModel.getWhitePlayer().setLumberCards(boardModel.getWhitePlayer().getLumberCards() + cardsToAdd);
+                            lumber_card_white.setText(Integer.toString(boardModel.getWhitePlayer().getLumberCards()));
+                            lumber_card_white.setGravity(Gravity.CENTER);
+                        }
+                        if (cardType == 'o') {
+                            boardModel.getWhitePlayer().setOreCards(boardModel.getWhitePlayer().getOreCards() + cardsToAdd);
+                            ore_card_white.setText(Integer.toString(boardModel.getWhitePlayer().getOreCards()));
+                            ore_card_white.setGravity(Gravity.CENTER);
                         }
                     }
                 }
@@ -834,41 +1029,111 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             //gets the type of view whether road or settlement
             char viewType = v.getResources().getResourceName(v.getId()).charAt(30);
 
-            //if road build is selected
-            if (buildSelection.getId() == R.id.road_build) {
-                //if clicked a road spot
-                if (viewType == 'r') {
-                    buildRoad(v);
+            //only build where there is empty space
+            if (v.getAlpha() == 0) {
+
+                //if road build is selected
+                if (buildSelection.getId() == R.id.road_build) {
+                    //if clicked a road spot
+                    if (viewType == 'r') {
+                        buildRoad(v);
+                    }
+                }
+                //if build settlement is selected
+                else if (buildSelection.getId() == R.id.settlement_build) {
+                    //if clicked a settlement spot
+                    if (viewType == 's') {
+                        buildSettlement(v);
+                    }
                 }
             }
-            //if build settlement is selected
-            else if (buildSelection.getId() == R.id.settlement_build) {
-                //if clicked a settlement spot
-                if (viewType == 's') {
-                    buildSettlement(v);
-                }
-            }
-            //upgrade to city is selected
+            //build a city where a settlement is visible, alpha = 1
             else {
+                if (buildSelection.getId() == R.id.city_build) {
+                    //if clicked a settlement spot
+                    if (viewType == 's') {
+                        buildCity(v);
+                    }
+                }
 
             }
+
         }
     }
 
+    private void buildCity(View v) {
+        int drawable = 0;
+
+        if (boardModel.getPlayerTurn() == 'b') {
+            drawable = R.drawable.blue_city;
+        }
+        else if (boardModel.getPlayerTurn() == 'o') {
+            drawable = R.drawable.orange_city;
+
+        }
+        else if (boardModel.getPlayerTurn() == 'p') {
+            drawable = R.drawable.purple_city;
+        }
+        else if (boardModel.getPlayerTurn() == 'w') {
+            drawable = R.drawable.white_city;
+        }
+
+        v.setBackgroundResource(drawable);
+        //change settlement to city in the board model
+        boardModel.getSettlementFromViewID(v).setCity(true);
+        buildSelection = null;
+        city_build.setBackgroundResource(drawable);
+
+    }
+
     private void buildRoad(View v) {
-        v.setBackgroundColor(ResourcesCompat.getColor(getResources(), R.color.blue, getTheme()));
+        int color = 0;
+
+        if (boardModel.getPlayerTurn() == 'b') {
+            color = R.color.blue;
+        }
+        else if (boardModel.getPlayerTurn() == 'o') {
+            color = R.color.orange;
+        }
+        else if (boardModel.getPlayerTurn() == 'p') {
+            color = R.color.purple;
+        }
+        else if (boardModel.getPlayerTurn() == 'w') {
+            color = R.color.white;
+        }
+
+
+        v.setBackgroundColor(ResourcesCompat.getColor(getResources(), color, getTheme()));
         v.setAlpha(1);
         buildSelection = null;
-        roadBuild.setBackgroundColor(getResources().getColor(R.color.blue, getTheme()));
+        roadBuild.setBackgroundColor(ResourcesCompat.getColor(getResources(), color, getTheme()));
     }
 
     private void buildSettlement(View v) {
-        v.setBackgroundResource(R.drawable.blue_settlement);
+        int drawable = 0;
+
+        if (boardModel.getPlayerTurn() == 'b') {
+            drawable = R.drawable.blue_circle;
+        }
+        else if (boardModel.getPlayerTurn() == 'o') {
+            drawable = R.drawable.orange_circle;
+        }
+        else if (boardModel.getPlayerTurn() == 'p') {
+            drawable = R.drawable.purple_circle;
+        }
+        else if (boardModel.getPlayerTurn() == 'w') {
+            drawable = R.drawable.white_circle;
+        }
+
+
+        v.setBackgroundResource(drawable);
         v.setAlpha(1);
-        boardModel.getSettlementFromViewID(v).setColor('b');
+        boardModel.getSettlementFromViewID(v).setColor(boardModel.getPlayerTurn());
         buildSelection = null;
-        settlementBuild.setBackgroundResource(R.drawable.blue_settlement);
+        settlementBuild.setBackgroundResource(drawable);
     }
+
+
 
 
 }

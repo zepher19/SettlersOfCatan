@@ -6,6 +6,8 @@ public class Settlement {
     int viewID;
     char color = 0;
 
+    boolean city = false;
+
     public Settlement(int viewID) {
         this.viewID = viewID;
     }
@@ -21,5 +23,14 @@ public class Settlement {
 
     public void setColor(char color) {
         this.color = color;
+    }
+
+
+    public boolean isCity() {
+        return city;
+    }
+
+    public void setCity(boolean city) {
+        this.city = city;
     }
 }

@@ -6,7 +6,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/black"
+    android:clickable="true"
     tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/build_selector_background_text_view"
+        android:layout_width="191dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="103dp"
+        android:layout_marginTop="653dp"
+        android:background="#52381E"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 
@@ -20,6 +31,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/board_background" />
+
+    <TextView
+        android:id="@+id/city_build"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="252dp"
+        android:layout_marginTop="668dp"
+        android:background="@drawable/blue_city"
+        android:clickable="true"
+        android:rotation="0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
         android:id="@+id/card_slots_white"
@@ -41,7 +64,7 @@
             android:background="@color/brick_red"
             android:gravity="center"
             android:text="@string/zero"
-            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
             android:textColor="#000000" />
 
         <TextView
@@ -51,7 +74,7 @@
             android:background="@color/grain_yellow"
             android:gravity="center"
             android:text="@string/zero"
-            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
             android:textColor="#000000" />
 
         <TextView
@@ -61,7 +84,7 @@
             android:background="@color/wool_green"
             android:gravity="center"
             android:text="@string/zero"
-            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
             android:textColor="#000000" />
 
         <TextView
@@ -71,7 +94,7 @@
             android:background="@color/lumber_green"
             android:gravity="center"
             android:text="@string/zero"
-            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
             android:textColor="#000000" />
 
         <TextView
@@ -81,7 +104,7 @@
             android:background="@color/ore_gray"
             android:gravity="center"
             android:text="@string/zero"
-            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
             android:textColor="#000000" />
 
     </LinearLayout>
@@ -89,12 +112,12 @@
     <LinearLayout
         android:id="@+id/card_slots_purple"
         android:layout_width="wrap_content"
-        android:padding="3dp"
-        android:background="@color/purple"
         android:layout_height="wrap_content"
         android:layout_marginStart="220dp"
         android:layout_marginTop="540dp"
+        android:background="@color/purple"
         android:orientation="horizontal"
+        android:padding="3dp"
         android:rotation="-30"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -106,7 +129,7 @@
             android:background="@color/brick_red"
             android:gravity="center"
             android:text="@string/zero"
-            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
             android:textColor="#000000" />
 
         <TextView
@@ -116,7 +139,7 @@
             android:background="@color/grain_yellow"
             android:gravity="center"
             android:text="@string/zero"
-            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
             android:textColor="#000000" />
 
         <TextView
@@ -126,7 +149,7 @@
             android:background="@color/wool_green"
             android:gravity="center"
             android:text="@string/zero"
-            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
             android:textColor="#000000" />
 
         <TextView
@@ -136,7 +159,7 @@
             android:background="@color/lumber_green"
             android:gravity="center"
             android:text="@string/zero"
-            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
             android:textColor="#000000" />
 
         <TextView
@@ -146,7 +169,7 @@
             android:background="@color/ore_gray"
             android:gravity="center"
             android:text="@string/zero"
-            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
             android:textColor="#000000" />
 
     </LinearLayout>
@@ -171,7 +194,7 @@
             android:background="@color/brick_red"
             android:gravity="center"
             android:text="@string/zero"
-            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
             android:textColor="#000000" />
 
         <TextView
@@ -181,7 +204,7 @@
             android:background="@color/grain_yellow"
             android:gravity="center"
             android:text="@string/zero"
-            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
             android:textColor="#000000" />
 
         <TextView
@@ -191,7 +214,7 @@
             android:background="@color/wool_green"
             android:gravity="center"
             android:text="@string/zero"
-            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
             android:textColor="#000000" />
 
         <TextView
@@ -201,7 +224,7 @@
             android:background="@color/lumber_green"
             android:gravity="center"
             android:text="@string/zero"
-            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
             android:textColor="#000000" />
 
         <TextView
@@ -211,7 +234,7 @@
             android:background="@color/ore_gray"
             android:gravity="center"
             android:text="@string/zero"
-            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
             android:textColor="#000000" />
 
     </LinearLayout>
@@ -222,7 +245,7 @@
         android:layout_height="25dp"
         android:layout_marginStart="184dp"
         android:layout_marginTop="668dp"
-        android:background="@drawable/blue_settlement"
+        android:background="@drawable/blue_circle"
         android:clickable="true"
         android:rotation="0"
         app:layout_constraintStart_toStartOf="parent"
@@ -419,360 +442,348 @@
         app:srcCompat="@drawable/hexagon_tile" />
 
 
-
-
     <TextView
         android:id="@+id/settlement_100"
-        android:clickable="true"
-        android:alpha="0"
         android:layout_width="25dp"
         android:layout_height="25dp"
         android:layout_marginStart="164dp"
         android:layout_marginTop="408dp"
+        android:alpha="0"
         android:background="@color/brick_red"
+        android:clickable="true"
         android:rotation="0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/settlement_101"
-        android:clickable="true"
-        android:alpha="0"
         android:layout_width="25dp"
         android:layout_height="25dp"
         android:layout_marginStart="216dp"
         android:layout_marginTop="408dp"
+        android:alpha="0"
         android:background="@color/brick_red"
+        android:clickable="true"
         android:rotation="0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/settlement_99"
-        android:clickable="true"
-        android:alpha="0"
         android:layout_width="25dp"
         android:layout_height="25dp"
         android:layout_marginStart="236dp"
         android:layout_marginTop="368dp"
+        android:alpha="0"
         android:background="@color/brick_red"
+        android:clickable="true"
         android:rotation="0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
 
 
     <TextView
         android:id="@+id/settlement_95"
-        android:clickable="true"
-        android:alpha="0"
         android:layout_width="25dp"
         android:layout_height="25dp"
         android:layout_marginStart="148dp"
         android:layout_marginTop="372dp"
+        android:alpha="0"
         android:background="@color/brick_red"
+        android:clickable="true"
         android:rotation="0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
 
-
     <TextView
         android:id="@+id/settlement_88"
-        android:clickable="true"
-        android:alpha="0"
         android:layout_width="25dp"
         android:layout_height="25dp"
         android:layout_marginStart="164dp"
         android:layout_marginTop="332dp"
+        android:alpha="0"
         android:background="@color/brick_red"
+        android:clickable="true"
         android:rotation="0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/settlement_89"
-        android:clickable="true"
-        android:alpha="0"
         android:layout_width="25dp"
         android:layout_height="25dp"
         android:layout_marginStart="216dp"
         android:layout_marginTop="332dp"
+        android:alpha="0"
         android:background="@color/brick_red"
+        android:clickable="true"
         android:rotation="0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
 
-
     <TextView
         android:id="@+id/settlement_80"
-        android:clickable="true"
-        android:alpha="0"
         android:layout_width="25dp"
         android:layout_height="25dp"
         android:layout_marginStart="232dp"
         android:layout_marginTop="292dp"
+        android:alpha="0"
         android:background="@color/brick_red"
+        android:clickable="true"
         android:rotation="0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/settlement_82"
-        android:clickable="true"
-        android:alpha="0"
         android:layout_width="25dp"
         android:layout_height="25dp"
         android:layout_marginStart="284dp"
         android:layout_marginTop="208dp"
+        android:alpha="0"
         android:background="@color/brick_red"
+        android:clickable="true"
         android:rotation="0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
 
-
     <TextView
         android:id="@+id/settlement_84"
-        android:clickable="true"
-        android:alpha="0"
         android:layout_width="25dp"
         android:layout_height="25dp"
         android:layout_marginStart="232dp"
         android:layout_marginTop="292dp"
+        android:alpha="0"
         android:background="@color/brick_red"
+        android:clickable="true"
         android:rotation="0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/settlement_85"
-        android:clickable="true"
-        android:alpha="0"
         android:layout_width="25dp"
         android:layout_height="25dp"
         android:layout_marginStart="284dp"
         android:layout_marginTop="208dp"
+        android:alpha="0"
         android:background="@color/brick_red"
+        android:clickable="true"
         android:rotation="0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
 
-
-
-
     <TextView
         android:id="@+id/settlement_68"
-        android:clickable="true"
-        android:alpha="0"
         android:layout_width="25dp"
         android:layout_height="25dp"
         android:layout_marginStart="288dp"
         android:layout_marginTop="292dp"
+        android:alpha="0"
         android:background="@color/brick_red"
+        android:clickable="true"
         android:rotation="0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/settlement_72"
-        android:clickable="true"
-        android:alpha="0"
         android:layout_width="25dp"
         android:layout_height="25dp"
         android:layout_marginStart="356dp"
         android:layout_marginTop="248dp"
+        android:alpha="0"
         android:background="@color/brick_red"
+        android:clickable="true"
         android:rotation="0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/settlement_73"
-        android:clickable="true"
-        android:alpha="0"
         android:layout_width="25dp"
         android:layout_height="25dp"
         android:layout_marginStart="308dp"
         android:layout_marginTop="248dp"
+        android:alpha="0"
         android:background="@color/brick_red"
+        android:clickable="true"
         android:rotation="0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/settlement_69"
-        android:clickable="true"
-        android:alpha="0"
         android:layout_width="25dp"
         android:layout_height="25dp"
         android:layout_marginStart="372dp"
         android:layout_marginTop="292dp"
+        android:alpha="0"
         android:background="@color/brick_red"
+        android:clickable="true"
         android:rotation="0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
 
-
     <TextView
         android:id="@+id/settlement_74"
-        android:clickable="true"
-        android:alpha="0"
         android:layout_width="25dp"
         android:layout_height="25dp"
         android:layout_marginStart="288dp"
         android:layout_marginTop="292dp"
+        android:alpha="0"
         android:background="@color/brick_red"
+        android:clickable="true"
         android:rotation="0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/settlement_75"
-        android:clickable="true"
-        android:alpha="0"
         android:layout_width="25dp"
         android:layout_height="25dp"
         android:layout_marginStart="356dp"
         android:layout_marginTop="248dp"
+        android:alpha="0"
         android:background="@color/brick_red"
+        android:clickable="true"
         android:rotation="0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/settlement_76"
-        android:clickable="true"
-        android:alpha="0"
         android:layout_width="25dp"
         android:layout_height="25dp"
         android:layout_marginStart="308dp"
         android:layout_marginTop="248dp"
+        android:alpha="0"
         android:background="@color/brick_red"
+        android:clickable="true"
         android:rotation="0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/settlement_77"
-        android:clickable="true"
-        android:alpha="0"
         android:layout_width="25dp"
         android:layout_height="25dp"
         android:layout_marginStart="372dp"
         android:layout_marginTop="292dp"
+        android:alpha="0"
         android:background="@color/brick_red"
+        android:clickable="true"
         android:rotation="0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
 
-
     <TextView
         android:id="@+id/settlement_62"
-        android:clickable="true"
-        android:alpha="0"
         android:layout_width="25dp"
         android:layout_height="25dp"
         android:layout_marginStart="288dp"
         android:layout_marginTop="372dp"
+        android:alpha="0"
         android:background="@color/brick_red"
+        android:clickable="true"
         android:rotation="0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/settlement_65"
-        android:clickable="true"
-        android:alpha="0"
         android:layout_width="25dp"
         android:layout_height="25dp"
         android:layout_marginStart="356dp"
         android:layout_marginTop="412dp"
+        android:alpha="0"
         android:background="@color/brick_red"
+        android:clickable="true"
         android:rotation="0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/settlement_66"
-        android:clickable="true"
-        android:alpha="0"
         android:layout_width="25dp"
         android:layout_height="25dp"
         android:layout_marginStart="356dp"
         android:layout_marginTop="328dp"
+        android:alpha="0"
         android:background="@color/brick_red"
+        android:clickable="true"
         android:rotation="0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/settlement_67"
-        android:clickable="true"
-        android:alpha="0"
         android:layout_width="25dp"
         android:layout_height="25dp"
         android:layout_marginStart="308dp"
         android:layout_marginTop="328dp"
+        android:alpha="0"
         android:background="@color/brick_red"
+        android:clickable="true"
         android:rotation="0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/settlement_63"
-        android:clickable="true"
-        android:alpha="0"
         android:layout_width="25dp"
         android:layout_height="25dp"
         android:layout_marginStart="372dp"
         android:layout_marginTop="372dp"
+        android:alpha="0"
         android:background="@color/brick_red"
+        android:clickable="true"
         android:rotation="0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
 
-
     <TextView
         android:id="@+id/settlement_59"
-        android:clickable="true"
-        android:alpha="0"
         android:layout_width="25dp"
         android:layout_height="25dp"
         android:layout_marginStart="356dp"
         android:layout_marginTop="492dp"
+        android:alpha="0"
         android:background="@color/brick_red"
+        android:clickable="true"
         android:rotation="0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/settlement_60"
-        android:clickable="true"
-        android:alpha="0"
         android:layout_width="25dp"
         android:layout_height="25dp"
         android:layout_marginStart="356dp"
         android:layout_marginTop="408dp"
+        android:alpha="0"
         android:background="@color/brick_red"
+        android:clickable="true"
         android:rotation="0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/settlement_61"
-        android:clickable="true"
-        android:alpha="0"
         android:layout_width="25dp"
         android:layout_height="25dp"
         android:layout_marginStart="308dp"
         android:layout_marginTop="408dp"
+        android:alpha="0"
         android:background="@color/brick_red"
+        android:clickable="true"
         android:rotation="0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -830,124 +841,121 @@
         app:layout_constraintTop_toTopOf="parent" />
 
 
-
     <TextView
         android:id="@+id/settlement_57"
-        android:clickable="true"
-        android:alpha="0"
         android:layout_width="25dp"
         android:layout_height="25dp"
         android:layout_marginStart="372dp"
         android:layout_marginTop="452dp"
+        android:alpha="0"
         android:background="@color/brick_red"
+        android:clickable="true"
         android:rotation="0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
 
-
     <TextView
         android:id="@+id/settlement_53"
-        android:clickable="true"
-        android:alpha="0"
         android:layout_width="25dp"
         android:layout_height="25dp"
         android:layout_marginStart="284dp"
         android:layout_marginTop="532dp"
+        android:alpha="0"
         android:background="@color/brick_red"
+        android:clickable="true"
         android:rotation="0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/settlement_54"
-        android:clickable="true"
-        android:alpha="0"
         android:layout_width="25dp"
         android:layout_height="25dp"
         android:layout_marginStart="284dp"
         android:layout_marginTop="448dp"
+        android:alpha="0"
         android:background="@color/brick_red"
+        android:clickable="true"
         android:rotation="0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/settlement_55"
-        android:clickable="true"
-        android:alpha="0"
         android:layout_width="25dp"
         android:layout_height="25dp"
         android:layout_marginStart="236dp"
         android:layout_marginTop="448dp"
+        android:alpha="0"
         android:background="@color/brick_red"
+        android:clickable="true"
         android:rotation="0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/settlement_51"
-        android:clickable="true"
-        android:alpha="0"
         android:layout_width="25dp"
         android:layout_height="25dp"
         android:layout_marginStart="304dp"
         android:layout_marginTop="492dp"
+        android:alpha="0"
         android:background="@color/brick_red"
+        android:clickable="true"
         android:rotation="0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
 
-
     <TextView
         android:id="@+id/settlement_46"
-        android:clickable="true"
-        android:alpha="0"
         android:layout_width="25dp"
         android:layout_height="25dp"
         android:layout_marginStart="160dp"
         android:layout_marginTop="568dp"
+        android:alpha="0"
         android:background="@color/brick_red"
+        android:clickable="true"
         android:rotation="0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/settlement_47"
-        android:clickable="true"
-        android:alpha="0"
         android:layout_width="25dp"
         android:layout_height="25dp"
         android:layout_marginStart="212dp"
         android:layout_marginTop="568dp"
+        android:alpha="0"
         android:background="@color/brick_red"
+        android:clickable="true"
         android:rotation="0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/settlement_48"
-        android:clickable="true"
-        android:alpha="0"
         android:layout_width="25dp"
         android:layout_height="25dp"
         android:layout_marginStart="212dp"
         android:layout_marginTop="484dp"
+        android:alpha="0"
         android:background="@color/brick_red"
+        android:clickable="true"
         android:rotation="0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/settlement_45"
-        android:clickable="true"
-        android:alpha="0"
         android:layout_width="25dp"
         android:layout_height="25dp"
         android:layout_marginStart="236dp"
         android:layout_marginTop="528dp"
+        android:alpha="0"
         android:background="@color/brick_red"
+        android:clickable="true"
         android:rotation="0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -955,39 +963,39 @@
 
     <TextView
         android:id="@+id/settlement_40"
-        android:clickable="true"
-        android:alpha="0"
         android:layout_width="25dp"
         android:layout_height="25dp"
         android:layout_marginStart="96dp"
         android:layout_marginTop="528dp"
+        android:alpha="0"
         android:background="@color/brick_red"
+        android:clickable="true"
         android:rotation="0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/settlement_41"
-        android:clickable="true"
-        android:alpha="0"
         android:layout_width="25dp"
         android:layout_height="25dp"
         android:layout_marginStart="148dp"
         android:layout_marginTop="528dp"
+        android:alpha="0"
         android:background="@color/brick_red"
+        android:clickable="true"
         android:rotation="0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/settlement_42"
-        android:clickable="true"
-        android:alpha="0"
         android:layout_width="25dp"
         android:layout_height="25dp"
         android:layout_marginStart="146dp"
         android:layout_marginTop="447dp"
+        android:alpha="0"
         android:background="@color/brick_red"
+        android:clickable="true"
         android:rotation="0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -1260,69 +1268,68 @@
 
     <TextView
         android:id="@+id/settlement_39"
-        android:clickable="true"
-        android:alpha="0"
         android:layout_width="25dp"
         android:layout_height="25dp"
         android:layout_marginStart="164dp"
         android:layout_marginTop="488dp"
+        android:alpha="0"
         android:background="@color/brick_red"
+        android:clickable="true"
         android:rotation="0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/settlement_20"
-        android:clickable="true"
-        android:alpha="0"
         android:layout_width="25dp"
         android:layout_height="25dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="448dp"
+        android:alpha="0"
         android:background="@color/brick_red"
+        android:clickable="true"
         android:rotation="0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/settlement_22"
-        android:clickable="true"
-        android:alpha="0"
         android:layout_width="25dp"
         android:layout_height="25dp"
         android:layout_marginStart="28dp"
         android:layout_marginTop="488dp"
+        android:alpha="0"
         android:background="@color/brick_red"
+        android:clickable="true"
         android:rotation="0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/settlement_23"
-        android:clickable="true"
-        android:alpha="0"
         android:layout_width="25dp"
         android:layout_height="25dp"
         android:layout_marginStart="80dp"
         android:layout_marginTop="488dp"
+        android:alpha="0"
         android:background="@color/brick_red"
+        android:clickable="true"
         android:rotation="0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/settlement_21"
-        android:clickable="true"
-        android:alpha="0"
         android:layout_width="25dp"
         android:layout_height="25dp"
         android:layout_marginStart="100dp"
         android:layout_marginTop="448dp"
+        android:alpha="0"
         android:background="@color/brick_red"
+        android:clickable="true"
         android:rotation="0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
 
 
     <TextView
@@ -1365,81 +1372,80 @@
         app:layout_constraintTop_toTopOf="parent" />
 
 
-
     <TextView
         android:id="@+id/settlement_7"
-        android:clickable="true"
-        android:alpha="0"
         android:layout_width="25dp"
         android:layout_height="25dp"
         android:layout_marginStart="100dp"
         android:layout_marginTop="368dp"
+        android:alpha="0"
         android:background="@color/brick_red"
+        android:clickable="true"
         android:rotation="0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/settlement_12"
-        android:clickable="true"
-        android:alpha="0"
         android:layout_width="25dp"
         android:layout_height="25dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="292dp"
+        android:alpha="0"
         android:background="@color/brick_red"
+        android:clickable="true"
         android:rotation="0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/settlement_14"
-        android:clickable="true"
-        android:alpha="0"
         android:layout_width="25dp"
         android:layout_height="25dp"
         android:layout_marginStart="28dp"
         android:layout_marginTop="332dp"
+        android:alpha="0"
         android:background="@color/brick_red"
+        android:clickable="true"
         android:rotation="0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/settlement_15"
-        android:clickable="true"
-        android:alpha="0"
         android:layout_width="25dp"
         android:layout_height="25dp"
         android:layout_marginStart="80dp"
         android:layout_marginTop="332dp"
+        android:alpha="0"
         android:background="@color/brick_red"
+        android:clickable="true"
         android:rotation="0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/settlement_17"
-        android:clickable="true"
-        android:alpha="0"
         android:layout_width="25dp"
         android:layout_height="25dp"
         android:layout_marginStart="32dp"
         android:layout_marginTop="248dp"
+        android:alpha="0"
         android:background="@color/brick_red"
+        android:clickable="true"
         android:rotation="0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/settlement_6"
-        android:clickable="true"
-        android:alpha="0"
         android:layout_width="25dp"
         android:layout_height="25dp"
         android:layout_marginStart="80dp"
         android:layout_marginTop="252dp"
+        android:alpha="0"
         android:background="@color/brick_red"
+        android:clickable="true"
         android:rotation="0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -1625,7 +1631,6 @@
         android:rotation="0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
 
 
     <TextView
@@ -1956,7 +1961,6 @@
         app:layout_constraintTop_toTopOf="parent" />
 
 
-
     <TextView
         android:id="@+id/road_14"
         android:layout_width="25dp"
@@ -2169,93 +2173,92 @@
 
     <TextView
         android:id="@+id/road_112"
-        android:clickable="true"
-        android:alpha="0"
         android:layout_width="25dp"
         android:layout_height="16dp"
         android:layout_marginStart="155dp"
         android:layout_marginTop="433dp"
+        android:alpha="0"
         android:background="@color/brick_red"
+        android:clickable="true"
         android:rotation="-60"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/road_110"
-        android:clickable="true"
-        android:alpha="0"
         android:layout_width="25dp"
         android:layout_height="16dp"
         android:layout_marginStart="260dp"
         android:layout_marginTop="380dp"
+        android:alpha="0"
         android:background="@color/brick_red"
+        android:clickable="true"
         android:rotation="0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/road_109"
-        android:clickable="true"
-        android:alpha="0"
         android:layout_width="25dp"
         android:layout_height="16dp"
         android:layout_marginStart="222dp"
         android:layout_marginTop="435dp"
+        android:alpha="0"
         android:background="@color/brick_red"
+        android:clickable="true"
         android:rotation="60"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
 
-
     <TextView
         android:id="@+id/road_47"
-        android:clickable="true"
-        android:alpha="0"
         android:layout_width="25dp"
         android:layout_height="16dp"
         android:layout_marginStart="154dp"
         android:layout_marginTop="556dp"
+        android:alpha="0"
         android:background="@color/brick_red"
+        android:clickable="true"
         android:rotation="60"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/road_48"
-        android:clickable="true"
-        android:alpha="0"
         android:layout_width="25dp"
         android:layout_height="16dp"
         android:layout_marginStart="188dp"
         android:layout_marginTop="576dp"
+        android:alpha="0"
         android:background="@color/brick_red"
+        android:clickable="true"
         android:rotation="0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/road_49"
-        android:clickable="true"
-        android:alpha="0"
         android:layout_width="25dp"
         android:layout_height="16dp"
         android:layout_marginStart="220dp"
         android:layout_marginTop="556dp"
+        android:alpha="0"
         android:background="@color/brick_red"
+        android:clickable="true"
         android:rotation="-60"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/road_50"
-        android:clickable="true"
-        android:alpha="0"
         android:layout_width="25dp"
         android:layout_height="16dp"
         android:layout_marginStart="223dp"
         android:layout_marginTop="516dp"
+        android:alpha="0"
         android:background="@color/brick_red"
+        android:clickable="true"
         android:rotation="60"
         app:layout_constraintStart_toEndOf="@+id/road_0"
         app:layout_constraintStart_toStartOf="parent"
@@ -2263,13 +2266,13 @@
 
     <TextView
         android:id="@+id/road_51"
-        android:clickable="true"
-        android:alpha="0"
         android:layout_width="25dp"
         android:layout_height="16dp"
         android:layout_marginStart="188dp"
         android:layout_marginTop="496dp"
+        android:alpha="0"
         android:background="@color/brick_red"
+        android:clickable="true"
         android:rotation="0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -2277,52 +2280,52 @@
 
     <TextView
         android:id="@+id/road_104"
-        android:clickable="true"
-        android:alpha="0"
         android:layout_width="25dp"
         android:layout_height="16dp"
         android:layout_marginStart="153dp"
         android:layout_marginTop="394dp"
+        android:alpha="0"
         android:background="@color/brick_red"
+        android:clickable="true"
         android:rotation="60"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/road_105"
-        android:clickable="true"
-        android:alpha="0"
         android:layout_width="25dp"
         android:layout_height="16dp"
         android:layout_marginStart="188dp"
         android:layout_marginTop="416dp"
+        android:alpha="0"
         android:background="@color/brick_red"
+        android:clickable="true"
         android:rotation="0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/road_106"
-        android:clickable="true"
-        android:alpha="0"
         android:layout_width="25dp"
         android:layout_height="16dp"
         android:layout_marginStart="224dp"
         android:layout_marginTop="392dp"
+        android:alpha="0"
         android:background="@color/brick_red"
+        android:clickable="true"
         android:rotation="-60"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/road_107"
-        android:clickable="true"
-        android:alpha="0"
         android:layout_width="25dp"
         android:layout_height="16dp"
         android:layout_marginStart="223dp"
         android:layout_marginTop="356dp"
+        android:alpha="0"
         android:background="@color/brick_red"
+        android:clickable="true"
         android:rotation="60"
         app:layout_constraintStart_toEndOf="@+id/road_0"
         app:layout_constraintStart_toStartOf="parent"
@@ -2331,26 +2334,26 @@
 
     <TextView
         android:id="@+id/road_99"
-        android:clickable="true"
-        android:alpha="0"
         android:layout_width="25dp"
         android:layout_height="16dp"
         android:layout_marginStart="123dp"
         android:layout_marginTop="380dp"
+        android:alpha="0"
         android:background="@color/brick_red"
+        android:clickable="true"
         android:rotation="0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/road_100"
-        android:clickable="true"
-        android:alpha="0"
         android:layout_width="25dp"
         android:layout_height="16dp"
         android:layout_marginStart="156dp"
         android:layout_marginTop="360dp"
+        android:alpha="0"
         android:background="@color/brick_red"
+        android:clickable="true"
         android:rotation="-60"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -2358,78 +2361,78 @@
 
     <TextView
         android:id="@+id/road_92"
-        android:clickable="true"
-        android:alpha="0"
         android:layout_width="25dp"
         android:layout_height="16dp"
         android:layout_marginStart="156dp"
         android:layout_marginTop="316dp"
+        android:alpha="0"
         android:background="@color/brick_red"
+        android:clickable="true"
         android:rotation="60"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/road_93"
-        android:clickable="true"
-        android:alpha="0"
         android:layout_width="25dp"
         android:layout_height="16dp"
         android:layout_marginStart="188dp"
         android:layout_marginTop="340dp"
+        android:alpha="0"
         android:background="@color/brick_red"
+        android:clickable="true"
         android:rotation="0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/road_94"
-        android:clickable="true"
-        android:alpha="0"
         android:layout_width="25dp"
         android:layout_height="16dp"
         android:layout_marginStart="224dp"
         android:layout_marginTop="316dp"
+        android:alpha="0"
         android:background="@color/brick_red"
+        android:clickable="true"
         android:rotation="-60"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/road_82"
-        android:clickable="true"
-        android:alpha="0"
         android:layout_width="25dp"
         android:layout_height="16dp"
         android:layout_marginStart="224dp"
         android:layout_marginTop="280dp"
+        android:alpha="0"
         android:background="@color/brick_red"
+        android:clickable="true"
         android:rotation="60"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/road_83"
-        android:clickable="true"
-        android:alpha="0"
         android:layout_width="25dp"
         android:layout_height="16dp"
         android:layout_marginStart="260dp"
         android:layout_marginTop="300dp"
+        android:alpha="0"
         android:background="@color/brick_red"
+        android:clickable="true"
         android:rotation="0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/road_85"
-        android:clickable="true"
-        android:alpha="0"
         android:layout_width="25dp"
         android:layout_height="16dp"
         android:layout_marginStart="293dp"
         android:layout_marginTop="238dp"
+        android:alpha="0"
         android:background="@color/brick_red"
+        android:clickable="true"
         android:rotation="60"
         app:layout_constraintStart_toEndOf="@+id/road_0"
         app:layout_constraintStart_toStartOf="parent"
@@ -2437,13 +2440,13 @@
 
     <TextView
         android:id="@+id/road_86"
-        android:clickable="true"
-        android:alpha="0"
         android:layout_width="25dp"
         android:layout_height="16dp"
         android:layout_marginStart="260dp"
         android:layout_marginTop="220dp"
+        android:alpha="0"
         android:background="@color/brick_red"
+        android:clickable="true"
         android:rotation="0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -2451,39 +2454,39 @@
 
     <TextView
         android:id="@+id/road_87"
-        android:clickable="true"
-        android:alpha="0"
         android:layout_width="25dp"
         android:layout_height="16dp"
         android:layout_marginStart="224dp"
         android:layout_marginTop="280dp"
+        android:alpha="0"
         android:background="@color/brick_red"
+        android:clickable="true"
         android:rotation="60"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/road_88"
-        android:clickable="true"
-        android:alpha="0"
         android:layout_width="25dp"
         android:layout_height="16dp"
         android:layout_marginStart="260dp"
         android:layout_marginTop="300dp"
+        android:alpha="0"
         android:background="@color/brick_red"
+        android:clickable="true"
         android:rotation="0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/road_89"
-        android:clickable="true"
-        android:alpha="0"
         android:layout_width="25dp"
         android:layout_height="16dp"
         android:layout_marginStart="293dp"
         android:layout_marginTop="238dp"
+        android:alpha="0"
         android:background="@color/brick_red"
+        android:clickable="true"
         android:rotation="60"
         app:layout_constraintStart_toEndOf="@+id/road_0"
         app:layout_constraintStart_toStartOf="parent"
@@ -2491,65 +2494,65 @@
 
     <TextView
         android:id="@+id/road_90"
-        android:clickable="true"
-        android:alpha="0"
         android:layout_width="25dp"
         android:layout_height="16dp"
         android:layout_marginStart="260dp"
         android:layout_marginTop="220dp"
+        android:alpha="0"
         android:background="@color/brick_red"
+        android:clickable="true"
         android:rotation="0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/road_70"
-        android:clickable="true"
-        android:alpha="0"
         android:layout_width="25dp"
         android:layout_height="16dp"
         android:layout_marginStart="296dp"
         android:layout_marginTop="280dp"
+        android:alpha="0"
         android:background="@color/brick_red"
+        android:clickable="true"
         android:rotation="-60"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/road_71"
-        android:clickable="true"
-        android:alpha="0"
         android:layout_width="25dp"
         android:layout_height="16dp"
         android:layout_marginStart="296dp"
         android:layout_marginTop="320dp"
+        android:alpha="0"
         android:background="@color/brick_red"
+        android:clickable="true"
         android:rotation="60"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/road_73"
-        android:clickable="true"
-        android:alpha="0"
         android:layout_width="25dp"
         android:layout_height="16dp"
         android:layout_marginStart="362dp"
         android:layout_marginTop="320dp"
+        android:alpha="0"
         android:background="@color/brick_red"
+        android:clickable="true"
         android:rotation="-60"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/road_74"
-        android:clickable="true"
-        android:alpha="0"
         android:layout_width="25dp"
         android:layout_height="16dp"
         android:layout_marginStart="360dp"
         android:layout_marginTop="280dp"
+        android:alpha="0"
         android:background="@color/brick_red"
+        android:clickable="true"
         android:rotation="60"
         app:layout_constraintStart_toEndOf="@+id/road_0"
         app:layout_constraintStart_toStartOf="parent"
@@ -2557,13 +2560,13 @@
 
     <TextView
         android:id="@+id/road_75"
-        android:clickable="true"
-        android:alpha="0"
         android:layout_width="25dp"
         android:layout_height="16dp"
         android:layout_marginStart="328dp"
         android:layout_marginTop="260dp"
+        android:alpha="0"
         android:background="@color/brick_red"
+        android:clickable="true"
         android:rotation="0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -2571,52 +2574,52 @@
 
     <TextView
         android:id="@+id/road_76"
-        android:clickable="true"
-        android:alpha="0"
         android:layout_width="25dp"
         android:layout_height="16dp"
         android:layout_marginStart="296dp"
         android:layout_marginTop="280dp"
+        android:alpha="0"
         android:background="@color/brick_red"
+        android:clickable="true"
         android:rotation="-60"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/road_77"
-        android:clickable="true"
-        android:alpha="0"
         android:layout_width="25dp"
         android:layout_height="16dp"
         android:layout_marginStart="296dp"
         android:layout_marginTop="320dp"
+        android:alpha="0"
         android:background="@color/brick_red"
+        android:clickable="true"
         android:rotation="60"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/road_78"
-        android:clickable="true"
-        android:alpha="0"
         android:layout_width="25dp"
         android:layout_height="16dp"
         android:layout_marginStart="362dp"
         android:layout_marginTop="320dp"
+        android:alpha="0"
         android:background="@color/brick_red"
+        android:clickable="true"
         android:rotation="-60"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/road_79"
-        android:clickable="true"
-        android:alpha="0"
         android:layout_width="25dp"
         android:layout_height="16dp"
         android:layout_marginStart="360dp"
         android:layout_marginTop="280dp"
+        android:alpha="0"
         android:background="@color/brick_red"
+        android:clickable="true"
         android:rotation="60"
         app:layout_constraintStart_toEndOf="@+id/road_0"
         app:layout_constraintStart_toStartOf="parent"
@@ -2624,65 +2627,65 @@
 
     <TextView
         android:id="@+id/road_80"
-        android:clickable="true"
-        android:alpha="0"
         android:layout_width="25dp"
         android:layout_height="16dp"
         android:layout_marginStart="328dp"
         android:layout_marginTop="260dp"
+        android:alpha="0"
         android:background="@color/brick_red"
+        android:clickable="true"
         android:rotation="0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/road_64"
-        android:clickable="true"
-        android:alpha="0"
         android:layout_width="25dp"
         android:layout_height="16dp"
         android:layout_marginStart="296dp"
         android:layout_marginTop="360dp"
+        android:alpha="0"
         android:background="@color/brick_red"
+        android:clickable="true"
         android:rotation="-60"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/road_65"
-        android:clickable="true"
-        android:alpha="0"
         android:layout_width="25dp"
         android:layout_height="16dp"
         android:layout_marginStart="296dp"
         android:layout_marginTop="400dp"
+        android:alpha="0"
         android:background="@color/brick_red"
+        android:clickable="true"
         android:rotation="60"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/road_67"
-        android:clickable="true"
-        android:alpha="0"
         android:layout_width="25dp"
         android:layout_height="16dp"
         android:layout_marginStart="364dp"
         android:layout_marginTop="396dp"
+        android:alpha="0"
         android:background="@color/brick_red"
+        android:clickable="true"
         android:rotation="-60"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/road_68"
-        android:clickable="true"
-        android:alpha="0"
         android:layout_width="25dp"
         android:layout_height="16dp"
         android:layout_marginStart="363dp"
         android:layout_marginTop="357dp"
+        android:alpha="0"
         android:background="@color/brick_red"
+        android:clickable="true"
         android:rotation="60"
         app:layout_constraintStart_toEndOf="@+id/road_0"
         app:layout_constraintStart_toStartOf="parent"
@@ -2690,67 +2693,66 @@
 
     <TextView
         android:id="@+id/road_69"
-        android:clickable="true"
-        android:alpha="0"
         android:layout_width="25dp"
         android:layout_height="16dp"
         android:layout_marginStart="328dp"
         android:layout_marginTop="340dp"
+        android:alpha="0"
         android:background="@color/brick_red"
+        android:clickable="true"
         android:rotation="0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/road_58"
-        android:clickable="true"
-        android:alpha="0"
         android:layout_width="25dp"
         android:layout_height="16dp"
         android:layout_marginStart="296dp"
         android:layout_marginTop="436dp"
+        android:alpha="0"
         android:background="@color/brick_red"
+        android:clickable="true"
         android:rotation="-60"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/road_60"
-        android:clickable="true"
-        android:alpha="0"
         android:layout_width="25dp"
         android:layout_height="16dp"
         android:layout_marginStart="328dp"
         android:layout_marginTop="495dp"
+        android:alpha="0"
         android:background="@color/brick_red"
+        android:clickable="true"
         android:rotation="0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/road_61"
-        android:clickable="true"
-        android:alpha="0"
         android:layout_width="25dp"
         android:layout_height="16dp"
         android:layout_marginStart="362dp"
         android:layout_marginTop="478dp"
+        android:alpha="0"
         android:background="@color/brick_red"
+        android:clickable="true"
         android:rotation="-60"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
 
-
     <TextView
         android:id="@+id/road_62"
-        android:clickable="true"
-        android:alpha="0"
         android:layout_width="25dp"
         android:layout_height="16dp"
         android:layout_marginStart="363dp"
         android:layout_marginTop="438dp"
+        android:alpha="0"
         android:background="@color/brick_red"
+        android:clickable="true"
         android:rotation="60"
         app:layout_constraintStart_toEndOf="@+id/road_0"
         app:layout_constraintStart_toStartOf="parent"
@@ -2758,65 +2760,65 @@
 
     <TextView
         android:id="@+id/road_63"
-        android:clickable="true"
-        android:alpha="0"
         android:layout_width="25dp"
         android:layout_height="16dp"
         android:layout_marginStart="330dp"
         android:layout_marginTop="420dp"
+        android:alpha="0"
         android:background="@color/brick_red"
+        android:clickable="true"
         android:rotation="0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/road_52"
-        android:clickable="true"
-        android:alpha="0"
         android:layout_width="25dp"
         android:layout_height="16dp"
         android:layout_marginStart="228dp"
         android:layout_marginTop="480dp"
+        android:alpha="0"
         android:background="@color/brick_red"
+        android:clickable="true"
         android:rotation="-60"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/road_54"
-        android:clickable="true"
-        android:alpha="0"
         android:layout_width="25dp"
         android:layout_height="16dp"
         android:layout_marginStart="260dp"
         android:layout_marginTop="535dp"
+        android:alpha="0"
         android:background="@color/brick_red"
+        android:clickable="true"
         android:rotation="0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/road_55"
-        android:clickable="true"
-        android:alpha="0"
         android:layout_width="25dp"
         android:layout_height="16dp"
         android:layout_marginStart="292dp"
         android:layout_marginTop="516dp"
+        android:alpha="0"
         android:background="@color/brick_red"
+        android:clickable="true"
         android:rotation="-60"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/road_56"
-        android:clickable="true"
-        android:alpha="0"
         android:layout_width="25dp"
         android:layout_height="16dp"
         android:layout_marginStart="295dp"
         android:layout_marginTop="477dp"
+        android:alpha="0"
         android:background="@color/brick_red"
+        android:clickable="true"
         android:rotation="60"
         app:layout_constraintStart_toEndOf="@+id/road_0"
         app:layout_constraintStart_toStartOf="parent"
@@ -2824,13 +2826,13 @@
 
     <TextView
         android:id="@+id/road_57"
-        android:clickable="true"
-        android:alpha="0"
         android:layout_width="25dp"
         android:layout_height="16dp"
         android:layout_marginStart="260dp"
         android:layout_marginTop="460dp"
+        android:alpha="0"
         android:background="@color/brick_red"
+        android:clickable="true"
         android:rotation="0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -2987,7 +2989,7 @@
         android:layout_width="25dp"
         android:layout_height="16dp"
         android:layout_marginStart="120dp"
-        android:layout_marginTop="668dp"
+        android:layout_marginTop="672dp"
         android:background="@color/blue"
         android:clickable="true"
         android:rotation="0"
@@ -3015,7 +3017,7 @@
             android:background="@color/brick_red"
             android:gravity="center"
             android:text="@string/zero"
-            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
             android:textColor="#000000" />
 
         <TextView
@@ -3025,7 +3027,7 @@
             android:background="@color/grain_yellow"
             android:gravity="center"
             android:text="@string/zero"
-            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
             android:textColor="#000000" />
 
         <TextView
@@ -3035,7 +3037,7 @@
             android:background="@color/wool_green"
             android:gravity="center"
             android:text="@string/zero"
-            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
             android:textColor="#000000" />
 
         <TextView
@@ -3045,7 +3047,7 @@
             android:background="@color/lumber_green"
             android:gravity="center"
             android:text="@string/zero"
-            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
             android:textColor="#000000" />
 
         <TextView
@@ -3055,7 +3057,7 @@
             android:background="@color/ore_gray"
             android:gravity="center"
             android:text="@string/zero"
-            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
             android:textColor="#000000" />
 
     </LinearLayout>
@@ -3130,6 +3132,18 @@
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
             android:textColor="#000000" />
     </TextSwitcher>
+
+    <Button
+        android:id="@+id/end_turn_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="40dp"
+        android:text="End Turn"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
