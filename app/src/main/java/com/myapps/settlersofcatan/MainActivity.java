@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.res.ResourcesCompat;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
@@ -53,7 +54,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     TextView city_build;
 
+    TextView cardSelection0;
+    TextView cardSelection1;
 
+
+    View.OnClickListener cardListener;
 
 
 
@@ -64,6 +69,22 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         boardModel = BoardModel.getInstance();
 
+
+        //handles when cards are clicked for trading and exchanging
+        cardListener = new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (cardSelection0 == null) {
+                    cardSelection0 = (TextView) v;
+                }
+                else {
+                    cardSelection1 = (TextView) v;
+                    trade();
+                    cardSelection0 = null;
+                    cardSelection1 = null;
+                }
+            }
+        };
 
 
         //used to unselect the build selection by clicking off the board
@@ -101,6 +122,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 roadBuild.setBackgroundColor(ResourcesCompat.getColor(getResources(), color, getTheme()));
                 settlementBuild.setBackgroundResource(drawable);
                 city_build.setBackgroundResource(cityDrawable);
+
             }
         });
 
@@ -165,6 +187,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
 
+
         //dice roll
         die0TextView0 = findViewById(R.id.die_0_text_view0);
         die0TextView1 = findViewById(R.id.die_0_text_view1);
@@ -185,28 +208,64 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
         brick_card_blue = findViewById(R.id.brick_card_blue);
+        brick_card_blue.setOnClickListener(cardListener);
+
         grain_card_blue = findViewById(R.id.grain_card_blue);
+        grain_card_blue.setOnClickListener(cardListener);
+
         wool_card_blue = findViewById(R.id.wool_card_blue);
+        wool_card_blue.setOnClickListener(cardListener);
+
         lumber_card_blue = findViewById(R.id.lumber_card_blue);
+        lumber_card_blue.setOnClickListener(cardListener);
+
         ore_card_blue = findViewById(R.id.ore_card_blue);
+        ore_card_blue.setOnClickListener(cardListener);
 
         brick_card_orange = findViewById(R.id.brick_card_orange);
+        brick_card_orange.setOnClickListener(cardListener);
+
         grain_card_orange = findViewById(R.id.grain_card_orange);
+        grain_card_orange.setOnClickListener(cardListener);
+
         wool_card_orange = findViewById(R.id.wool_card_orange);
+        wool_card_orange.setOnClickListener(cardListener);
+
         lumber_card_orange = findViewById(R.id.lumber_card_orange);
+        lumber_card_orange.setOnClickListener(cardListener);
+
         ore_card_orange = findViewById(R.id.ore_card_orange);
+        ore_card_orange.setOnClickListener(cardListener);
 
         brick_card_purple = findViewById(R.id.brick_card_purple);
+        brick_card_purple.setOnClickListener(cardListener);
+
         grain_card_purple = findViewById(R.id.grain_card_purple);
+        grain_card_purple.setOnClickListener(cardListener);
+
         wool_card_purple = findViewById(R.id.wool_card_purple);
+        wool_card_purple.setOnClickListener(cardListener);
+
         lumber_card_purple = findViewById(R.id.lumber_card_purple);
+        lumber_card_purple.setOnClickListener(cardListener);
+
         ore_card_purple = findViewById(R.id.ore_card_purple);
+        ore_card_purple.setOnClickListener(cardListener);
 
         brick_card_white = findViewById(R.id.brick_card_white);
+        brick_card_white.setOnClickListener(cardListener);
+
         grain_card_white = findViewById(R.id.grain_card_white);
+        grain_card_white.setOnClickListener(cardListener);
+
         wool_card_white = findViewById(R.id.wool_card_white);
+        wool_card_white.setOnClickListener(cardListener);
+
         lumber_card_white = findViewById(R.id.lumber_card_white);
+        lumber_card_white.setOnClickListener(cardListener);
+
         ore_card_white = findViewById(R.id.ore_card_white);
+        ore_card_white.setOnClickListener(cardListener);
 
 
 
@@ -731,6 +790,76 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         updateCurrentPlayerGraphic();
     }
 
+    private void trade() {
+        Card zeroCard = boardModel.findCardByID(cardSelection0.getId());
+        Card oneCard = boardModel.findCardByID(cardSelection1.getId());
+
+        char zeroPlayerColor = zeroCard.getPlayerOwner();
+        char onePlayerColor = oneCard.getPlayerOwner();
+
+        Player zeroPlayer;
+        Player onePlayer;
+
+        if (zeroPlayerColor == 'b') {
+            zeroPlayer = boardModel.getBluePlayer();
+        }
+        else if (zeroPlayerColor == 'o') {
+            zeroPlayer = boardModel.getOrangePlayer();
+        }
+        else if (zeroPlayerColor == 'p') {
+            zeroPlayer = boardModel.getPurplePlayer();
+        }
+        else {
+            zeroPlayer = boardModel.getWhitePlayer();
+        }
+
+
+        if (onePlayerColor == 'b') {
+            onePlayer = boardModel.getBluePlayer();
+        }
+        else if (onePlayerColor == 'o') {
+            onePlayer = boardModel.getOrangePlayer();
+        }
+        else if (onePlayerColor == 'p') {
+            onePlayer = boardModel.getPurplePlayer();
+        }
+        else {
+            onePlayer = boardModel.getWhitePlayer();
+        }
+
+
+        char zeroCardType = zeroCard.getCardType();
+        char oneCardType = oneCard.getCardType();
+
+        //finds the card that will have to increase after the trade
+        Card zeroCardToIncrease = boardModel.findCardByTypeAndPlayer(oneCardType, zeroPlayer);
+        Card oneCardToIncrease = boardModel.findCardByTypeAndPlayer(zeroCardType, onePlayer);
+
+
+        //add 1 to the card that they receive
+        zeroCardToIncrease.setCardNumber(zeroCardToIncrease.getCardNumber() + 1);
+        oneCardToIncrease.setCardNumber(oneCardToIncrease.getCardNumber() + 1);
+
+
+        //subtract the card that was traded from their cards
+        zeroCard.setCardNumber(zeroCard.getCardNumber() - 1);
+        oneCard.setCardNumber(oneCard.getCardNumber() - 1);
+
+
+        //update card TextViews
+        TextView zeroTextView = findViewById(zeroCard.getViewID());
+        TextView oneTextView = findViewById(oneCard.getViewID());
+
+        TextView zeroCardToIncreaseTextView = findViewById(zeroCardToIncrease.getViewID());
+        TextView oneCardToIncreaseTextView = findViewById(oneCardToIncrease.getViewID());
+
+        zeroTextView.setText(Integer.toString(zeroCard.getCardNumber()));
+        oneTextView.setText(Integer.toString(oneCard.getCardNumber()));
+
+        zeroCardToIncreaseTextView.setText(Integer.toString(zeroCardToIncrease.getCardNumber()));
+        oneCardToIncreaseTextView.setText(Integer.toString(oneCardToIncrease.getCardNumber()));
+    }
+
     private void updateCurrentPlayerGraphic() {
         if (boardModel.getPlayerTurn() == 'b') {
             currentPlayerTextView.setBackground(ResourcesCompat.getDrawable(getResources(), R.drawable.blue_circle, getTheme()));
@@ -783,28 +912,28 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     //if blue has a settlement
                     if (boardModel.getTileArray()[i].getSettlements()[j].getColor() == 'b') {
                         if (cardType == 'b') {
-                            boardModel.getBluePlayer().setBrickCards(boardModel.getBluePlayer().getBrickCards() + cardsToAdd);
-                            brick_card_blue.setText(Integer.toString(boardModel.getBluePlayer().getBrickCards()));
+                            boardModel.getBluePlayer().getBrickCard().setCardNumber(boardModel.getBluePlayer().getBrickCard().getCardNumber() + cardsToAdd);
+                            brick_card_blue.setText(Integer.toString(boardModel.getBluePlayer().getBrickCard().getCardNumber()));
                             brick_card_blue.setGravity(Gravity.CENTER);
                         }
                         if (cardType == 'g') {
-                            boardModel.getBluePlayer().setGrainCards(boardModel.getBluePlayer().getGrainCards() + cardsToAdd);
-                            grain_card_blue.setText(Integer.toString(boardModel.getBluePlayer().getGrainCards()));
+                            boardModel.getBluePlayer().getGrainCard().setCardNumber(boardModel.getBluePlayer().getGrainCard().getCardNumber() + cardsToAdd);
+                            grain_card_blue.setText(Integer.toString(boardModel.getBluePlayer().getGrainCard().getCardNumber()));
                             grain_card_blue.setGravity(Gravity.CENTER);
                         }
                         if (cardType == 'w') {
-                            boardModel.getBluePlayer().setWoolCards(boardModel.getBluePlayer().getWoolCards() + cardsToAdd);
-                            wool_card_blue.setText(Integer.toString(boardModel.getBluePlayer().getWoolCards()));
+                            boardModel.getBluePlayer().getWoolCard().setCardNumber(boardModel.getBluePlayer().getWoolCard().getCardNumber() + cardsToAdd);
+                            wool_card_blue.setText(Integer.toString(boardModel.getBluePlayer().getWoolCard().getCardNumber()));
                             wool_card_blue.setGravity(Gravity.CENTER);
                         }
                         if (cardType == 'l') {
-                            boardModel.getBluePlayer().setLumberCards(boardModel.getBluePlayer().getLumberCards() + cardsToAdd);
-                            lumber_card_blue.setText(Integer.toString(boardModel.getBluePlayer().getLumberCards()));
+                            boardModel.getBluePlayer().getLumberCard().setCardNumber(boardModel.getBluePlayer().getLumberCard().getCardNumber() + cardsToAdd);
+                            lumber_card_blue.setText(Integer.toString(boardModel.getBluePlayer().getLumberCard().getCardNumber()));
                             lumber_card_blue.setGravity(Gravity.CENTER);
                         }
                         if (cardType == 'o') {
-                            boardModel.getBluePlayer().setOreCards(boardModel.getBluePlayer().getOreCards() + cardsToAdd);
-                            ore_card_blue.setText(Integer.toString(boardModel.getBluePlayer().getOreCards()));
+                            boardModel.getBluePlayer().getOreCard().setCardNumber(boardModel.getBluePlayer().getOreCard().getCardNumber() + cardsToAdd);
+                            ore_card_blue.setText(Integer.toString(boardModel.getBluePlayer().getOreCard().getCardNumber()));
                             ore_card_blue.setGravity(Gravity.CENTER);
                         }
                     }
@@ -813,28 +942,28 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     //if orange has a settlement
                     if (boardModel.getTileArray()[i].getSettlements()[j].getColor() == 'o') {
                         if (cardType == 'b') {
-                            boardModel.getOrangePlayer().setBrickCards(boardModel.getOrangePlayer().getBrickCards() + cardsToAdd);
-                            brick_card_orange.setText(Integer.toString(boardModel.getOrangePlayer().getBrickCards()));
+                            boardModel.getOrangePlayer().getBrickCard().setCardNumber(boardModel.getOrangePlayer().getBrickCard().getCardNumber() + cardsToAdd);
+                            brick_card_orange.setText(Integer.toString(boardModel.getOrangePlayer().getBrickCard().getCardNumber()));
                             brick_card_orange.setGravity(Gravity.CENTER);
                         }
                         if (cardType == 'g') {
-                            boardModel.getOrangePlayer().setGrainCards(boardModel.getOrangePlayer().getGrainCards() + cardsToAdd);
-                            grain_card_orange.setText(Integer.toString(boardModel.getOrangePlayer().getGrainCards()));
+                            boardModel.getOrangePlayer().getGrainCard().setCardNumber(boardModel.getOrangePlayer().getGrainCard().getCardNumber() + cardsToAdd);
+                            grain_card_orange.setText(Integer.toString(boardModel.getOrangePlayer().getGrainCard().getCardNumber()));
                             grain_card_orange.setGravity(Gravity.CENTER);
                         }
                         if (cardType == 'w') {
-                            boardModel.getOrangePlayer().setWoolCards(boardModel.getOrangePlayer().getWoolCards() + cardsToAdd);
-                            wool_card_orange.setText(Integer.toString(boardModel.getOrangePlayer().getWoolCards()));
+                            boardModel.getOrangePlayer().getWoolCard().setCardNumber(boardModel.getOrangePlayer().getWoolCard().getCardNumber() + cardsToAdd);
+                            wool_card_orange.setText(Integer.toString(boardModel.getOrangePlayer().getWoolCard().getCardNumber()));
                             wool_card_orange.setGravity(Gravity.CENTER);
                         }
                         if (cardType == 'l') {
-                            boardModel.getOrangePlayer().setLumberCards(boardModel.getOrangePlayer().getLumberCards() + cardsToAdd);
-                            lumber_card_orange.setText(Integer.toString(boardModel.getOrangePlayer().getLumberCards()));
+                            boardModel.getOrangePlayer().getLumberCard().setCardNumber(boardModel.getOrangePlayer().getLumberCard().getCardNumber() + cardsToAdd);
+                            lumber_card_orange.setText(Integer.toString(boardModel.getOrangePlayer().getLumberCard().getCardNumber()));
                             lumber_card_blue.setGravity(Gravity.CENTER);
                         }
                         if (cardType == 'o') {
-                            boardModel.getOrangePlayer().setOreCards(boardModel.getOrangePlayer().getOreCards() + cardsToAdd);
-                            ore_card_orange.setText(Integer.toString(boardModel.getOrangePlayer().getOreCards()));
+                            boardModel.getOrangePlayer().getOreCard().setCardNumber(boardModel.getOrangePlayer().getOreCard().getCardNumber() + cardsToAdd);
+                            ore_card_orange.setText(Integer.toString(boardModel.getOrangePlayer().getOreCard().getCardNumber()));
                             ore_card_orange.setGravity(Gravity.CENTER);
                         }
                     }
@@ -843,28 +972,28 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     //if purple has a settlement
                     if (boardModel.getTileArray()[i].getSettlements()[j].getColor() == 'p') {
                         if (cardType == 'b') {
-                            boardModel.getPurplePlayer().setBrickCards(boardModel.getPurplePlayer().getBrickCards() + cardsToAdd);
-                            brick_card_purple.setText(Integer.toString(boardModel.getPurplePlayer().getBrickCards()));
+                            boardModel.getPurplePlayer().getBrickCard().setCardNumber(boardModel.getPurplePlayer().getBrickCard().getCardNumber() + cardsToAdd);
+                            brick_card_purple.setText(Integer.toString(boardModel.getPurplePlayer().getBrickCard().getCardNumber()));
                             brick_card_purple.setGravity(Gravity.CENTER);
                         }
                         if (cardType == 'g') {
-                            boardModel.getPurplePlayer().setGrainCards(boardModel.getPurplePlayer().getGrainCards() + cardsToAdd);
-                            grain_card_purple.setText(Integer.toString(boardModel.getPurplePlayer().getGrainCards()));
+                            boardModel.getPurplePlayer().getGrainCard().setCardNumber(boardModel.getPurplePlayer().getGrainCard().getCardNumber() + cardsToAdd);
+                            grain_card_purple.setText(Integer.toString(boardModel.getPurplePlayer().getGrainCard().getCardNumber()));
                             grain_card_purple.setGravity(Gravity.CENTER);
                         }
                         if (cardType == 'w') {
-                            boardModel.getPurplePlayer().setWoolCards(boardModel.getPurplePlayer().getWoolCards() + cardsToAdd);
-                            wool_card_purple.setText(Integer.toString(boardModel.getPurplePlayer().getWoolCards()));
+                            boardModel.getPurplePlayer().getWoolCard().setCardNumber(boardModel.getPurplePlayer().getWoolCard().getCardNumber() + cardsToAdd);
+                            wool_card_purple.setText(Integer.toString(boardModel.getPurplePlayer().getWoolCard().getCardNumber()));
                             wool_card_purple.setGravity(Gravity.CENTER);
                         }
                         if (cardType == 'l') {
-                            boardModel.getPurplePlayer().setLumberCards(boardModel.getPurplePlayer().getLumberCards() + cardsToAdd);
-                            lumber_card_purple.setText(Integer.toString(boardModel.getPurplePlayer().getLumberCards()));
+                            boardModel.getPurplePlayer().getLumberCard().setCardNumber(boardModel.getPurplePlayer().getLumberCard().getCardNumber() + cardsToAdd);
+                            lumber_card_purple.setText(Integer.toString(boardModel.getPurplePlayer().getLumberCard().getCardNumber()));
                             lumber_card_purple.setGravity(Gravity.CENTER);
                         }
                         if (cardType == 'o') {
-                            boardModel.getPurplePlayer().setOreCards(boardModel.getPurplePlayer().getOreCards() + cardsToAdd);
-                            ore_card_purple.setText(Integer.toString(boardModel.getPurplePlayer().getOreCards()));
+                            boardModel.getPurplePlayer().getOreCard().setCardNumber(boardModel.getPurplePlayer().getOreCard().getCardNumber() + cardsToAdd);
+                            ore_card_purple.setText(Integer.toString(boardModel.getPurplePlayer().getOreCard().getCardNumber()));
                             ore_card_purple.setGravity(Gravity.CENTER);
                         }
                     }
@@ -874,28 +1003,28 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     //if white has a settlement
                     if (boardModel.getTileArray()[i].getSettlements()[j].getColor() == 'w') {
                         if (cardType == 'b') {
-                            boardModel.getWhitePlayer().setBrickCards(boardModel.getWhitePlayer().getBrickCards() + cardsToAdd);
-                            brick_card_white.setText(Integer.toString(boardModel.getWhitePlayer().getBrickCards()));
+                            boardModel.getWhitePlayer().getBrickCard().setCardNumber(boardModel.getWhitePlayer().getBrickCard().getCardNumber() + cardsToAdd);
+                            brick_card_white.setText(Integer.toString(boardModel.getWhitePlayer().getBrickCard().getCardNumber()));
                             brick_card_white.setGravity(Gravity.CENTER);
                         }
                         if (cardType == 'g') {
-                            boardModel.getWhitePlayer().setGrainCards(boardModel.getWhitePlayer().getGrainCards() + cardsToAdd);
-                            grain_card_white.setText(Integer.toString(boardModel.getWhitePlayer().getGrainCards()));
+                            boardModel.getWhitePlayer().getGrainCard().setCardNumber(boardModel.getWhitePlayer().getGrainCard().getCardNumber() + cardsToAdd);
+                            grain_card_white.setText(Integer.toString(boardModel.getWhitePlayer().getGrainCard().getCardNumber()));
                             grain_card_white.setGravity(Gravity.CENTER);
                         }
                         if (cardType == 'w') {
-                            boardModel.getWhitePlayer().setWoolCards(boardModel.getWhitePlayer().getWoolCards() + cardsToAdd);
-                            wool_card_white.setText(Integer.toString(boardModel.getWhitePlayer().getWoolCards()));
+                            boardModel.getWhitePlayer().getWoolCard().setCardNumber(boardModel.getWhitePlayer().getWoolCard().getCardNumber() + cardsToAdd);
+                            wool_card_white.setText(Integer.toString(boardModel.getWhitePlayer().getWoolCard().getCardNumber()));
                             wool_card_white.setGravity(Gravity.CENTER);
                         }
                         if (cardType == 'l') {
-                            boardModel.getWhitePlayer().setLumberCards(boardModel.getWhitePlayer().getLumberCards() + cardsToAdd);
-                            lumber_card_white.setText(Integer.toString(boardModel.getWhitePlayer().getLumberCards()));
+                            boardModel.getWhitePlayer().getLumberCard().setCardNumber(boardModel.getWhitePlayer().getLumberCard().getCardNumber() + cardsToAdd);
+                            lumber_card_white.setText(Integer.toString(boardModel.getWhitePlayer().getLumberCard().getCardNumber()));
                             lumber_card_white.setGravity(Gravity.CENTER);
                         }
                         if (cardType == 'o') {
-                            boardModel.getWhitePlayer().setOreCards(boardModel.getWhitePlayer().getOreCards() + cardsToAdd);
-                            ore_card_white.setText(Integer.toString(boardModel.getWhitePlayer().getOreCards()));
+                            boardModel.getWhitePlayer().getOreCard().setCardNumber(boardModel.getWhitePlayer().getOreCard().getCardNumber() + cardsToAdd);
+                            ore_card_white.setText(Integer.toString(boardModel.getWhitePlayer().getOreCard().getCardNumber()));
                             ore_card_white.setGravity(Gravity.CENTER);
                         }
                     }

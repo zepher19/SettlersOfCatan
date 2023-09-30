@@ -30,10 +30,10 @@ public class BoardModel {
 
 
     //create players
-    private Player bluePlayer = new Player('b');
-    private Player orangePlayer = new Player('o');
-    private Player purplePlayer = new Player('p');
-    private Player whitePlayer = new Player('w');
+    private Player bluePlayer;
+    private Player orangePlayer;
+    private Player purplePlayer;
+    private Player whitePlayer;
 
 
     Settlement settlement_0, settlement_1, settlement_2, settlement_3, settlement_4, settlement_5, settlement_6, settlement_7, settlement_8,
@@ -64,6 +64,11 @@ public class BoardModel {
     private static final BoardModel instance = new BoardModel();
 
     private BoardModel() {
+
+        bluePlayer = new Player('b', new Card(R.id.brick_card_blue, 'b', 'b'), new Card(R.id.grain_card_blue, 'g', 'b'), new Card(R.id.wool_card_blue, 'w', 'b'), new Card(R.id.lumber_card_blue, 'l', 'b'), new Card(R.id.ore_card_blue, 'o', 'b'));
+        orangePlayer = new Player('o', new Card(R.id.brick_card_orange, 'b', 'o'), new Card(R.id.grain_card_orange, 'g', 'o'), new Card(R.id.wool_card_orange, 'w', 'o'), new Card(R.id.lumber_card_orange, 'l', 'o'), new Card(R.id.ore_card_orange, 'o', 'o'));
+        purplePlayer = new Player('p', new Card(R.id.brick_card_purple, 'b', 'p'), new Card(R.id.grain_card_purple, 'g', 'p'), new Card(R.id.wool_card_purple, 'w', 'p'), new Card(R.id.lumber_card_purple, 'l', 'p'), new Card(R.id.ore_card_purple, 'o', 'p'));
+        whitePlayer = new Player('w', new Card(R.id.brick_card_white, 'b', 'w'), new Card(R.id.grain_card_white, 'g', 'w'), new Card(R.id.wool_card_white, 'w', 'w'), new Card(R.id.lumber_card_white, 'l', 'w'), new Card(R.id.ore_card_white, 'o', 'w'));
 
 
         //put the array into a linked list so we can easily remove indexes, allowing randomization
@@ -352,6 +357,73 @@ public class BoardModel {
         else if (playerTurn == 'w') {
             playerTurn = 'b';
         }
+    }
+
+    public Player getPlayer() {
+        if (playerTurn == 'b') {
+            return bluePlayer;
+        }
+        else if (playerTurn == 'o') {
+            return orangePlayer;
+        }
+        else if (playerTurn == 'p') {
+            return purplePlayer;
+        }
+        else {
+            return whitePlayer;
+        }
+    }
+
+    public Card findCardByTypeAndPlayer(char cardType, Player player) {
+        if (cardType == 'b') {
+            return player.getBrickCard();
+        }
+        else if (cardType == 'g') {
+            return player.getGrainCard();
+        }
+        else if (cardType == 'w') {
+            return player.getWoolCard();
+        }
+        else if (cardType == 'l') {
+            return player.getLumberCard();
+        }
+        else {
+            return player.getOreCard();
+        }
+    }
+
+
+
+
+    public Card findCardByID(int viewID) {
+        //check blue cards
+        for (int i = 0; i < bluePlayer.getCardArray().length; i++) {
+            if (bluePlayer.getCardArray()[i].getViewID() == viewID) {
+                return bluePlayer.getCardArray()[i];
+            }
+        }
+
+        //check orange cards
+        for (int i = 0; i < orangePlayer.getCardArray().length; i++) {
+            if (orangePlayer.getCardArray()[i].getViewID() == viewID) {
+                return orangePlayer.getCardArray()[i];
+            }
+        }
+
+        //check purple cards
+        for (int i = 0; i < purplePlayer.getCardArray().length; i++) {
+            if (purplePlayer.getCardArray()[i].getViewID() == viewID) {
+                return purplePlayer.getCardArray()[i];
+            }
+        }
+
+        //check white cards
+        for (int i = 0; i < whitePlayer.getCardArray().length; i++) {
+            if (whitePlayer.getCardArray()[i].getViewID() == viewID) {
+                return whitePlayer.getCardArray()[i];
+            }
+        }
+        return null;
     }
 }
 

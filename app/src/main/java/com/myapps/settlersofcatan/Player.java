@@ -4,54 +4,58 @@ public class Player {
 
     char color;
 
-    int brickCards;
-    int grainCards;
-    int woolCards;
-    int lumberCards;
-    int oreCards;
 
 
-    public Player(char color) {
+    Card brickCard;
+    Card grainCard;
+    Card woolCard;
+    Card lumberCard;
+    Card oreCard;
 
+    Card[] cardArray;
+
+
+
+
+
+
+    public Player(char color, Card brickCard, Card grainCard, Card woolCard, Card lumberCard, Card oreCard ) {
+        this.color = color;
+        this.brickCard = brickCard;
+        this.grainCard = grainCard;
+        this.woolCard = woolCard;
+        this.lumberCard = lumberCard;
+        this.oreCard = oreCard;
+
+        cardArray = new Card[] {brickCard, grainCard, woolCard, lumberCard, oreCard};
     }
 
-    public void setBrickCards(int brickCards) {
-        this.brickCards = brickCards;
+
+    public Card getBrickCard() {
+        return brickCard;
     }
 
-    public void setGrainCards(int grainCards) {
-        this.grainCards = grainCards;
+    public Card getGrainCard() {
+        return grainCard;
     }
 
-    public void setWoolCards(int woolCards) {
-        this.woolCards = woolCards;
+    public Card getLumberCard() {
+        return lumberCard;
     }
 
-    public void setLumberCards(int lumberCards) {
-        this.lumberCards = lumberCards;
+    public Card getWoolCard() {
+        return woolCard;
     }
 
-    public void setOreCards(int oreCards) {
-        this.oreCards = oreCards;
+    public Card getOreCard() {
+        return oreCard;
     }
 
-    public int getBrickCards() {
-        return brickCards;
+    public Card[] getCardArray() {
+        return cardArray;
     }
 
-    public int getGrainCards() {
-        return grainCards;
-    }
-
-    public int getWoolCards() {
-        return woolCards;
-    }
-
-    public int getLumberCards() {
-        return lumberCards;
-    }
-
-    public int getOreCards() {
-        return oreCards;
+    public char getColor() {
+        return color;
     }
 }
