@@ -10,8 +10,10 @@ public class Tile {
 
     int tileNumber;
 
+    int originalTileNumber;
 
     Settlement[] settlements;
+
 
     public Tile(int viewID, int textViewID, char tileType) {
         this.viewID = viewID;
@@ -51,6 +53,20 @@ public class Tile {
 
     public Settlement[] getSettlements() {
         return settlements;
+    }
+
+
+    public int getTileNumTextViewID() {
+        return textViewID;
+    }
+
+
+    public void setOriginalTileNumber(int originalTileNumber) {
+        this.originalTileNumber = originalTileNumber;
+    }
+
+    public int getOriginalTileNumber() {
+        return originalTileNumber;
     }
 }
 

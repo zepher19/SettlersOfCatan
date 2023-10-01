@@ -62,6 +62,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     Button tradeButton, exchangeButton;
 
+    View.OnClickListener tileNumberListener;
+
+    TextView tile_1_num, tile_2_num, tile_3_num, tile_4_num, tile_5_num, tile_6_num, tile_7_num, tile_8_num, tile_9_num, tile_10_num,
+            tile_11_num, tile_12_num, tile_13_num, tile_14_num, tile_15_num, tile_16_num, tile_17_num, tile_18_num, tile_19_num;
+
+
 
 
     @Override
@@ -70,6 +76,40 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
 
         boardModel = BoardModel.getInstance();
+
+
+
+        tileNumberListener = new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                TextView temp = (TextView) v;
+
+                //if 7 is rolled
+                if (dieTotal == 7) {
+                    //if the player clicks on the spot currently occupied by baron
+                    if (boardModel.findTileByTileNum((TextView) v).getTileNumber() == 0) {
+                        //if moving from the original baron spot
+                        if (boardModel.findTileByTileNum((TextView) v).getTileType() == 'd') {
+                            boardModel.findTileByTileNum((TextView) v).setTileNumber(1);
+                        }
+                        else {
+                            boardModel.findTileByTileNum((TextView) v).setTileNumber(boardModel.findTileByTileNum((TextView) v).getOriginalTileNumber());
+                        }
+                        //highlight baron
+                        temp.setBackgroundResource(R.drawable.blank_tile_number_circle);
+                        //change tile num back to its original
+                        boardModel.setMovingBaron(true);
+                    }
+                    //player clicks where they want the baron to go
+                    else if (boardModel.isMovingBaron()) {
+                        boardModel.findTileByTileNum((TextView) v).setTileNumber(0);
+                        boardModel.setMovingBaron(false);
+                        drawBoardTiles();
+                    }
+
+                }
+            }
+        };
 
         tradeButton = findViewById(R.id.trade_button);
         exchangeButton = findViewById(R.id.exchange_button);
@@ -225,6 +265,80 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 drawCards();
             }
         });
+
+
+        tile_1_num = findViewById(R.id.tile_1_num);
+        tile_1_num.setOnClickListener(tileNumberListener);
+
+        tile_2_num = findViewById(R.id.tile_2_num);
+        tile_2_num.setOnClickListener(tileNumberListener);
+
+        tile_3_num = findViewById(R.id.tile_3_num);
+        tile_3_num.setOnClickListener(tileNumberListener);
+
+        tile_4_num = findViewById(R.id.tile_4_num);
+        tile_4_num.setOnClickListener(tileNumberListener);
+
+        tile_5_num = findViewById(R.id.tile_5_num);
+        tile_5_num.setOnClickListener(tileNumberListener);
+
+        tile_6_num = findViewById(R.id.tile_6_num);
+        tile_6_num.setOnClickListener(tileNumberListener);
+
+        tile_7_num = findViewById(R.id.tile_7_num);
+        tile_7_num.setOnClickListener(tileNumberListener);
+
+        tile_8_num = findViewById(R.id.tile_8_num);
+        tile_8_num.setOnClickListener(tileNumberListener);
+
+        tile_9_num = findViewById(R.id.tile_9_num);
+        tile_9_num.setOnClickListener(tileNumberListener);
+
+        tile_10_num = findViewById(R.id.tile_10_num);
+        tile_10_num.setOnClickListener(tileNumberListener);
+
+        tile_11_num = findViewById(R.id.tile_11_num);
+        tile_11_num.setOnClickListener(tileNumberListener);
+
+        tile_12_num = findViewById(R.id.tile_12_num);
+        tile_12_num.setOnClickListener(tileNumberListener);
+
+        tile_13_num = findViewById(R.id.tile_13_num);
+        tile_13_num.setOnClickListener(tileNumberListener);
+
+        tile_14_num = findViewById(R.id.tile_14_num);
+        tile_14_num.setOnClickListener(tileNumberListener);
+
+        tile_15_num = findViewById(R.id.tile_15_num);
+        tile_15_num.setOnClickListener(tileNumberListener);
+
+        tile_16_num = findViewById(R.id.tile_16_num);
+        tile_16_num.setOnClickListener(tileNumberListener);
+
+        tile_17_num = findViewById(R.id.tile_17_num);
+        tile_17_num.setOnClickListener(tileNumberListener);
+
+        tile_18_num = findViewById(R.id.tile_18_num);
+        tile_18_num.setOnClickListener(tileNumberListener);
+
+        tile_19_num = findViewById(R.id.tile_19_num);
+        tile_19_num.setOnClickListener(tileNumberListener);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -914,6 +1028,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         //prevent player from trading with themself
         if (zeroPlayerColor == onePlayerColor) {
+            Toast.makeText(this, "Must trade with another player.", Toast.LENGTH_SHORT).show();
             return;
         }
 
@@ -1176,10 +1291,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             //set tile number
             if (boardModel.getTileArray()[i].getTileNumber() == 0) {
                 tempTextView.setText("");
-
-                ;
                 tempTextView.setBackground(ResourcesCompat.getDrawable(getResources(),R.drawable.robber_baron, getTheme()));
             }
+            if (boardModel.getTileArray()[i].getTileNumber() == 1) {
+                tempTextView.setText("");
+                tempTextView.setBackground(ResourcesCompat.getDrawable(getResources(),R.drawable.blank_tile_number_circle, getTheme()));
+            }
+
             if (boardModel.getTileArray()[i].getTileNumber() == 2) {
                 tempTextView.setText(R.string.Two);
                 tempTextView.setTextColor(getResources().getColor(R.color.black));
@@ -1282,20 +1400,49 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private void buildCity(View v) {
         int drawable = 0;
+        Player cityBuilder;
 
         if (boardModel.getPlayerTurn() == 'b') {
             drawable = R.drawable.blue_city;
+            cityBuilder = boardModel.getBluePlayer();
         }
         else if (boardModel.getPlayerTurn() == 'o') {
             drawable = R.drawable.orange_city;
-
+            cityBuilder = boardModel.getOrangePlayer();
         }
         else if (boardModel.getPlayerTurn() == 'p') {
             drawable = R.drawable.purple_city;
+            cityBuilder = boardModel.getPurplePlayer();
         }
-        else if (boardModel.getPlayerTurn() == 'w') {
+        else {
             drawable = R.drawable.white_city;
+            cityBuilder = boardModel.getWhitePlayer();
         }
+
+
+        //TODO reinstate logic to prevent building a road if not enough materials
+
+        /*
+        if (cityBuilder.getOreCard().getCardNumber() < 3 || cityBuilder.getGrainCard().getCardNumber() < 2) {
+            Toast.makeText(this, "Not enough materials.", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+         */
+
+
+
+
+        //decrement cards to reflect paying to construct
+        cityBuilder.getOreCard().setCardNumber(cityBuilder.getOreCard().getCardNumber() - 3);
+        cityBuilder.getGrainCard().setCardNumber(cityBuilder.getGrainCard().getCardNumber() - 2);
+
+        TextView cardOreToChange = findViewById(cityBuilder.getOreCard().getViewID());
+        TextView cardGrainToChange = findViewById(cityBuilder.getGrainCard().getViewID());
+
+        cardOreToChange.setText(Integer.toString(cityBuilder.getOreCard().getCardNumber()));
+        cardGrainToChange.setText(Integer.toString(cityBuilder.getGrainCard().getCardNumber()));
+
 
         v.setBackgroundResource(drawable);
         //change settlement to city in the board model
@@ -1307,20 +1454,47 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private void buildRoad(View v) {
         int color = 0;
+        Player roadBuilder;
 
         if (boardModel.getPlayerTurn() == 'b') {
             color = R.color.blue;
+            roadBuilder = boardModel.getBluePlayer();
         }
         else if (boardModel.getPlayerTurn() == 'o') {
             color = R.color.orange;
+            roadBuilder = boardModel.getOrangePlayer();
         }
         else if (boardModel.getPlayerTurn() == 'p') {
             color = R.color.purple;
+            roadBuilder = boardModel.getPurplePlayer();
         }
-        else if (boardModel.getPlayerTurn() == 'w') {
+        else {
             color = R.color.white;
+            roadBuilder = boardModel.getWhitePlayer();
         }
 
+
+
+        //TODO reinstate logic to prevent building a road if not enough materials
+        /*
+
+        if (roadBuilder.getBrickCard().getCardNumber() == 0 || roadBuilder.getLumberCard().getCardNumber() == 0) {
+            Toast.makeText(this, "Not enough materials.", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+         */
+
+
+        //decrement player brick and lumber cards and update textView to reflect the change
+        roadBuilder.getBrickCard().setCardNumber(roadBuilder.getBrickCard().getCardNumber() - 1);
+        roadBuilder.getLumberCard().setCardNumber(roadBuilder.getLumberCard().getCardNumber() - 1);
+
+        TextView cardBrickToChange = findViewById(roadBuilder.getBrickCard().getViewID());
+        TextView cardLumberToChange = findViewById(roadBuilder.getLumberCard().getViewID());
+
+        cardBrickToChange.setText(Integer.toString(roadBuilder.getBrickCard().getCardNumber()));
+        cardLumberToChange.setText(Integer.toString(roadBuilder.getLumberCard().getCardNumber()));
 
         v.setBackgroundColor(ResourcesCompat.getColor(getResources(), color, getTheme()));
         v.setAlpha(1);
@@ -1330,19 +1504,57 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private void buildSettlement(View v) {
         int drawable = 0;
+        Player settlementBuilder;
 
         if (boardModel.getPlayerTurn() == 'b') {
             drawable = R.drawable.blue_circle;
+            settlementBuilder = boardModel.getBluePlayer();
         }
         else if (boardModel.getPlayerTurn() == 'o') {
             drawable = R.drawable.orange_circle;
+            settlementBuilder = boardModel.getOrangePlayer();
+
         }
         else if (boardModel.getPlayerTurn() == 'p') {
             drawable = R.drawable.purple_circle;
+            settlementBuilder = boardModel.getPurplePlayer();
         }
-        else if (boardModel.getPlayerTurn() == 'w') {
+        else {
             drawable = R.drawable.white_circle;
+            settlementBuilder = boardModel.getWhitePlayer();
         }
+
+
+        //TODO reinstate logic to prevent building a settlement if not enough materials
+
+/*
+        if (settlementBuilder.getBrickCard().getCardNumber() == 0 || settlementBuilder.getGrainCard().getCardNumber() == 0 ||
+                settlementBuilder.getWoolCard().getCardNumber() == 0 || settlementBuilder.getLumberCard().getCardNumber() == 0) {
+            Toast.makeText(this, "Not enough materials.", Toast.LENGTH_SHORT).show();
+            return;
+
+        }
+ */
+
+
+
+        //decrement player brick, grain, wool, and lumber cards and update textView to reflect the change
+        settlementBuilder.getBrickCard().setCardNumber(settlementBuilder.getBrickCard().getCardNumber() - 1);
+        settlementBuilder.getGrainCard().setCardNumber(settlementBuilder.getGrainCard().getCardNumber() - 1);
+        settlementBuilder.getWoolCard().setCardNumber(settlementBuilder.getWoolCard().getCardNumber() - 1);
+        settlementBuilder.getLumberCard().setCardNumber(settlementBuilder.getLumberCard().getCardNumber() - 1);
+
+
+        TextView cardBrickToChange = findViewById(settlementBuilder.getBrickCard().getViewID());
+        TextView cardGrainToChange = findViewById(settlementBuilder.getGrainCard().getViewID());
+        TextView cardWoolToChange = findViewById(settlementBuilder.getWoolCard().getViewID());
+        TextView cardLumberToChange = findViewById(settlementBuilder.getLumberCard().getViewID());
+
+
+        cardBrickToChange.setText(Integer.toString(settlementBuilder.getBrickCard().getCardNumber()));
+        cardGrainToChange.setText(Integer.toString(settlementBuilder.getGrainCard().getCardNumber()));
+        cardWoolToChange.setText(Integer.toString(settlementBuilder.getWoolCard().getCardNumber()));
+        cardLumberToChange.setText(Integer.toString(settlementBuilder.getLumberCard().getCardNumber()));
 
 
         v.setBackgroundResource(drawable);

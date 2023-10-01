@@ -1,14 +1,14 @@
 package com.myapps.settlersofcatan;
 
 import android.view.View;
+import android.widget.TextView;
 
 import java.util.Collections;
 import java.util.LinkedList;
 import java.util.Random;
 
 public class BoardModel {
-
-
+    private boolean movingBaron;
 
 
     //contains types of tiles, used to populate board
@@ -183,78 +183,97 @@ public class BoardModel {
         //create tiles using view id, the type of tile, and the dice number of the tile
         Tile tile1 = new Tile(R.id.tile_1, R.id.tile_1_num, randomizeTileType());
         tile1.setTileNumber(randomizeTileNumber(tile1));
+        tile1.setOriginalTileNumber(tile1.getTileNumber());
         tile1.setSettlements(new Settlement[]{settlement_112, settlement_1, settlement_109, settlement_111, settlement_110, settlement_105});
 
         Tile tile2 = new Tile(R.id.tile_2, R.id.tile_2_num, randomizeTileType());
         tile2.setTileNumber(randomizeTileNumber(tile2));
+        tile2.setOriginalTileNumber(tile2.getTileNumber());
         tile2.setSettlements(new Settlement[]{settlement_104, settlement_105, settlement_110, settlement_9, settlement_8, settlement_6});
 
         Tile tile3 = new Tile(R.id.tile_3, R.id.tile_3_num, randomizeTileType());
         tile3.setTileNumber(randomizeTileNumber(tile3));
+        tile3.setOriginalTileNumber(tile3.getTileNumber());
         tile3.setSettlements(new Settlement[]{settlement_109, settlement_85, settlement_76, settlement_74, settlement_84, settlement_111});
 
         Tile tile4 = new Tile(R.id.tile_4, R.id.tile_4_num, randomizeTileType());
         tile4.setTileNumber(randomizeTileNumber(tile4));
+        tile4.setOriginalTileNumber(tile4.getTileNumber());
         tile4.setSettlements(new Settlement[]{settlement_17, settlement_6, settlement_8, settlement_15, settlement_14, settlement_12});
 
         Tile tile5 = new Tile(R.id.tile_5, R.id.tile_5_num, randomizeTileType());
         tile5.setTileNumber(randomizeTileNumber(tile5));
+        tile5.setOriginalTileNumber(tile5.getTileNumber());
         tile5.setSettlements(new Settlement[]{settlement_110, settlement_111, settlement_84, settlement_89, settlement_88, settlement_9});
 
         Tile tile6 = new Tile(R.id.tile_6, R.id.tile_6_num, randomizeTileType());
         tile6.setTileNumber(randomizeTileNumber(tile6));
+        tile6.setOriginalTileNumber(tile6.getTileNumber());
         tile6.setSettlements(new Settlement[]{settlement_76, settlement_75, settlement_77, settlement_66, settlement_67, settlement_74});
 
         Tile tile7 = new Tile(R.id.tile_7, R.id.tile_7_num, randomizeTileType());
         tile7.setTileNumber(randomizeTileNumber(tile7));
+        tile7.setOriginalTileNumber(tile7.getTileNumber());
         tile7.setSettlements(new Settlement[]{settlement_8, settlement_9, settlement_88, settlement_95, settlement_7, settlement_15});
 
         Tile tile8 = new Tile(R.id.tile_8, R.id.tile_8_num, randomizeTileType());
         tile8.setTileNumber(randomizeTileNumber(tile8));
+        tile8.setOriginalTileNumber(tile8.getTileNumber());
         tile8.setSettlements(new Settlement[]{settlement_84, settlement_74, settlement_67, settlement_62, settlement_99, settlement_89});
 
         Tile tile9 = new Tile(R.id.tile_9, R.id.tile_9_num, randomizeTileType());
         tile9.setTileNumber(randomizeTileNumber(tile9));
+        tile9.setOriginalTileNumber(tile9.getTileNumber());
         tile9.setSettlements(new Settlement[]{settlement_14, settlement_15, settlement_7, settlement_13, settlement_10, settlement_19});
 
         Tile tile10 = new Tile(R.id.tile_10, R.id.tile_10_num, randomizeTileType());
         tile10.setTileNumber(randomizeTileNumber(tile10));
+        tile10.setOriginalTileNumber(tile10.getTileNumber());
         tile10.setSettlements(new Settlement[]{settlement_88, settlement_89, settlement_99, settlement_101, settlement_100, settlement_95});
 
         Tile tile11 = new Tile(R.id.tile_11, R.id.tile_11_num, randomizeTileType());
         tile11.setTileNumber(randomizeTileNumber(tile11));
+        tile11.setOriginalTileNumber(tile11.getTileNumber());
         tile11.setSettlements(new Settlement[]{settlement_67, settlement_66, settlement_63, settlement_60, settlement_61, settlement_62});
 
         Tile tile12 = new Tile(R.id.tile_12, R.id.tile_12_num, randomizeTileType());
         tile12.setTileNumber(randomizeTileNumber(tile12));
+        tile12.setOriginalTileNumber(tile12.getTileNumber());
         tile12.setSettlements(new Settlement[]{settlement_7, settlement_95, settlement_100, settlement_42, settlement_21, settlement_13});
 
         Tile tile13 = new Tile(R.id.tile_13, R.id.tile_13_num, randomizeTileType());
         tile13.setTileNumber(randomizeTileNumber(tile13));
+        tile13.setOriginalTileNumber(tile13.getTileNumber());
         tile13.setSettlements(new Settlement[]{settlement_99, settlement_62, settlement_61, settlement_54, settlement_55, settlement_101});
 
         Tile tile14 = new Tile(R.id.tile_14, R.id.tile_14_num, randomizeTileType());
         tile14.setTileNumber(randomizeTileNumber(tile14));
+        tile14.setOriginalTileNumber(tile14.getTileNumber());
         tile14.setSettlements(new Settlement[]{settlement_10, settlement_13, settlement_21, settlement_23, settlement_22, settlement_20});
 
         Tile tile15 = new Tile(R.id.tile_15, R.id.tile_15_num, randomizeTileType());
         tile15.setTileNumber(randomizeTileNumber(tile15));
+        tile15.setOriginalTileNumber(tile15.getTileNumber());
         tile15.setSettlements(new Settlement[]{settlement_100, settlement_101, settlement_55, settlement_48, settlement_39, settlement_42});
 
         Tile tile16 = new Tile(R.id.tile_16, R.id.tile_16_num, randomizeTileType());
         tile16.setTileNumber(randomizeTileNumber(tile16));
+        tile16.setOriginalTileNumber(tile16.getTileNumber());
         tile16.setSettlements(new Settlement[]{settlement_61, settlement_60, settlement_57, settlement_59, settlement_51, settlement_54});
 
         Tile tile17 = new Tile(R.id.tile_17, R.id.tile_17_num, randomizeTileType());
         tile17.setTileNumber(randomizeTileNumber(tile17));
+        tile17.setOriginalTileNumber(tile17.getTileNumber());
         tile17.setSettlements(new Settlement[]{settlement_21, settlement_42, settlement_39, settlement_41, settlement_40, settlement_23});
 
         Tile tile18 = new Tile(R.id.tile_18, R.id.tile_18_num, randomizeTileType());
         tile18.setTileNumber(randomizeTileNumber(tile18));
+        tile18.setOriginalTileNumber(tile18.getTileNumber());
         tile18.setSettlements(new Settlement[]{settlement_55, settlement_54, settlement_51, settlement_53, settlement_45, settlement_48});
 
         Tile tile19 = new Tile(R.id.tile_19, R.id.tile_19_num, randomizeTileType());
         tile19.setTileNumber(randomizeTileNumber(tile19));
+        tile19.setOriginalTileNumber(tile19.getTileNumber());
         tile19.setSettlements(new Settlement[]{settlement_39, settlement_48, settlement_45, settlement_47, settlement_46, settlement_41});
 
         //put tiles in tile array
@@ -421,6 +440,25 @@ public class BoardModel {
         for (int i = 0; i < whitePlayer.getCardArray().length; i++) {
             if (whitePlayer.getCardArray()[i].getViewID() == viewID) {
                 return whitePlayer.getCardArray()[i];
+            }
+        }
+        return null;
+    }
+
+
+    public boolean isMovingBaron() {
+        return movingBaron;
+    }
+
+    public void setMovingBaron(boolean movingBaron) {
+        this.movingBaron = movingBaron;
+    }
+
+
+    public Tile findTileByTileNum(TextView tileNum) {
+        for (int i = 0; i < tileArray.length; i++) {
+            if (tileArray[i].getTileNumTextViewID() == tileNum.getId()) {
+                return tileArray[i];
             }
         }
         return null;
