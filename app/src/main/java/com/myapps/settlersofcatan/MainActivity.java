@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextSwitcher;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.Random;
 
@@ -57,8 +58,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     TextView cardSelection0;
     TextView cardSelection1;
 
-
     View.OnClickListener cardListener;
+
+    Button tradeButton, exchangeButton;
 
 
 
@@ -69,6 +71,37 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         boardModel = BoardModel.getInstance();
 
+        tradeButton = findViewById(R.id.trade_button);
+        exchangeButton = findViewById(R.id.exchange_button);
+        tradeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (cardSelection0 != null && cardSelection1 != null) {
+                    trade();
+                    cardSelection0.setTextColor(ResourcesCompat.getColor(getResources(), R.color.black, getTheme()));
+                    cardSelection1.setTextColor(ResourcesCompat.getColor(getResources(), R.color.black, getTheme()));
+                    cardSelection0 = null;
+                    cardSelection1 = null;
+                }
+            }
+        });
+
+
+        exchangeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (cardSelection0 != null && cardSelection1 != null) {
+                    exchange();
+                    cardSelection0.setTextColor(ResourcesCompat.getColor(getResources(), R.color.black, getTheme()));
+                    cardSelection1.setTextColor(ResourcesCompat.getColor(getResources(), R.color.black, getTheme()));
+                    cardSelection0 = null;
+                    cardSelection1 = null;
+                }
+            }
+        });
+
+
+
 
         //handles when cards are clicked for trading and exchanging
         cardListener = new View.OnClickListener() {
@@ -76,12 +109,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             public void onClick(View v) {
                 if (cardSelection0 == null) {
                     cardSelection0 = (TextView) v;
+                    cardSelection0.setTextColor(ResourcesCompat.getColor(getResources(), R.color.white, getTheme()));
                 }
-                else {
+                else if (cardSelection1 == null){
                     cardSelection1 = (TextView) v;
-                    trade();
-                    cardSelection0 = null;
-                    cardSelection1 = null;
+                    cardSelection1.setTextColor(ResourcesCompat.getColor(getResources(), R.color.white, getTheme()));
                 }
             }
         };
@@ -123,6 +155,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 settlementBuild.setBackgroundResource(drawable);
                 city_build.setBackgroundResource(cityDrawable);
 
+                if (cardSelection0 != null) {
+                    cardSelection0.setTextColor(ResourcesCompat.getColor(getResources(), R.color.black, getTheme()));
+                    cardSelection0 = null;
+                }
+
+                if (cardSelection1 != null) {
+                    cardSelection1.setTextColor(ResourcesCompat.getColor(getResources(), R.color.black, getTheme()));
+                    cardSelection1 = null;
+                }
             }
         });
 
@@ -790,9 +831,52 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         updateCurrentPlayerGraphic();
     }
 
+    private void exchange() {
+        Card card0 = boardModel.findCardByID(cardSelection0.getId());
+        Card card1 = boardModel.findCardByID(cardSelection1.getId());
+
+        //must exchange with only their own cards
+        if(card0.getPlayerOwner() != card1.getPlayerOwner()) {
+            Toast.makeText(this, "Can only exchange your own cards.", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        //TODO reinstate this logic
+        /*
+
+        //prevents trading when you have 0 cards
+        if (card0.getCardNumber() == 0 || card1.getCardNumber() == 0) {
+            return;
+        }
+
+         */
+
+
+        card0.setCardNumber(card0.getCardNumber() - 4);
+        card1.setCardNumber(card1.getCardNumber() + 1);
+
+        TextView zeroTextView = findViewById(card0.getViewID());
+        TextView oneTextView = findViewById(card1.getViewID());
+
+        zeroTextView.setText(Integer.toString(card0.getCardNumber()));
+        oneTextView.setText(Integer.toString(card1.getCardNumber()));
+    }
+
     private void trade() {
         Card zeroCard = boardModel.findCardByID(cardSelection0.getId());
         Card oneCard = boardModel.findCardByID(cardSelection1.getId());
+
+
+        //TODO reinstate this logic
+        /*
+
+        //prevents trading when you have 0 cards
+        if (zeroCard.getCardNumber() == 0 || oneCard.getCardNumber() == 0) {
+            return;
+        }
+
+         */
+
 
         char zeroPlayerColor = zeroCard.getPlayerOwner();
         char onePlayerColor = oneCard.getPlayerOwner();
@@ -825,6 +909,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
         else {
             onePlayer = boardModel.getWhitePlayer();
+        }
+
+
+        //prevent player from trading with themself
+        if (zeroPlayerColor == onePlayerColor) {
+            return;
         }
 
 

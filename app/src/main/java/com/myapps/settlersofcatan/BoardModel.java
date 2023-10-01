@@ -1,13 +1,13 @@
 package com.myapps.settlersofcatan;
 
 import android.view.View;
-import android.widget.TextView;
 
 import java.util.Collections;
 import java.util.LinkedList;
 import java.util.Random;
 
 public class BoardModel {
+
 
 
 

@@ -20,7 +20,6 @@
         app:layout_constraintTop_toTopOf="parent" />
 
 
-
     <ImageView
         android:id="@+id/board_background"
         android:layout_width="430dp"
@@ -443,6 +442,1177 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/hexagon_tile" />
+
+
+    <TextView
+        android:id="@+id/road_118"
+        android:layout_width="25dp"
+        android:layout_height="16dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="436dp"
+        android:alpha="0"
+        android:background="@color/brick_red"
+        android:clickable="true"
+        android:rotation="-60"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/road_119"
+        android:layout_width="25dp"
+        android:layout_height="16dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="476dp"
+        android:alpha="0"
+        android:background="@color/brick_red"
+        android:clickable="true"
+        android:rotation="60"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/road_120"
+        android:layout_width="25dp"
+        android:layout_height="16dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="496dp"
+        android:alpha="0"
+        android:background="@color/brick_red"
+        android:clickable="true"
+        android:rotation="0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/road_121"
+        android:layout_width="25dp"
+        android:layout_height="16dp"
+        android:layout_marginStart="88dp"
+        android:layout_marginTop="472dp"
+        android:alpha="0"
+        android:background="@color/brick_red"
+        android:clickable="true"
+        android:rotation="-60"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/road_122"
+        android:layout_width="25dp"
+        android:layout_height="16dp"
+        android:layout_marginStart="87dp"
+        android:layout_marginTop="436dp"
+        android:alpha="0"
+        android:background="@color/brick_red"
+        android:clickable="true"
+        android:rotation="60"
+        app:layout_constraintStart_toEndOf="@+id/road_0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/road_123"
+        android:layout_width="25dp"
+        android:layout_height="16dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="416dp"
+        android:alpha="0"
+        android:background="@color/brick_red"
+        android:clickable="true"
+        android:rotation="0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/road_21"
+        android:layout_width="25dp"
+        android:layout_height="16dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="352dp"
+        android:alpha="0"
+        android:background="@color/brick_red"
+        android:clickable="true"
+        android:rotation="-60"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/road_6"
+        android:layout_width="25dp"
+        android:layout_height="16dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="392dp"
+        android:alpha="0"
+        android:background="@color/brick_red"
+        android:clickable="true"
+        android:rotation="60"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/road_7"
+        android:layout_width="25dp"
+        android:layout_height="16dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="416dp"
+        android:alpha="0"
+        android:background="@color/brick_red"
+        android:clickable="true"
+        android:rotation="0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/road_12"
+        android:layout_width="25dp"
+        android:layout_height="16dp"
+        android:layout_marginStart="88dp"
+        android:layout_marginTop="392dp"
+        android:alpha="0"
+        android:background="@color/brick_red"
+        android:clickable="true"
+        android:rotation="-60"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/road_18"
+        android:layout_width="25dp"
+        android:layout_height="16dp"
+        android:layout_marginStart="87dp"
+        android:layout_marginTop="356dp"
+        android:alpha="0"
+        android:background="@color/brick_red"
+        android:clickable="true"
+        android:rotation="60"
+        app:layout_constraintStart_toEndOf="@+id/road_0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/road_14"
+        android:layout_width="25dp"
+        android:layout_height="16dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="280dp"
+        android:alpha="0"
+        android:background="@color/brick_red"
+        android:clickable="true"
+        android:rotation="-60"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/road_15"
+        android:layout_width="25dp"
+        android:layout_height="16dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="320dp"
+        android:alpha="0"
+        android:background="@color/brick_red"
+        android:clickable="true"
+        android:rotation="60"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/road_16"
+        android:layout_width="25dp"
+        android:layout_height="16dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="340dp"
+        android:alpha="0"
+        android:background="@color/brick_red"
+        android:clickable="true"
+        android:rotation="0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/road_17"
+        android:layout_width="25dp"
+        android:layout_height="16dp"
+        android:layout_marginStart="88dp"
+        android:layout_marginTop="316dp"
+        android:alpha="0"
+        android:background="@color/brick_red"
+        android:clickable="true"
+        android:rotation="-60"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/road_19"
+        android:layout_width="25dp"
+        android:layout_height="16dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="260dp"
+        android:alpha="0"
+        android:background="@color/brick_red"
+        android:clickable="true"
+        android:rotation="0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/road_8"
+        android:layout_width="25dp"
+        android:layout_height="16dp"
+        android:layout_marginStart="88dp"
+        android:layout_marginTop="236dp"
+        android:alpha="0"
+        android:background="@color/brick_red"
+        android:clickable="true"
+        android:rotation="-60"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/road_9"
+        android:layout_width="25dp"
+        android:layout_height="16dp"
+        android:layout_marginStart="88dp"
+        android:layout_marginTop="276dp"
+        android:alpha="0"
+        android:background="@color/brick_red"
+        android:clickable="true"
+        android:rotation="60"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/road_10"
+        android:layout_width="25dp"
+        android:layout_height="16dp"
+        android:layout_marginStart="120dp"
+        android:layout_marginTop="300dp"
+        android:alpha="0"
+        android:background="@color/brick_red"
+        android:clickable="true"
+        android:rotation="0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/road_11"
+        android:layout_width="25dp"
+        android:layout_height="16dp"
+        android:layout_marginStart="156dp"
+        android:layout_marginTop="276dp"
+        android:alpha="0"
+        android:background="@color/brick_red"
+        android:clickable="true"
+        android:rotation="-60"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/road_13"
+        android:layout_width="25dp"
+        android:layout_height="16dp"
+        android:layout_marginStart="120dp"
+        android:layout_marginTop="220dp"
+        android:alpha="0"
+        android:background="@color/brick_red"
+        android:clickable="true"
+        android:rotation="0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/road_5"
+        android:layout_width="25dp"
+        android:layout_height="16dp"
+        android:layout_marginStart="156dp"
+        android:layout_marginTop="203dp"
+        android:alpha="0"
+        android:background="@color/brick_red"
+        android:clickable="true"
+        android:rotation="-60"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/road_4"
+        android:layout_width="25dp"
+        android:layout_height="16dp"
+        android:layout_marginStart="155dp"
+        android:layout_marginTop="243dp"
+        android:alpha="0"
+        android:background="@color/brick_red"
+        android:clickable="true"
+        android:rotation="60"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/road_3"
+        android:layout_width="25dp"
+        android:layout_height="16dp"
+        android:layout_marginStart="189dp"
+        android:layout_marginTop="264dp"
+        android:alpha="0"
+        android:background="@color/brick_red"
+        android:clickable="true"
+        android:rotation="0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/road_2"
+        android:layout_width="25dp"
+        android:layout_height="16dp"
+        android:layout_marginStart="223dp"
+        android:layout_marginTop="242dp"
+        android:alpha="0"
+        android:background="@color/brick_red"
+        android:clickable="true"
+        android:rotation="-60"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/road_1"
+        android:layout_width="25dp"
+        android:layout_height="16dp"
+        android:layout_marginStart="223dp"
+        android:layout_marginTop="204dp"
+        android:alpha="0"
+        android:background="@color/brick_red"
+        android:clickable="true"
+        android:rotation="60"
+        app:layout_constraintStart_toEndOf="@+id/road_0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/road_0"
+        android:layout_width="25dp"
+        android:layout_height="16dp"
+        android:layout_marginStart="189dp"
+        android:layout_marginTop="184dp"
+        android:alpha="0"
+        android:background="@color/brick_red"
+        android:clickable="true"
+        android:rotation="0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/road_112"
+        android:layout_width="25dp"
+        android:layout_height="16dp"
+        android:layout_marginStart="155dp"
+        android:layout_marginTop="433dp"
+        android:alpha="0"
+        android:background="@color/brick_red"
+        android:clickable="true"
+        android:rotation="-60"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/road_110"
+        android:layout_width="25dp"
+        android:layout_height="16dp"
+        android:layout_marginStart="260dp"
+        android:layout_marginTop="380dp"
+        android:alpha="0"
+        android:background="@color/brick_red"
+        android:clickable="true"
+        android:rotation="0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/road_109"
+        android:layout_width="25dp"
+        android:layout_height="16dp"
+        android:layout_marginStart="222dp"
+        android:layout_marginTop="435dp"
+        android:alpha="0"
+        android:background="@color/brick_red"
+        android:clickable="true"
+        android:rotation="60"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/road_47"
+        android:layout_width="25dp"
+        android:layout_height="16dp"
+        android:layout_marginStart="154dp"
+        android:layout_marginTop="556dp"
+        android:alpha="0"
+        android:background="@color/brick_red"
+        android:clickable="true"
+        android:rotation="60"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/road_48"
+        android:layout_width="25dp"
+        android:layout_height="16dp"
+        android:layout_marginStart="188dp"
+        android:layout_marginTop="576dp"
+        android:alpha="0"
+        android:background="@color/brick_red"
+        android:clickable="true"
+        android:rotation="0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/road_49"
+        android:layout_width="25dp"
+        android:layout_height="16dp"
+        android:layout_marginStart="220dp"
+        android:layout_marginTop="556dp"
+        android:alpha="0"
+        android:background="@color/brick_red"
+        android:clickable="true"
+        android:rotation="-60"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/road_50"
+        android:layout_width="25dp"
+        android:layout_height="16dp"
+        android:layout_marginStart="223dp"
+        android:layout_marginTop="516dp"
+        android:alpha="0"
+        android:background="@color/brick_red"
+        android:clickable="true"
+        android:rotation="60"
+        app:layout_constraintStart_toEndOf="@+id/road_0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/road_51"
+        android:layout_width="25dp"
+        android:layout_height="16dp"
+        android:layout_marginStart="188dp"
+        android:layout_marginTop="496dp"
+        android:alpha="0"
+        android:background="@color/brick_red"
+        android:clickable="true"
+        android:rotation="0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/road_104"
+        android:layout_width="25dp"
+        android:layout_height="16dp"
+        android:layout_marginStart="153dp"
+        android:layout_marginTop="394dp"
+        android:alpha="0"
+        android:background="@color/brick_red"
+        android:clickable="true"
+        android:rotation="60"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/road_105"
+        android:layout_width="25dp"
+        android:layout_height="16dp"
+        android:layout_marginStart="188dp"
+        android:layout_marginTop="416dp"
+        android:alpha="0"
+        android:background="@color/brick_red"
+        android:clickable="true"
+        android:rotation="0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/road_106"
+        android:layout_width="25dp"
+        android:layout_height="16dp"
+        android:layout_marginStart="224dp"
+        android:layout_marginTop="392dp"
+        android:alpha="0"
+        android:background="@color/brick_red"
+        android:clickable="true"
+        android:rotation="-60"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/road_107"
+        android:layout_width="25dp"
+        android:layout_height="16dp"
+        android:layout_marginStart="223dp"
+        android:layout_marginTop="356dp"
+        android:alpha="0"
+        android:background="@color/brick_red"
+        android:clickable="true"
+        android:rotation="60"
+        app:layout_constraintStart_toEndOf="@+id/road_0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/road_99"
+        android:layout_width="25dp"
+        android:layout_height="16dp"
+        android:layout_marginStart="123dp"
+        android:layout_marginTop="380dp"
+        android:alpha="0"
+        android:background="@color/brick_red"
+        android:clickable="true"
+        android:rotation="0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/road_100"
+        android:layout_width="25dp"
+        android:layout_height="16dp"
+        android:layout_marginStart="156dp"
+        android:layout_marginTop="360dp"
+        android:alpha="0"
+        android:background="@color/brick_red"
+        android:clickable="true"
+        android:rotation="-60"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/road_92"
+        android:layout_width="25dp"
+        android:layout_height="16dp"
+        android:layout_marginStart="156dp"
+        android:layout_marginTop="316dp"
+        android:alpha="0"
+        android:background="@color/brick_red"
+        android:clickable="true"
+        android:rotation="60"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/road_93"
+        android:layout_width="25dp"
+        android:layout_height="16dp"
+        android:layout_marginStart="188dp"
+        android:layout_marginTop="340dp"
+        android:alpha="0"
+        android:background="@color/brick_red"
+        android:clickable="true"
+        android:rotation="0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/road_94"
+        android:layout_width="25dp"
+        android:layout_height="16dp"
+        android:layout_marginStart="224dp"
+        android:layout_marginTop="316dp"
+        android:alpha="0"
+        android:background="@color/brick_red"
+        android:clickable="true"
+        android:rotation="-60"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/road_82"
+        android:layout_width="25dp"
+        android:layout_height="16dp"
+        android:layout_marginStart="224dp"
+        android:layout_marginTop="280dp"
+        android:alpha="0"
+        android:background="@color/brick_red"
+        android:clickable="true"
+        android:rotation="60"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/road_83"
+        android:layout_width="25dp"
+        android:layout_height="16dp"
+        android:layout_marginStart="260dp"
+        android:layout_marginTop="300dp"
+        android:alpha="0"
+        android:background="@color/brick_red"
+        android:clickable="true"
+        android:rotation="0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/road_85"
+        android:layout_width="25dp"
+        android:layout_height="16dp"
+        android:layout_marginStart="293dp"
+        android:layout_marginTop="238dp"
+        android:alpha="0"
+        android:background="@color/brick_red"
+        android:clickable="true"
+        android:rotation="60"
+        app:layout_constraintStart_toEndOf="@+id/road_0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/road_86"
+        android:layout_width="25dp"
+        android:layout_height="16dp"
+        android:layout_marginStart="260dp"
+        android:layout_marginTop="220dp"
+        android:alpha="0"
+        android:background="@color/brick_red"
+        android:clickable="true"
+        android:rotation="0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/road_87"
+        android:layout_width="25dp"
+        android:layout_height="16dp"
+        android:layout_marginStart="224dp"
+        android:layout_marginTop="280dp"
+        android:alpha="0"
+        android:background="@color/brick_red"
+        android:clickable="true"
+        android:rotation="60"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/road_88"
+        android:layout_width="25dp"
+        android:layout_height="16dp"
+        android:layout_marginStart="260dp"
+        android:layout_marginTop="300dp"
+        android:alpha="0"
+        android:background="@color/brick_red"
+        android:clickable="true"
+        android:rotation="0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/road_89"
+        android:layout_width="25dp"
+        android:layout_height="16dp"
+        android:layout_marginStart="293dp"
+        android:layout_marginTop="238dp"
+        android:alpha="0"
+        android:background="@color/brick_red"
+        android:clickable="true"
+        android:rotation="60"
+        app:layout_constraintStart_toEndOf="@+id/road_0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/road_90"
+        android:layout_width="25dp"
+        android:layout_height="16dp"
+        android:layout_marginStart="260dp"
+        android:layout_marginTop="220dp"
+        android:alpha="0"
+        android:background="@color/brick_red"
+        android:clickable="true"
+        android:rotation="0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/road_70"
+        android:layout_width="25dp"
+        android:layout_height="16dp"
+        android:layout_marginStart="296dp"
+        android:layout_marginTop="280dp"
+        android:alpha="0"
+        android:background="@color/brick_red"
+        android:clickable="true"
+        android:rotation="-60"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/road_71"
+        android:layout_width="25dp"
+        android:layout_height="16dp"
+        android:layout_marginStart="296dp"
+        android:layout_marginTop="320dp"
+        android:alpha="0"
+        android:background="@color/brick_red"
+        android:clickable="true"
+        android:rotation="60"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/road_73"
+        android:layout_width="25dp"
+        android:layout_height="16dp"
+        android:layout_marginStart="362dp"
+        android:layout_marginTop="320dp"
+        android:alpha="0"
+        android:background="@color/brick_red"
+        android:clickable="true"
+        android:rotation="-60"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/road_74"
+        android:layout_width="25dp"
+        android:layout_height="16dp"
+        android:layout_marginStart="360dp"
+        android:layout_marginTop="280dp"
+        android:alpha="0"
+        android:background="@color/brick_red"
+        android:clickable="true"
+        android:rotation="60"
+        app:layout_constraintStart_toEndOf="@+id/road_0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/road_75"
+        android:layout_width="25dp"
+        android:layout_height="16dp"
+        android:layout_marginStart="328dp"
+        android:layout_marginTop="260dp"
+        android:alpha="0"
+        android:background="@color/brick_red"
+        android:clickable="true"
+        android:rotation="0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/road_76"
+        android:layout_width="25dp"
+        android:layout_height="16dp"
+        android:layout_marginStart="296dp"
+        android:layout_marginTop="280dp"
+        android:alpha="0"
+        android:background="@color/brick_red"
+        android:clickable="true"
+        android:rotation="-60"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/road_77"
+        android:layout_width="25dp"
+        android:layout_height="16dp"
+        android:layout_marginStart="296dp"
+        android:layout_marginTop="320dp"
+        android:alpha="0"
+        android:background="@color/brick_red"
+        android:clickable="true"
+        android:rotation="60"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/road_78"
+        android:layout_width="25dp"
+        android:layout_height="16dp"
+        android:layout_marginStart="362dp"
+        android:layout_marginTop="320dp"
+        android:alpha="0"
+        android:background="@color/brick_red"
+        android:clickable="true"
+        android:rotation="-60"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/road_79"
+        android:layout_width="25dp"
+        android:layout_height="16dp"
+        android:layout_marginStart="360dp"
+        android:layout_marginTop="280dp"
+        android:alpha="0"
+        android:background="@color/brick_red"
+        android:clickable="true"
+        android:rotation="60"
+        app:layout_constraintStart_toEndOf="@+id/road_0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/road_80"
+        android:layout_width="25dp"
+        android:layout_height="16dp"
+        android:layout_marginStart="328dp"
+        android:layout_marginTop="260dp"
+        android:alpha="0"
+        android:background="@color/brick_red"
+        android:clickable="true"
+        android:rotation="0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/road_64"
+        android:layout_width="25dp"
+        android:layout_height="16dp"
+        android:layout_marginStart="296dp"
+        android:layout_marginTop="360dp"
+        android:alpha="0"
+        android:background="@color/brick_red"
+        android:clickable="true"
+        android:rotation="-60"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/road_65"
+        android:layout_width="25dp"
+        android:layout_height="16dp"
+        android:layout_marginStart="296dp"
+        android:layout_marginTop="400dp"
+        android:alpha="0"
+        android:background="@color/brick_red"
+        android:clickable="true"
+        android:rotation="60"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/road_67"
+        android:layout_width="25dp"
+        android:layout_height="16dp"
+        android:layout_marginStart="364dp"
+        android:layout_marginTop="396dp"
+        android:alpha="0"
+        android:background="@color/brick_red"
+        android:clickable="true"
+        android:rotation="-60"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/road_68"
+        android:layout_width="25dp"
+        android:layout_height="16dp"
+        android:layout_marginStart="363dp"
+        android:layout_marginTop="357dp"
+        android:alpha="0"
+        android:background="@color/brick_red"
+        android:clickable="true"
+        android:rotation="60"
+        app:layout_constraintStart_toEndOf="@+id/road_0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/road_69"
+        android:layout_width="25dp"
+        android:layout_height="16dp"
+        android:layout_marginStart="328dp"
+        android:layout_marginTop="340dp"
+        android:alpha="0"
+        android:background="@color/brick_red"
+        android:clickable="true"
+        android:rotation="0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/road_58"
+        android:layout_width="25dp"
+        android:layout_height="16dp"
+        android:layout_marginStart="296dp"
+        android:layout_marginTop="436dp"
+        android:alpha="0"
+        android:background="@color/brick_red"
+        android:clickable="true"
+        android:rotation="-60"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/road_60"
+        android:layout_width="25dp"
+        android:layout_height="16dp"
+        android:layout_marginStart="328dp"
+        android:layout_marginTop="495dp"
+        android:alpha="0"
+        android:background="@color/brick_red"
+        android:clickable="true"
+        android:rotation="0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/road_61"
+        android:layout_width="25dp"
+        android:layout_height="16dp"
+        android:layout_marginStart="362dp"
+        android:layout_marginTop="478dp"
+        android:alpha="0"
+        android:background="@color/brick_red"
+        android:clickable="true"
+        android:rotation="-60"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/road_62"
+        android:layout_width="25dp"
+        android:layout_height="16dp"
+        android:layout_marginStart="363dp"
+        android:layout_marginTop="438dp"
+        android:alpha="0"
+        android:background="@color/brick_red"
+        android:clickable="true"
+        android:rotation="60"
+        app:layout_constraintStart_toEndOf="@+id/road_0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/road_63"
+        android:layout_width="25dp"
+        android:layout_height="16dp"
+        android:layout_marginStart="330dp"
+        android:layout_marginTop="420dp"
+        android:alpha="0"
+        android:background="@color/brick_red"
+        android:clickable="true"
+        android:rotation="0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/road_52"
+        android:layout_width="25dp"
+        android:layout_height="16dp"
+        android:layout_marginStart="228dp"
+        android:layout_marginTop="480dp"
+        android:alpha="0"
+        android:background="@color/brick_red"
+        android:clickable="true"
+        android:rotation="-60"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/road_54"
+        android:layout_width="25dp"
+        android:layout_height="16dp"
+        android:layout_marginStart="260dp"
+        android:layout_marginTop="535dp"
+        android:alpha="0"
+        android:background="@color/brick_red"
+        android:clickable="true"
+        android:rotation="0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/road_55"
+        android:layout_width="25dp"
+        android:layout_height="16dp"
+        android:layout_marginStart="292dp"
+        android:layout_marginTop="516dp"
+        android:alpha="0"
+        android:background="@color/brick_red"
+        android:clickable="true"
+        android:rotation="-60"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/road_56"
+        android:layout_width="25dp"
+        android:layout_height="16dp"
+        android:layout_marginStart="295dp"
+        android:layout_marginTop="477dp"
+        android:alpha="0"
+        android:background="@color/brick_red"
+        android:clickable="true"
+        android:rotation="60"
+        app:layout_constraintStart_toEndOf="@+id/road_0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/road_57"
+        android:layout_width="25dp"
+        android:layout_height="16dp"
+        android:layout_marginStart="260dp"
+        android:layout_marginTop="460dp"
+        android:alpha="0"
+        android:background="@color/brick_red"
+        android:clickable="true"
+        android:rotation="0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/road_43"
+        android:layout_width="25dp"
+        android:layout_height="16dp"
+        android:layout_marginStart="156dp"
+        android:layout_marginTop="512dp"
+        android:alpha="0"
+        android:background="@color/brick_red"
+        android:clickable="true"
+        android:rotation="-60"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="KeyboardInaccessibleWidget" />
+
+    <TextView
+        android:id="@+id/road_44"
+        android:layout_width="25dp"
+        android:layout_height="16dp"
+        android:layout_marginStart="154dp"
+        android:layout_marginTop="476dp"
+        android:alpha="0"
+        android:background="@color/brick_red"
+        android:clickable="true"
+        android:rotation="60"
+        app:layout_constraintStart_toEndOf="@+id/road_0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="KeyboardInaccessibleWidget" />
+
+    <TextView
+        android:id="@+id/road_45"
+        android:layout_width="25dp"
+        android:layout_height="16dp"
+        android:layout_marginStart="120dp"
+        android:layout_marginTop="456dp"
+        android:alpha="0"
+        android:background="@color/brick_red"
+        android:clickable="true"
+        android:rotation="0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/road_41"
+        android:layout_width="25dp"
+        android:layout_height="16dp"
+        android:layout_marginStart="88dp"
+        android:layout_marginTop="512dp"
+        android:alpha="0"
+        android:background="@color/brick_red"
+        android:clickable="true"
+        android:rotation="60"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/road_42"
+        android:layout_width="25dp"
+        android:layout_height="16dp"
+        android:layout_marginStart="120dp"
+        android:layout_marginTop="536dp"
+        android:alpha="0"
+        android:background="@color/brick_red"
+        android:clickable="true"
+        android:rotation="0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/road_22"
+        android:layout_width="25dp"
+        android:layout_height="16dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="436dp"
+        android:alpha="0"
+        android:background="@color/brick_red"
+        android:clickable="true"
+        android:rotation="-60"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/road_23"
+        android:layout_width="25dp"
+        android:layout_height="16dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="476dp"
+        android:alpha="0"
+        android:background="@color/brick_red"
+        android:clickable="true"
+        android:rotation="60"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/road_24"
+        android:layout_width="25dp"
+        android:layout_height="16dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="496dp"
+        android:alpha="0"
+        android:background="@color/brick_red"
+        android:clickable="true"
+        android:rotation="0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/road_25"
+        android:layout_width="25dp"
+        android:layout_height="16dp"
+        android:layout_marginStart="88dp"
+        android:layout_marginTop="472dp"
+        android:alpha="0"
+        android:background="@color/brick_red"
+        android:clickable="true"
+        android:rotation="-60"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/road_26"
+        android:layout_width="25dp"
+        android:layout_height="16dp"
+        android:layout_marginStart="87dp"
+        android:layout_marginTop="436dp"
+        android:alpha="0"
+        android:background="@color/brick_red"
+        android:clickable="true"
+        android:rotation="60"
+        app:layout_constraintStart_toEndOf="@+id/road_0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/road_27"
+        android:layout_width="25dp"
+        android:layout_height="16dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="416dp"
+        android:alpha="0"
+        android:background="@color/brick_red"
+        android:clickable="true"
+        android:rotation="0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 
 
     <TextView
@@ -1818,1174 +2988,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/road_118"
-        android:layout_width="25dp"
-        android:layout_height="16dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="436dp"
-        android:alpha="0"
-        android:background="@color/brick_red"
-        android:clickable="true"
-        android:rotation="-60"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/road_119"
-        android:layout_width="25dp"
-        android:layout_height="16dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="476dp"
-        android:alpha="0"
-        android:background="@color/brick_red"
-        android:clickable="true"
-        android:rotation="60"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/road_120"
-        android:layout_width="25dp"
-        android:layout_height="16dp"
-        android:layout_marginStart="56dp"
-        android:layout_marginTop="496dp"
-        android:alpha="0"
-        android:background="@color/brick_red"
-        android:clickable="true"
-        android:rotation="0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/road_121"
-        android:layout_width="25dp"
-        android:layout_height="16dp"
-        android:layout_marginStart="88dp"
-        android:layout_marginTop="472dp"
-        android:alpha="0"
-        android:background="@color/brick_red"
-        android:clickable="true"
-        android:rotation="-60"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/road_122"
-        android:layout_width="25dp"
-        android:layout_height="16dp"
-        android:layout_marginStart="87dp"
-        android:layout_marginTop="436dp"
-        android:alpha="0"
-        android:background="@color/brick_red"
-        android:clickable="true"
-        android:rotation="60"
-        app:layout_constraintStart_toEndOf="@+id/road_0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/road_123"
-        android:layout_width="25dp"
-        android:layout_height="16dp"
-        android:layout_marginStart="56dp"
-        android:layout_marginTop="416dp"
-        android:alpha="0"
-        android:background="@color/brick_red"
-        android:clickable="true"
-        android:rotation="0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/road_21"
-        android:layout_width="25dp"
-        android:layout_height="16dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="352dp"
-        android:alpha="0"
-        android:background="@color/brick_red"
-        android:clickable="true"
-        android:rotation="-60"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/road_6"
-        android:layout_width="25dp"
-        android:layout_height="16dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="392dp"
-        android:alpha="0"
-        android:background="@color/brick_red"
-        android:clickable="true"
-        android:rotation="60"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/road_7"
-        android:layout_width="25dp"
-        android:layout_height="16dp"
-        android:layout_marginStart="56dp"
-        android:layout_marginTop="416dp"
-        android:alpha="0"
-        android:background="@color/brick_red"
-        android:clickable="true"
-        android:rotation="0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/road_12"
-        android:layout_width="25dp"
-        android:layout_height="16dp"
-        android:layout_marginStart="88dp"
-        android:layout_marginTop="392dp"
-        android:alpha="0"
-        android:background="@color/brick_red"
-        android:clickable="true"
-        android:rotation="-60"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/road_18"
-        android:layout_width="25dp"
-        android:layout_height="16dp"
-        android:layout_marginStart="87dp"
-        android:layout_marginTop="356dp"
-        android:alpha="0"
-        android:background="@color/brick_red"
-        android:clickable="true"
-        android:rotation="60"
-        app:layout_constraintStart_toEndOf="@+id/road_0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-
-    <TextView
-        android:id="@+id/road_14"
-        android:layout_width="25dp"
-        android:layout_height="16dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="280dp"
-        android:alpha="0"
-        android:background="@color/brick_red"
-        android:clickable="true"
-        android:rotation="-60"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/road_15"
-        android:layout_width="25dp"
-        android:layout_height="16dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="320dp"
-        android:alpha="0"
-        android:background="@color/brick_red"
-        android:clickable="true"
-        android:rotation="60"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/road_16"
-        android:layout_width="25dp"
-        android:layout_height="16dp"
-        android:layout_marginStart="56dp"
-        android:layout_marginTop="340dp"
-        android:alpha="0"
-        android:background="@color/brick_red"
-        android:clickable="true"
-        android:rotation="0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/road_17"
-        android:layout_width="25dp"
-        android:layout_height="16dp"
-        android:layout_marginStart="88dp"
-        android:layout_marginTop="316dp"
-        android:alpha="0"
-        android:background="@color/brick_red"
-        android:clickable="true"
-        android:rotation="-60"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/road_19"
-        android:layout_width="25dp"
-        android:layout_height="16dp"
-        android:layout_marginStart="56dp"
-        android:layout_marginTop="260dp"
-        android:alpha="0"
-        android:background="@color/brick_red"
-        android:clickable="true"
-        android:rotation="0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/road_8"
-        android:layout_width="25dp"
-        android:layout_height="16dp"
-        android:layout_marginStart="88dp"
-        android:layout_marginTop="236dp"
-        android:alpha="0"
-        android:background="@color/brick_red"
-        android:clickable="true"
-        android:rotation="-60"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/road_9"
-        android:layout_width="25dp"
-        android:layout_height="16dp"
-        android:layout_marginStart="88dp"
-        android:layout_marginTop="276dp"
-        android:alpha="0"
-        android:background="@color/brick_red"
-        android:clickable="true"
-        android:rotation="60"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/road_10"
-        android:layout_width="25dp"
-        android:layout_height="16dp"
-        android:layout_marginStart="120dp"
-        android:layout_marginTop="300dp"
-        android:alpha="0"
-        android:background="@color/brick_red"
-        android:clickable="true"
-        android:rotation="0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/road_11"
-        android:layout_width="25dp"
-        android:layout_height="16dp"
-        android:layout_marginStart="156dp"
-        android:layout_marginTop="276dp"
-        android:alpha="0"
-        android:background="@color/brick_red"
-        android:clickable="true"
-        android:rotation="-60"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/road_13"
-        android:layout_width="25dp"
-        android:layout_height="16dp"
-        android:layout_marginStart="120dp"
-        android:layout_marginTop="220dp"
-        android:alpha="0"
-        android:background="@color/brick_red"
-        android:clickable="true"
-        android:rotation="0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/road_5"
-        android:layout_width="25dp"
-        android:layout_height="16dp"
-        android:layout_marginStart="156dp"
-        android:layout_marginTop="203dp"
-        android:alpha="0"
-        android:background="@color/brick_red"
-        android:clickable="true"
-        android:rotation="-60"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/road_4"
-        android:layout_width="25dp"
-        android:layout_height="16dp"
-        android:layout_marginStart="155dp"
-        android:layout_marginTop="243dp"
-        android:alpha="0"
-        android:background="@color/brick_red"
-        android:clickable="true"
-        android:rotation="60"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/road_3"
-        android:layout_width="25dp"
-        android:layout_height="16dp"
-        android:layout_marginStart="189dp"
-        android:layout_marginTop="264dp"
-        android:alpha="0"
-        android:background="@color/brick_red"
-        android:clickable="true"
-        android:rotation="0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/road_2"
-        android:layout_width="25dp"
-        android:layout_height="16dp"
-        android:layout_marginStart="223dp"
-        android:layout_marginTop="242dp"
-        android:alpha="0"
-        android:background="@color/brick_red"
-        android:clickable="true"
-        android:rotation="-60"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/road_1"
-        android:layout_width="25dp"
-        android:layout_height="16dp"
-        android:layout_marginStart="223dp"
-        android:layout_marginTop="204dp"
-        android:alpha="0"
-        android:background="@color/brick_red"
-        android:clickable="true"
-        android:rotation="60"
-        app:layout_constraintStart_toEndOf="@+id/road_0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/road_0"
-        android:layout_width="25dp"
-        android:layout_height="16dp"
-        android:layout_marginStart="189dp"
-        android:layout_marginTop="184dp"
-        android:alpha="0"
-        android:background="@color/brick_red"
-        android:clickable="true"
-        android:rotation="0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-
-    <TextView
-        android:id="@+id/road_112"
-        android:layout_width="25dp"
-        android:layout_height="16dp"
-        android:layout_marginStart="155dp"
-        android:layout_marginTop="433dp"
-        android:alpha="0"
-        android:background="@color/brick_red"
-        android:clickable="true"
-        android:rotation="-60"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/road_110"
-        android:layout_width="25dp"
-        android:layout_height="16dp"
-        android:layout_marginStart="260dp"
-        android:layout_marginTop="380dp"
-        android:alpha="0"
-        android:background="@color/brick_red"
-        android:clickable="true"
-        android:rotation="0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/road_109"
-        android:layout_width="25dp"
-        android:layout_height="16dp"
-        android:layout_marginStart="222dp"
-        android:layout_marginTop="435dp"
-        android:alpha="0"
-        android:background="@color/brick_red"
-        android:clickable="true"
-        android:rotation="60"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-
-    <TextView
-        android:id="@+id/road_47"
-        android:layout_width="25dp"
-        android:layout_height="16dp"
-        android:layout_marginStart="154dp"
-        android:layout_marginTop="556dp"
-        android:alpha="0"
-        android:background="@color/brick_red"
-        android:clickable="true"
-        android:rotation="60"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/road_48"
-        android:layout_width="25dp"
-        android:layout_height="16dp"
-        android:layout_marginStart="188dp"
-        android:layout_marginTop="576dp"
-        android:alpha="0"
-        android:background="@color/brick_red"
-        android:clickable="true"
-        android:rotation="0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/road_49"
-        android:layout_width="25dp"
-        android:layout_height="16dp"
-        android:layout_marginStart="220dp"
-        android:layout_marginTop="556dp"
-        android:alpha="0"
-        android:background="@color/brick_red"
-        android:clickable="true"
-        android:rotation="-60"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/road_50"
-        android:layout_width="25dp"
-        android:layout_height="16dp"
-        android:layout_marginStart="223dp"
-        android:layout_marginTop="516dp"
-        android:alpha="0"
-        android:background="@color/brick_red"
-        android:clickable="true"
-        android:rotation="60"
-        app:layout_constraintStart_toEndOf="@+id/road_0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/road_51"
-        android:layout_width="25dp"
-        android:layout_height="16dp"
-        android:layout_marginStart="188dp"
-        android:layout_marginTop="496dp"
-        android:alpha="0"
-        android:background="@color/brick_red"
-        android:clickable="true"
-        android:rotation="0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-
-    <TextView
-        android:id="@+id/road_104"
-        android:layout_width="25dp"
-        android:layout_height="16dp"
-        android:layout_marginStart="153dp"
-        android:layout_marginTop="394dp"
-        android:alpha="0"
-        android:background="@color/brick_red"
-        android:clickable="true"
-        android:rotation="60"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/road_105"
-        android:layout_width="25dp"
-        android:layout_height="16dp"
-        android:layout_marginStart="188dp"
-        android:layout_marginTop="416dp"
-        android:alpha="0"
-        android:background="@color/brick_red"
-        android:clickable="true"
-        android:rotation="0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/road_106"
-        android:layout_width="25dp"
-        android:layout_height="16dp"
-        android:layout_marginStart="224dp"
-        android:layout_marginTop="392dp"
-        android:alpha="0"
-        android:background="@color/brick_red"
-        android:clickable="true"
-        android:rotation="-60"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/road_107"
-        android:layout_width="25dp"
-        android:layout_height="16dp"
-        android:layout_marginStart="223dp"
-        android:layout_marginTop="356dp"
-        android:alpha="0"
-        android:background="@color/brick_red"
-        android:clickable="true"
-        android:rotation="60"
-        app:layout_constraintStart_toEndOf="@+id/road_0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-
-    <TextView
-        android:id="@+id/road_99"
-        android:layout_width="25dp"
-        android:layout_height="16dp"
-        android:layout_marginStart="123dp"
-        android:layout_marginTop="380dp"
-        android:alpha="0"
-        android:background="@color/brick_red"
-        android:clickable="true"
-        android:rotation="0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/road_100"
-        android:layout_width="25dp"
-        android:layout_height="16dp"
-        android:layout_marginStart="156dp"
-        android:layout_marginTop="360dp"
-        android:alpha="0"
-        android:background="@color/brick_red"
-        android:clickable="true"
-        android:rotation="-60"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-
-    <TextView
-        android:id="@+id/road_92"
-        android:layout_width="25dp"
-        android:layout_height="16dp"
-        android:layout_marginStart="156dp"
-        android:layout_marginTop="316dp"
-        android:alpha="0"
-        android:background="@color/brick_red"
-        android:clickable="true"
-        android:rotation="60"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/road_93"
-        android:layout_width="25dp"
-        android:layout_height="16dp"
-        android:layout_marginStart="188dp"
-        android:layout_marginTop="340dp"
-        android:alpha="0"
-        android:background="@color/brick_red"
-        android:clickable="true"
-        android:rotation="0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/road_94"
-        android:layout_width="25dp"
-        android:layout_height="16dp"
-        android:layout_marginStart="224dp"
-        android:layout_marginTop="316dp"
-        android:alpha="0"
-        android:background="@color/brick_red"
-        android:clickable="true"
-        android:rotation="-60"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/road_82"
-        android:layout_width="25dp"
-        android:layout_height="16dp"
-        android:layout_marginStart="224dp"
-        android:layout_marginTop="280dp"
-        android:alpha="0"
-        android:background="@color/brick_red"
-        android:clickable="true"
-        android:rotation="60"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/road_83"
-        android:layout_width="25dp"
-        android:layout_height="16dp"
-        android:layout_marginStart="260dp"
-        android:layout_marginTop="300dp"
-        android:alpha="0"
-        android:background="@color/brick_red"
-        android:clickable="true"
-        android:rotation="0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/road_85"
-        android:layout_width="25dp"
-        android:layout_height="16dp"
-        android:layout_marginStart="293dp"
-        android:layout_marginTop="238dp"
-        android:alpha="0"
-        android:background="@color/brick_red"
-        android:clickable="true"
-        android:rotation="60"
-        app:layout_constraintStart_toEndOf="@+id/road_0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/road_86"
-        android:layout_width="25dp"
-        android:layout_height="16dp"
-        android:layout_marginStart="260dp"
-        android:layout_marginTop="220dp"
-        android:alpha="0"
-        android:background="@color/brick_red"
-        android:clickable="true"
-        android:rotation="0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-
-    <TextView
-        android:id="@+id/road_87"
-        android:layout_width="25dp"
-        android:layout_height="16dp"
-        android:layout_marginStart="224dp"
-        android:layout_marginTop="280dp"
-        android:alpha="0"
-        android:background="@color/brick_red"
-        android:clickable="true"
-        android:rotation="60"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/road_88"
-        android:layout_width="25dp"
-        android:layout_height="16dp"
-        android:layout_marginStart="260dp"
-        android:layout_marginTop="300dp"
-        android:alpha="0"
-        android:background="@color/brick_red"
-        android:clickable="true"
-        android:rotation="0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/road_89"
-        android:layout_width="25dp"
-        android:layout_height="16dp"
-        android:layout_marginStart="293dp"
-        android:layout_marginTop="238dp"
-        android:alpha="0"
-        android:background="@color/brick_red"
-        android:clickable="true"
-        android:rotation="60"
-        app:layout_constraintStart_toEndOf="@+id/road_0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/road_90"
-        android:layout_width="25dp"
-        android:layout_height="16dp"
-        android:layout_marginStart="260dp"
-        android:layout_marginTop="220dp"
-        android:alpha="0"
-        android:background="@color/brick_red"
-        android:clickable="true"
-        android:rotation="0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/road_70"
-        android:layout_width="25dp"
-        android:layout_height="16dp"
-        android:layout_marginStart="296dp"
-        android:layout_marginTop="280dp"
-        android:alpha="0"
-        android:background="@color/brick_red"
-        android:clickable="true"
-        android:rotation="-60"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/road_71"
-        android:layout_width="25dp"
-        android:layout_height="16dp"
-        android:layout_marginStart="296dp"
-        android:layout_marginTop="320dp"
-        android:alpha="0"
-        android:background="@color/brick_red"
-        android:clickable="true"
-        android:rotation="60"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/road_73"
-        android:layout_width="25dp"
-        android:layout_height="16dp"
-        android:layout_marginStart="362dp"
-        android:layout_marginTop="320dp"
-        android:alpha="0"
-        android:background="@color/brick_red"
-        android:clickable="true"
-        android:rotation="-60"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/road_74"
-        android:layout_width="25dp"
-        android:layout_height="16dp"
-        android:layout_marginStart="360dp"
-        android:layout_marginTop="280dp"
-        android:alpha="0"
-        android:background="@color/brick_red"
-        android:clickable="true"
-        android:rotation="60"
-        app:layout_constraintStart_toEndOf="@+id/road_0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/road_75"
-        android:layout_width="25dp"
-        android:layout_height="16dp"
-        android:layout_marginStart="328dp"
-        android:layout_marginTop="260dp"
-        android:alpha="0"
-        android:background="@color/brick_red"
-        android:clickable="true"
-        android:rotation="0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-
-    <TextView
-        android:id="@+id/road_76"
-        android:layout_width="25dp"
-        android:layout_height="16dp"
-        android:layout_marginStart="296dp"
-        android:layout_marginTop="280dp"
-        android:alpha="0"
-        android:background="@color/brick_red"
-        android:clickable="true"
-        android:rotation="-60"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/road_77"
-        android:layout_width="25dp"
-        android:layout_height="16dp"
-        android:layout_marginStart="296dp"
-        android:layout_marginTop="320dp"
-        android:alpha="0"
-        android:background="@color/brick_red"
-        android:clickable="true"
-        android:rotation="60"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/road_78"
-        android:layout_width="25dp"
-        android:layout_height="16dp"
-        android:layout_marginStart="362dp"
-        android:layout_marginTop="320dp"
-        android:alpha="0"
-        android:background="@color/brick_red"
-        android:clickable="true"
-        android:rotation="-60"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/road_79"
-        android:layout_width="25dp"
-        android:layout_height="16dp"
-        android:layout_marginStart="360dp"
-        android:layout_marginTop="280dp"
-        android:alpha="0"
-        android:background="@color/brick_red"
-        android:clickable="true"
-        android:rotation="60"
-        app:layout_constraintStart_toEndOf="@+id/road_0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/road_80"
-        android:layout_width="25dp"
-        android:layout_height="16dp"
-        android:layout_marginStart="328dp"
-        android:layout_marginTop="260dp"
-        android:alpha="0"
-        android:background="@color/brick_red"
-        android:clickable="true"
-        android:rotation="0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/road_64"
-        android:layout_width="25dp"
-        android:layout_height="16dp"
-        android:layout_marginStart="296dp"
-        android:layout_marginTop="360dp"
-        android:alpha="0"
-        android:background="@color/brick_red"
-        android:clickable="true"
-        android:rotation="-60"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/road_65"
-        android:layout_width="25dp"
-        android:layout_height="16dp"
-        android:layout_marginStart="296dp"
-        android:layout_marginTop="400dp"
-        android:alpha="0"
-        android:background="@color/brick_red"
-        android:clickable="true"
-        android:rotation="60"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/road_67"
-        android:layout_width="25dp"
-        android:layout_height="16dp"
-        android:layout_marginStart="364dp"
-        android:layout_marginTop="396dp"
-        android:alpha="0"
-        android:background="@color/brick_red"
-        android:clickable="true"
-        android:rotation="-60"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/road_68"
-        android:layout_width="25dp"
-        android:layout_height="16dp"
-        android:layout_marginStart="363dp"
-        android:layout_marginTop="357dp"
-        android:alpha="0"
-        android:background="@color/brick_red"
-        android:clickable="true"
-        android:rotation="60"
-        app:layout_constraintStart_toEndOf="@+id/road_0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/road_69"
-        android:layout_width="25dp"
-        android:layout_height="16dp"
-        android:layout_marginStart="328dp"
-        android:layout_marginTop="340dp"
-        android:alpha="0"
-        android:background="@color/brick_red"
-        android:clickable="true"
-        android:rotation="0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/road_58"
-        android:layout_width="25dp"
-        android:layout_height="16dp"
-        android:layout_marginStart="296dp"
-        android:layout_marginTop="436dp"
-        android:alpha="0"
-        android:background="@color/brick_red"
-        android:clickable="true"
-        android:rotation="-60"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/road_60"
-        android:layout_width="25dp"
-        android:layout_height="16dp"
-        android:layout_marginStart="328dp"
-        android:layout_marginTop="495dp"
-        android:alpha="0"
-        android:background="@color/brick_red"
-        android:clickable="true"
-        android:rotation="0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/road_61"
-        android:layout_width="25dp"
-        android:layout_height="16dp"
-        android:layout_marginStart="362dp"
-        android:layout_marginTop="478dp"
-        android:alpha="0"
-        android:background="@color/brick_red"
-        android:clickable="true"
-        android:rotation="-60"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-
-    <TextView
-        android:id="@+id/road_62"
-        android:layout_width="25dp"
-        android:layout_height="16dp"
-        android:layout_marginStart="363dp"
-        android:layout_marginTop="438dp"
-        android:alpha="0"
-        android:background="@color/brick_red"
-        android:clickable="true"
-        android:rotation="60"
-        app:layout_constraintStart_toEndOf="@+id/road_0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/road_63"
-        android:layout_width="25dp"
-        android:layout_height="16dp"
-        android:layout_marginStart="330dp"
-        android:layout_marginTop="420dp"
-        android:alpha="0"
-        android:background="@color/brick_red"
-        android:clickable="true"
-        android:rotation="0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/road_52"
-        android:layout_width="25dp"
-        android:layout_height="16dp"
-        android:layout_marginStart="228dp"
-        android:layout_marginTop="480dp"
-        android:alpha="0"
-        android:background="@color/brick_red"
-        android:clickable="true"
-        android:rotation="-60"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/road_54"
-        android:layout_width="25dp"
-        android:layout_height="16dp"
-        android:layout_marginStart="260dp"
-        android:layout_marginTop="535dp"
-        android:alpha="0"
-        android:background="@color/brick_red"
-        android:clickable="true"
-        android:rotation="0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/road_55"
-        android:layout_width="25dp"
-        android:layout_height="16dp"
-        android:layout_marginStart="292dp"
-        android:layout_marginTop="516dp"
-        android:alpha="0"
-        android:background="@color/brick_red"
-        android:clickable="true"
-        android:rotation="-60"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/road_56"
-        android:layout_width="25dp"
-        android:layout_height="16dp"
-        android:layout_marginStart="295dp"
-        android:layout_marginTop="477dp"
-        android:alpha="0"
-        android:background="@color/brick_red"
-        android:clickable="true"
-        android:rotation="60"
-        app:layout_constraintStart_toEndOf="@+id/road_0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/road_57"
-        android:layout_width="25dp"
-        android:layout_height="16dp"
-        android:layout_marginStart="260dp"
-        android:layout_marginTop="460dp"
-        android:alpha="0"
-        android:background="@color/brick_red"
-        android:clickable="true"
-        android:rotation="0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/road_43"
-        android:layout_width="25dp"
-        android:layout_height="16dp"
-        android:layout_marginStart="156dp"
-        android:layout_marginTop="512dp"
-        android:alpha="0"
-        android:background="@color/brick_red"
-        android:clickable="true"
-        android:rotation="-60"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="KeyboardInaccessibleWidget" />
-
-    <TextView
-        android:id="@+id/road_44"
-        android:layout_width="25dp"
-        android:layout_height="16dp"
-        android:layout_marginStart="154dp"
-        android:layout_marginTop="476dp"
-        android:alpha="0"
-        android:background="@color/brick_red"
-        android:clickable="true"
-        android:rotation="60"
-        app:layout_constraintStart_toEndOf="@+id/road_0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="KeyboardInaccessibleWidget" />
-
-    <TextView
-        android:id="@+id/road_45"
-        android:layout_width="25dp"
-        android:layout_height="16dp"
-        android:layout_marginStart="120dp"
-        android:layout_marginTop="456dp"
-        android:alpha="0"
-        android:background="@color/brick_red"
-        android:clickable="true"
-        android:rotation="0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/road_41"
-        android:layout_width="25dp"
-        android:layout_height="16dp"
-        android:layout_marginStart="88dp"
-        android:layout_marginTop="512dp"
-        android:alpha="0"
-        android:background="@color/brick_red"
-        android:clickable="true"
-        android:rotation="60"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/road_42"
-        android:layout_width="25dp"
-        android:layout_height="16dp"
-        android:layout_marginStart="120dp"
-        android:layout_marginTop="536dp"
-        android:alpha="0"
-        android:background="@color/brick_red"
-        android:clickable="true"
-        android:rotation="0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/road_22"
-        android:layout_width="25dp"
-        android:layout_height="16dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="436dp"
-        android:alpha="0"
-        android:background="@color/brick_red"
-        android:clickable="true"
-        android:rotation="-60"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/road_23"
-        android:layout_width="25dp"
-        android:layout_height="16dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="476dp"
-        android:alpha="0"
-        android:background="@color/brick_red"
-        android:clickable="true"
-        android:rotation="60"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/road_24"
-        android:layout_width="25dp"
-        android:layout_height="16dp"
-        android:layout_marginStart="56dp"
-        android:layout_marginTop="496dp"
-        android:alpha="0"
-        android:background="@color/brick_red"
-        android:clickable="true"
-        android:rotation="0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/road_25"
-        android:layout_width="25dp"
-        android:layout_height="16dp"
-        android:layout_marginStart="88dp"
-        android:layout_marginTop="472dp"
-        android:alpha="0"
-        android:background="@color/brick_red"
-        android:clickable="true"
-        android:rotation="-60"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/road_26"
-        android:layout_width="25dp"
-        android:layout_height="16dp"
-        android:layout_marginStart="87dp"
-        android:layout_marginTop="436dp"
-        android:alpha="0"
-        android:background="@color/brick_red"
-        android:clickable="true"
-        android:rotation="60"
-        app:layout_constraintStart_toEndOf="@+id/road_0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/road_27"
-        android:layout_width="25dp"
-        android:layout_height="16dp"
-        android:layout_marginStart="56dp"
-        android:layout_marginTop="416dp"
-        android:alpha="0"
-        android:background="@color/brick_red"
-        android:clickable="true"
-        android:rotation="0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/road_build"
@@ -3148,7 +3151,25 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <Button
+        android:id="@+id/trade_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="296dp"
+        android:layout_marginTop="16dp"
+        android:text="Trade"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
+    <Button
+        android:id="@+id/exchange_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="288dp"
+        android:layout_marginTop="64dp"
+        android:text="Exchange"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
