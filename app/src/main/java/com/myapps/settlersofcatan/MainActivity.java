@@ -13,6 +13,7 @@ import android.widget.TextSwitcher;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.LinkedList;
 import java.util.Random;
 
 
@@ -1096,146 +1097,288 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void drawCards() {
-        int cardsToAdd = 0;
 
-        //scan through tiles for tile numbers that correspond to the dice roll
-        //then scan through that tile's settlements to see if any of those players
-        //need to collect cards
-        for (int i = 0; i < boardModel.getTileArray().length; i++) {
-            if (boardModel.getTileArray()[i].getTileNumber() == dieTotal) {
-                char cardType = boardModel.getTileArray()[i].getTileType();
-                for (int j= 0; j < boardModel.getTileArray()[i].getSettlements().length; j++) {
-
-                    //check if city and determine cards to add for city vs settlement
-                    if (boardModel.getTileArray()[i].getSettlements()[j].isCity()) {
-                        cardsToAdd = 2;
-                    }
-                    else {
-                        cardsToAdd = 1;
-                    }
-
-                    //if blue has a settlement
-                    if (boardModel.getTileArray()[i].getSettlements()[j].getColor() == 'b') {
-                        if (cardType == 'b') {
-                            boardModel.getBluePlayer().getBrickCard().setCardNumber(boardModel.getBluePlayer().getBrickCard().getCardNumber() + cardsToAdd);
-                            brick_card_blue.setText(Integer.toString(boardModel.getBluePlayer().getBrickCard().getCardNumber()));
-                            brick_card_blue.setGravity(Gravity.CENTER);
-                        }
-                        if (cardType == 'g') {
-                            boardModel.getBluePlayer().getGrainCard().setCardNumber(boardModel.getBluePlayer().getGrainCard().getCardNumber() + cardsToAdd);
-                            grain_card_blue.setText(Integer.toString(boardModel.getBluePlayer().getGrainCard().getCardNumber()));
-                            grain_card_blue.setGravity(Gravity.CENTER);
-                        }
-                        if (cardType == 'w') {
-                            boardModel.getBluePlayer().getWoolCard().setCardNumber(boardModel.getBluePlayer().getWoolCard().getCardNumber() + cardsToAdd);
-                            wool_card_blue.setText(Integer.toString(boardModel.getBluePlayer().getWoolCard().getCardNumber()));
-                            wool_card_blue.setGravity(Gravity.CENTER);
-                        }
-                        if (cardType == 'l') {
-                            boardModel.getBluePlayer().getLumberCard().setCardNumber(boardModel.getBluePlayer().getLumberCard().getCardNumber() + cardsToAdd);
-                            lumber_card_blue.setText(Integer.toString(boardModel.getBluePlayer().getLumberCard().getCardNumber()));
-                            lumber_card_blue.setGravity(Gravity.CENTER);
-                        }
-                        if (cardType == 'o') {
-                            boardModel.getBluePlayer().getOreCard().setCardNumber(boardModel.getBluePlayer().getOreCard().getCardNumber() + cardsToAdd);
-                            ore_card_blue.setText(Integer.toString(boardModel.getBluePlayer().getOreCard().getCardNumber()));
-                            ore_card_blue.setGravity(Gravity.CENTER);
-                        }
-                    }
-
-
-                    //if orange has a settlement
-                    if (boardModel.getTileArray()[i].getSettlements()[j].getColor() == 'o') {
-                        if (cardType == 'b') {
-                            boardModel.getOrangePlayer().getBrickCard().setCardNumber(boardModel.getOrangePlayer().getBrickCard().getCardNumber() + cardsToAdd);
-                            brick_card_orange.setText(Integer.toString(boardModel.getOrangePlayer().getBrickCard().getCardNumber()));
-                            brick_card_orange.setGravity(Gravity.CENTER);
-                        }
-                        if (cardType == 'g') {
-                            boardModel.getOrangePlayer().getGrainCard().setCardNumber(boardModel.getOrangePlayer().getGrainCard().getCardNumber() + cardsToAdd);
-                            grain_card_orange.setText(Integer.toString(boardModel.getOrangePlayer().getGrainCard().getCardNumber()));
-                            grain_card_orange.setGravity(Gravity.CENTER);
-                        }
-                        if (cardType == 'w') {
-                            boardModel.getOrangePlayer().getWoolCard().setCardNumber(boardModel.getOrangePlayer().getWoolCard().getCardNumber() + cardsToAdd);
-                            wool_card_orange.setText(Integer.toString(boardModel.getOrangePlayer().getWoolCard().getCardNumber()));
-                            wool_card_orange.setGravity(Gravity.CENTER);
-                        }
-                        if (cardType == 'l') {
-                            boardModel.getOrangePlayer().getLumberCard().setCardNumber(boardModel.getOrangePlayer().getLumberCard().getCardNumber() + cardsToAdd);
-                            lumber_card_orange.setText(Integer.toString(boardModel.getOrangePlayer().getLumberCard().getCardNumber()));
-                            lumber_card_blue.setGravity(Gravity.CENTER);
-                        }
-                        if (cardType == 'o') {
-                            boardModel.getOrangePlayer().getOreCard().setCardNumber(boardModel.getOrangePlayer().getOreCard().getCardNumber() + cardsToAdd);
-                            ore_card_orange.setText(Integer.toString(boardModel.getOrangePlayer().getOreCard().getCardNumber()));
-                            ore_card_orange.setGravity(Gravity.CENTER);
-                        }
-                    }
-
-
-                    //if purple has a settlement
-                    if (boardModel.getTileArray()[i].getSettlements()[j].getColor() == 'p') {
-                        if (cardType == 'b') {
-                            boardModel.getPurplePlayer().getBrickCard().setCardNumber(boardModel.getPurplePlayer().getBrickCard().getCardNumber() + cardsToAdd);
-                            brick_card_purple.setText(Integer.toString(boardModel.getPurplePlayer().getBrickCard().getCardNumber()));
-                            brick_card_purple.setGravity(Gravity.CENTER);
-                        }
-                        if (cardType == 'g') {
-                            boardModel.getPurplePlayer().getGrainCard().setCardNumber(boardModel.getPurplePlayer().getGrainCard().getCardNumber() + cardsToAdd);
-                            grain_card_purple.setText(Integer.toString(boardModel.getPurplePlayer().getGrainCard().getCardNumber()));
-                            grain_card_purple.setGravity(Gravity.CENTER);
-                        }
-                        if (cardType == 'w') {
-                            boardModel.getPurplePlayer().getWoolCard().setCardNumber(boardModel.getPurplePlayer().getWoolCard().getCardNumber() + cardsToAdd);
-                            wool_card_purple.setText(Integer.toString(boardModel.getPurplePlayer().getWoolCard().getCardNumber()));
-                            wool_card_purple.setGravity(Gravity.CENTER);
-                        }
-                        if (cardType == 'l') {
-                            boardModel.getPurplePlayer().getLumberCard().setCardNumber(boardModel.getPurplePlayer().getLumberCard().getCardNumber() + cardsToAdd);
-                            lumber_card_purple.setText(Integer.toString(boardModel.getPurplePlayer().getLumberCard().getCardNumber()));
-                            lumber_card_purple.setGravity(Gravity.CENTER);
-                        }
-                        if (cardType == 'o') {
-                            boardModel.getPurplePlayer().getOreCard().setCardNumber(boardModel.getPurplePlayer().getOreCard().getCardNumber() + cardsToAdd);
-                            ore_card_purple.setText(Integer.toString(boardModel.getPurplePlayer().getOreCard().getCardNumber()));
-                            ore_card_purple.setGravity(Gravity.CENTER);
-                        }
-                    }
+        if (dieTotal == 7) {
+            discardCards();
 
 
 
-                    //if white has a settlement
-                    if (boardModel.getTileArray()[i].getSettlements()[j].getColor() == 'w') {
-                        if (cardType == 'b') {
-                            boardModel.getWhitePlayer().getBrickCard().setCardNumber(boardModel.getWhitePlayer().getBrickCard().getCardNumber() + cardsToAdd);
-                            brick_card_white.setText(Integer.toString(boardModel.getWhitePlayer().getBrickCard().getCardNumber()));
-                            brick_card_white.setGravity(Gravity.CENTER);
+        }
+        //die total is any number other than 7
+        else {
+
+            int cardsToAdd = 0;
+
+            //scan through tiles for tile numbers that correspond to the dice roll
+            //then scan through that tile's settlements to see if any of those players
+            //need to collect cards
+            for (int i = 0; i < boardModel.getTileArray().length; i++) {
+                if (boardModel.getTileArray()[i].getTileNumber() == dieTotal) {
+                    char cardType = boardModel.getTileArray()[i].getTileType();
+                    for (int j = 0; j < boardModel.getTileArray()[i].getSettlements().length; j++) {
+
+                        //check if city and determine cards to add for city vs settlement
+                        if (boardModel.getTileArray()[i].getSettlements()[j].isCity()) {
+                            cardsToAdd = 2;
+                        } else {
+                            cardsToAdd = 1;
                         }
-                        if (cardType == 'g') {
-                            boardModel.getWhitePlayer().getGrainCard().setCardNumber(boardModel.getWhitePlayer().getGrainCard().getCardNumber() + cardsToAdd);
-                            grain_card_white.setText(Integer.toString(boardModel.getWhitePlayer().getGrainCard().getCardNumber()));
-                            grain_card_white.setGravity(Gravity.CENTER);
+
+                        //if blue has a settlement
+                        if (boardModel.getTileArray()[i].getSettlements()[j].getColor() == 'b') {
+                            if (cardType == 'b') {
+                                boardModel.getBluePlayer().getBrickCard().setCardNumber(boardModel.getBluePlayer().getBrickCard().getCardNumber() + cardsToAdd);
+                                brick_card_blue.setText(Integer.toString(boardModel.getBluePlayer().getBrickCard().getCardNumber()));
+                                brick_card_blue.setGravity(Gravity.CENTER);
+                            }
+                            if (cardType == 'g') {
+                                boardModel.getBluePlayer().getGrainCard().setCardNumber(boardModel.getBluePlayer().getGrainCard().getCardNumber() + cardsToAdd);
+                                grain_card_blue.setText(Integer.toString(boardModel.getBluePlayer().getGrainCard().getCardNumber()));
+                                grain_card_blue.setGravity(Gravity.CENTER);
+                            }
+                            if (cardType == 'w') {
+                                boardModel.getBluePlayer().getWoolCard().setCardNumber(boardModel.getBluePlayer().getWoolCard().getCardNumber() + cardsToAdd);
+                                wool_card_blue.setText(Integer.toString(boardModel.getBluePlayer().getWoolCard().getCardNumber()));
+                                wool_card_blue.setGravity(Gravity.CENTER);
+                            }
+                            if (cardType == 'l') {
+                                boardModel.getBluePlayer().getLumberCard().setCardNumber(boardModel.getBluePlayer().getLumberCard().getCardNumber() + cardsToAdd);
+                                lumber_card_blue.setText(Integer.toString(boardModel.getBluePlayer().getLumberCard().getCardNumber()));
+                                lumber_card_blue.setGravity(Gravity.CENTER);
+                            }
+                            if (cardType == 'o') {
+                                boardModel.getBluePlayer().getOreCard().setCardNumber(boardModel.getBluePlayer().getOreCard().getCardNumber() + cardsToAdd);
+                                ore_card_blue.setText(Integer.toString(boardModel.getBluePlayer().getOreCard().getCardNumber()));
+                                ore_card_blue.setGravity(Gravity.CENTER);
+                            }
                         }
-                        if (cardType == 'w') {
-                            boardModel.getWhitePlayer().getWoolCard().setCardNumber(boardModel.getWhitePlayer().getWoolCard().getCardNumber() + cardsToAdd);
-                            wool_card_white.setText(Integer.toString(boardModel.getWhitePlayer().getWoolCard().getCardNumber()));
-                            wool_card_white.setGravity(Gravity.CENTER);
+
+
+                        //if orange has a settlement
+                        if (boardModel.getTileArray()[i].getSettlements()[j].getColor() == 'o') {
+                            if (cardType == 'b') {
+                                boardModel.getOrangePlayer().getBrickCard().setCardNumber(boardModel.getOrangePlayer().getBrickCard().getCardNumber() + cardsToAdd);
+                                brick_card_orange.setText(Integer.toString(boardModel.getOrangePlayer().getBrickCard().getCardNumber()));
+                                brick_card_orange.setGravity(Gravity.CENTER);
+                            }
+                            if (cardType == 'g') {
+                                boardModel.getOrangePlayer().getGrainCard().setCardNumber(boardModel.getOrangePlayer().getGrainCard().getCardNumber() + cardsToAdd);
+                                grain_card_orange.setText(Integer.toString(boardModel.getOrangePlayer().getGrainCard().getCardNumber()));
+                                grain_card_orange.setGravity(Gravity.CENTER);
+                            }
+                            if (cardType == 'w') {
+                                boardModel.getOrangePlayer().getWoolCard().setCardNumber(boardModel.getOrangePlayer().getWoolCard().getCardNumber() + cardsToAdd);
+                                wool_card_orange.setText(Integer.toString(boardModel.getOrangePlayer().getWoolCard().getCardNumber()));
+                                wool_card_orange.setGravity(Gravity.CENTER);
+                            }
+                            if (cardType == 'l') {
+                                boardModel.getOrangePlayer().getLumberCard().setCardNumber(boardModel.getOrangePlayer().getLumberCard().getCardNumber() + cardsToAdd);
+                                lumber_card_orange.setText(Integer.toString(boardModel.getOrangePlayer().getLumberCard().getCardNumber()));
+                                lumber_card_blue.setGravity(Gravity.CENTER);
+                            }
+                            if (cardType == 'o') {
+                                boardModel.getOrangePlayer().getOreCard().setCardNumber(boardModel.getOrangePlayer().getOreCard().getCardNumber() + cardsToAdd);
+                                ore_card_orange.setText(Integer.toString(boardModel.getOrangePlayer().getOreCard().getCardNumber()));
+                                ore_card_orange.setGravity(Gravity.CENTER);
+                            }
                         }
-                        if (cardType == 'l') {
-                            boardModel.getWhitePlayer().getLumberCard().setCardNumber(boardModel.getWhitePlayer().getLumberCard().getCardNumber() + cardsToAdd);
-                            lumber_card_white.setText(Integer.toString(boardModel.getWhitePlayer().getLumberCard().getCardNumber()));
-                            lumber_card_white.setGravity(Gravity.CENTER);
+
+
+                        //if purple has a settlement
+                        if (boardModel.getTileArray()[i].getSettlements()[j].getColor() == 'p') {
+                            if (cardType == 'b') {
+                                boardModel.getPurplePlayer().getBrickCard().setCardNumber(boardModel.getPurplePlayer().getBrickCard().getCardNumber() + cardsToAdd);
+                                brick_card_purple.setText(Integer.toString(boardModel.getPurplePlayer().getBrickCard().getCardNumber()));
+                                brick_card_purple.setGravity(Gravity.CENTER);
+                            }
+                            if (cardType == 'g') {
+                                boardModel.getPurplePlayer().getGrainCard().setCardNumber(boardModel.getPurplePlayer().getGrainCard().getCardNumber() + cardsToAdd);
+                                grain_card_purple.setText(Integer.toString(boardModel.getPurplePlayer().getGrainCard().getCardNumber()));
+                                grain_card_purple.setGravity(Gravity.CENTER);
+                            }
+                            if (cardType == 'w') {
+                                boardModel.getPurplePlayer().getWoolCard().setCardNumber(boardModel.getPurplePlayer().getWoolCard().getCardNumber() + cardsToAdd);
+                                wool_card_purple.setText(Integer.toString(boardModel.getPurplePlayer().getWoolCard().getCardNumber()));
+                                wool_card_purple.setGravity(Gravity.CENTER);
+                            }
+                            if (cardType == 'l') {
+                                boardModel.getPurplePlayer().getLumberCard().setCardNumber(boardModel.getPurplePlayer().getLumberCard().getCardNumber() + cardsToAdd);
+                                lumber_card_purple.setText(Integer.toString(boardModel.getPurplePlayer().getLumberCard().getCardNumber()));
+                                lumber_card_purple.setGravity(Gravity.CENTER);
+                            }
+                            if (cardType == 'o') {
+                                boardModel.getPurplePlayer().getOreCard().setCardNumber(boardModel.getPurplePlayer().getOreCard().getCardNumber() + cardsToAdd);
+                                ore_card_purple.setText(Integer.toString(boardModel.getPurplePlayer().getOreCard().getCardNumber()));
+                                ore_card_purple.setGravity(Gravity.CENTER);
+                            }
                         }
-                        if (cardType == 'o') {
-                            boardModel.getWhitePlayer().getOreCard().setCardNumber(boardModel.getWhitePlayer().getOreCard().getCardNumber() + cardsToAdd);
-                            ore_card_white.setText(Integer.toString(boardModel.getWhitePlayer().getOreCard().getCardNumber()));
-                            ore_card_white.setGravity(Gravity.CENTER);
+
+
+                        //if white has a settlement
+                        if (boardModel.getTileArray()[i].getSettlements()[j].getColor() == 'w') {
+                            if (cardType == 'b') {
+                                boardModel.getWhitePlayer().getBrickCard().setCardNumber(boardModel.getWhitePlayer().getBrickCard().getCardNumber() + cardsToAdd);
+                                brick_card_white.setText(Integer.toString(boardModel.getWhitePlayer().getBrickCard().getCardNumber()));
+                                brick_card_white.setGravity(Gravity.CENTER);
+                            }
+                            if (cardType == 'g') {
+                                boardModel.getWhitePlayer().getGrainCard().setCardNumber(boardModel.getWhitePlayer().getGrainCard().getCardNumber() + cardsToAdd);
+                                grain_card_white.setText(Integer.toString(boardModel.getWhitePlayer().getGrainCard().getCardNumber()));
+                                grain_card_white.setGravity(Gravity.CENTER);
+                            }
+                            if (cardType == 'w') {
+                                boardModel.getWhitePlayer().getWoolCard().setCardNumber(boardModel.getWhitePlayer().getWoolCard().getCardNumber() + cardsToAdd);
+                                wool_card_white.setText(Integer.toString(boardModel.getWhitePlayer().getWoolCard().getCardNumber()));
+                                wool_card_white.setGravity(Gravity.CENTER);
+                            }
+                            if (cardType == 'l') {
+                                boardModel.getWhitePlayer().getLumberCard().setCardNumber(boardModel.getWhitePlayer().getLumberCard().getCardNumber() + cardsToAdd);
+                                lumber_card_white.setText(Integer.toString(boardModel.getWhitePlayer().getLumberCard().getCardNumber()));
+                                lumber_card_white.setGravity(Gravity.CENTER);
+                            }
+                            if (cardType == 'o') {
+                                boardModel.getWhitePlayer().getOreCard().setCardNumber(boardModel.getWhitePlayer().getOreCard().getCardNumber() + cardsToAdd);
+                                ore_card_white.setText(Integer.toString(boardModel.getWhitePlayer().getOreCard().getCardNumber()));
+                                ore_card_white.setGravity(Gravity.CENTER);
+                            }
                         }
                     }
                 }
             }
         }
+    }
+
+    //if a 7 is rolled, players with more than 7 cards discard half randomly
+
+    private void discardCards() {
+        Random random = new Random();
+
+        int blueTotal = boardModel.getBluePlayer().getBrickCard().getCardNumber() + boardModel.getBluePlayer().getGrainCard().getCardNumber() +
+                boardModel.getBluePlayer().getWoolCard().getCardNumber() + boardModel.getBluePlayer().getLumberCard().getCardNumber() +
+                boardModel.getBluePlayer().getOreCard().getCardNumber();
+
+
+        int orangeTotal = boardModel.getOrangePlayer().getBrickCard().getCardNumber() + boardModel.getOrangePlayer().getGrainCard().getCardNumber() +
+                boardModel.getOrangePlayer().getWoolCard().getCardNumber() + boardModel.getOrangePlayer().getLumberCard().getCardNumber() +
+                boardModel.getOrangePlayer().getOreCard().getCardNumber();
+
+        int purpleTotal = boardModel.getPurplePlayer().getBrickCard().getCardNumber() + boardModel.getPurplePlayer().getGrainCard().getCardNumber() +
+                boardModel.getPurplePlayer().getWoolCard().getCardNumber() + boardModel.getPurplePlayer().getLumberCard().getCardNumber() +
+                boardModel.getPurplePlayer().getOreCard().getCardNumber();
+
+        int whiteTotal = boardModel.getWhitePlayer().getBrickCard().getCardNumber() + boardModel.getWhitePlayer().getGrainCard().getCardNumber() +
+                boardModel.getWhitePlayer().getWoolCard().getCardNumber() + boardModel.getWhitePlayer().getLumberCard().getCardNumber() +
+                boardModel.getWhitePlayer().getOreCard().getCardNumber();
+
+
+        int numToDiscard = 0;
+        Player playerDiscarding;
+
+
+        if (blueTotal >= 7) {
+            numToDiscard = blueTotal / 2;
+            Log.d("msdfds", Integer.toString(blueTotal));
+
+            playerDiscarding = boardModel.getBluePlayer();
+            randomizeDiscard(numToDiscard, playerDiscarding, random);
+        }
+        //orange has more than 7 cards
+        if (orangeTotal >= 7) {
+            numToDiscard = orangeTotal / 2;
+            playerDiscarding = boardModel.getOrangePlayer();
+            randomizeDiscard(numToDiscard, playerDiscarding, random);
+        }
+        //purple has more than 7
+        if (purpleTotal >= 7) {
+            numToDiscard = purpleTotal / 2;
+            playerDiscarding = boardModel.getPurplePlayer();
+            randomizeDiscard(numToDiscard, playerDiscarding, random);
+        }
+        //white has more than 7
+        if (whiteTotal >= 7) {
+            numToDiscard = whiteTotal / 2;
+            playerDiscarding = boardModel.getWhitePlayer();
+            randomizeDiscard(numToDiscard, playerDiscarding, random);
+        }
+    }
+
+    private void randomizeDiscard(int numToDiscard, Player playerDiscarding, Random random) {
+
+        Log.d("sdfd", Integer.toString(numToDiscard));
+
+
+        LinkedList<Character> cardLinkedList = new LinkedList<>();
+
+
+        //add cards to a list to be randomly removed
+        for (int i = 0; i < playerDiscarding.getBrickCard().getCardNumber(); i++) {
+            cardLinkedList.add('b');
+        }
+        for (int i = 0; i < playerDiscarding.getGrainCard().getCardNumber(); i++) {
+            cardLinkedList.add('g');
+        }
+        for (int i = 0; i < playerDiscarding.getWoolCard().getCardNumber(); i++) {
+            cardLinkedList.add('w');
+
+        }
+        for (int i = 0; i < playerDiscarding.getLumberCard().getCardNumber(); i++) {
+            cardLinkedList.add('l');
+
+        }
+        for (int i = 0; i < playerDiscarding.getOreCard().getCardNumber(); i++) {
+            cardLinkedList.add('o');
+        }
+
+
+        Log.d("pre removal", cardLinkedList.toString());
+
+
+        //randomly remove cards
+        for (int i = 0; i < numToDiscard; i++) {
+            cardLinkedList.remove(random.nextInt(cardLinkedList.size()));
+        }
+
+        Log.d("post removal", cardLinkedList.toString());
+
+        playerDiscarding.getBrickCard().setCardNumber(0);
+        playerDiscarding.getGrainCard().setCardNumber(0);
+        playerDiscarding.getWoolCard().setCardNumber(0);
+        playerDiscarding.getLumberCard().setCardNumber(0);
+        playerDiscarding.getOreCard().setCardNumber(0);
+
+
+        for (int i = 0; i < cardLinkedList.size(); i++) {
+            if (cardLinkedList.get(i) == 'b') {
+                playerDiscarding.getBrickCard().setCardNumber(playerDiscarding.getBrickCard().getCardNumber() + 1);
+            }
+            if (cardLinkedList.get(i) == 'g') {
+                playerDiscarding.getGrainCard().setCardNumber(playerDiscarding.getGrainCard().getCardNumber() + 1);
+            }
+            if (cardLinkedList.get(i) == 'w') {
+                playerDiscarding.getWoolCard().setCardNumber(playerDiscarding.getWoolCard().getCardNumber() + 1);
+            }
+            if (cardLinkedList.get(i) == 'l') {
+                playerDiscarding.getLumberCard().setCardNumber(playerDiscarding.getLumberCard().getCardNumber() + 1);
+            }
+            if (cardLinkedList.get(i) == 'o') {
+                playerDiscarding.getOreCard().setCardNumber(playerDiscarding.getOreCard().getCardNumber() + 1);
+            }
+        }
+
+
+
+
+        TextView brickCard = findViewById(playerDiscarding.getBrickCard().getViewID());
+        TextView grainCard = findViewById(playerDiscarding.getGrainCard().getViewID());
+        TextView woolCard = findViewById(playerDiscarding.getWoolCard().getViewID());
+        TextView lumberCard = findViewById(playerDiscarding.getLumberCard().getViewID());
+        TextView oreCard = findViewById(playerDiscarding.getOreCard().getViewID());
+
+        brickCard.setText(Integer.toString(playerDiscarding.getBrickCard().getCardNumber()));
+        grainCard.setText(Integer.toString(playerDiscarding.getGrainCard().getCardNumber()));
+        woolCard.setText(Integer.toString(playerDiscarding.getWoolCard().getCardNumber()));
+        lumberCard.setText(Integer.toString(playerDiscarding.getLumberCard().getCardNumber()));
+        oreCard.setText(Integer.toString(playerDiscarding.getOreCard().getCardNumber()));
     }
 
     private void rollDice() {
@@ -1536,7 +1679,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
  */
 
+//TODO reinstate logic for charging players to build settlement
 
+        /*
 
         //decrement player brick, grain, wool, and lumber cards and update textView to reflect the change
         settlementBuilder.getBrickCard().setCardNumber(settlementBuilder.getBrickCard().getCardNumber() - 1);
@@ -1555,6 +1700,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         cardGrainToChange.setText(Integer.toString(settlementBuilder.getGrainCard().getCardNumber()));
         cardWoolToChange.setText(Integer.toString(settlementBuilder.getWoolCard().getCardNumber()));
         cardLumberToChange.setText(Integer.toString(settlementBuilder.getLumberCard().getCardNumber()));
+
+
+
+         */
 
 
         v.setBackgroundResource(drawable);
