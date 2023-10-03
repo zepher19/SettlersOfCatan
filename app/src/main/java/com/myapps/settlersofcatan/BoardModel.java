@@ -53,8 +53,9 @@ public class BoardModel {
 
 
     char playerTurn;
-    char[] players = {'b', 'o', 'p', 'w'};
+    char[] players;
 
+    String[] developmentCardArray;
 
 
 
@@ -65,11 +66,19 @@ public class BoardModel {
 
     private BoardModel() {
 
-        bluePlayer = new Player('b', new Card(R.id.brick_card_blue, 'b', 'b'), new Card(R.id.grain_card_blue, 'g', 'b'), new Card(R.id.wool_card_blue, 'w', 'b'), new Card(R.id.lumber_card_blue, 'l', 'b'), new Card(R.id.ore_card_blue, 'o', 'b'));
-        orangePlayer = new Player('o', new Card(R.id.brick_card_orange, 'b', 'o'), new Card(R.id.grain_card_orange, 'g', 'o'), new Card(R.id.wool_card_orange, 'w', 'o'), new Card(R.id.lumber_card_orange, 'l', 'o'), new Card(R.id.ore_card_orange, 'o', 'o'));
-        purplePlayer = new Player('p', new Card(R.id.brick_card_purple, 'b', 'p'), new Card(R.id.grain_card_purple, 'g', 'p'), new Card(R.id.wool_card_purple, 'w', 'p'), new Card(R.id.lumber_card_purple, 'l', 'p'), new Card(R.id.ore_card_purple, 'o', 'p'));
-        whitePlayer = new Player('w', new Card(R.id.brick_card_white, 'b', 'w'), new Card(R.id.grain_card_white, 'g', 'w'), new Card(R.id.wool_card_white, 'w', 'w'), new Card(R.id.lumber_card_white, 'l', 'w'), new Card(R.id.ore_card_white, 'o', 'w'));
+        players = new char[] {'b', 'o', 'p', 'w'};
 
+        developmentCardArray = new String[] {"Road Building", "Knight", "Victory Point"};
+
+
+        bluePlayer = new Player('b', new Card(R.id.brick_card_blue, 'b', 'b'), new Card(R.id.grain_card_blue, 'g', 'b'), new Card(R.id.wool_card_blue, 'w', 'b'), new Card(R.id.lumber_card_blue, 'l', 'b'), new Card(R.id.ore_card_blue, 'o', 'b'));
+        bluePlayer.setVictoryPointViewID(R.id.blue_victory_point_counter);
+        orangePlayer = new Player('o', new Card(R.id.brick_card_orange, 'b', 'o'), new Card(R.id.grain_card_orange, 'g', 'o'), new Card(R.id.wool_card_orange, 'w', 'o'), new Card(R.id.lumber_card_orange, 'l', 'o'), new Card(R.id.ore_card_orange, 'o', 'o'));
+        orangePlayer.setVictoryPointViewID(R.id.orange_victory_point_counter);
+        purplePlayer = new Player('p', new Card(R.id.brick_card_purple, 'b', 'p'), new Card(R.id.grain_card_purple, 'g', 'p'), new Card(R.id.wool_card_purple, 'w', 'p'), new Card(R.id.lumber_card_purple, 'l', 'p'), new Card(R.id.ore_card_purple, 'o', 'p'));
+        purplePlayer.setVictoryPointViewID(R.id.purple_victory_point_counter);
+        whitePlayer = new Player('w', new Card(R.id.brick_card_white, 'b', 'w'), new Card(R.id.grain_card_white, 'g', 'w'), new Card(R.id.wool_card_white, 'w', 'w'), new Card(R.id.lumber_card_white, 'l', 'w'), new Card(R.id.ore_card_white, 'o', 'w'));
+        whitePlayer.setVictoryPointViewID(R.id.white_victory_point_counter);
 
         //put the array into a linked list so we can easily remove indexes, allowing randomization
         tileTypesLinkedList = new LinkedList<>();
@@ -463,6 +472,13 @@ public class BoardModel {
         }
         return null;
     }
+
+    public String getDevelopmentCard() {
+        Random random = new Random();
+        return developmentCardArray[random.nextInt(3)];
+    }
+
+
 }
 
 

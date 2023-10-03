@@ -4,7 +4,9 @@ public class Player {
 
     char color;
 
+    int victoryPoints = 0;
 
+    int victoryPointViewID;
 
     Card brickCard;
     Card grainCard;
@@ -57,5 +59,21 @@ public class Player {
 
     public char getColor() {
         return color;
+    }
+
+    public int getVictoryPoints() {
+        return victoryPoints;
+    }
+
+    public void setVictoryPoints(int victoryPoints) {
+        this.victoryPoints = victoryPoints;
+    }
+
+    public void setVictoryPointViewID(int victoryPointViewID) {
+        this.victoryPointViewID = victoryPointViewID;
+    }
+
+    public int getVictoryPointViewID() {
+        return victoryPointViewID;
     }
 }

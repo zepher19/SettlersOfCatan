@@ -68,7 +68,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     TextView tile_1_num, tile_2_num, tile_3_num, tile_4_num, tile_5_num, tile_6_num, tile_7_num, tile_8_num, tile_9_num, tile_10_num,
             tile_11_num, tile_12_num, tile_13_num, tile_14_num, tile_15_num, tile_16_num, tile_17_num, tile_18_num, tile_19_num;
 
-
+    TextView development_card, blue_victory_point_counter, orange_victory_point_counter, purple_victory_point_counter, white_victory_point_counter;
 
 
     @Override
@@ -77,6 +77,27 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
 
         boardModel = BoardModel.getInstance();
+
+
+        blue_victory_point_counter = findViewById(R.id.blue_victory_point_counter);
+        orange_victory_point_counter = findViewById(R.id.orange_victory_point_counter);
+        purple_victory_point_counter = findViewById(R.id.purple_victory_point_counter);
+        white_victory_point_counter = findViewById(R.id.white_victory_point_counter);
+
+
+
+
+
+        //developement cards
+        development_card = findViewById(R.id.developement_card);
+        development_card.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                buyDevelopmentCard();
+            }
+        });
+
+
 
 
 
@@ -946,6 +967,75 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         updateCurrentPlayerGraphic();
     }
 
+    private void buyDevelopmentCard() {
+        Player buyer = boardModel.getPlayer();
+
+
+
+
+        //TODO reinstate logic to prevent building a road if not enough materials
+
+/*
+        if (buyer.getOreCard().getCardNumber() == 0 || buyer.getGrainCard().getCardNumber() == 0 ||
+        buyer.getWoolCard().getCardNumber() == 0) {
+            Toast.makeText(this, "Not enough materials.", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+ */
+
+
+        String developmentCard = boardModel.getDevelopmentCard();
+        //move baron
+        if (developmentCard.equals("Knight")) {
+            Toast.makeText(this, "Knight: Move the Robber Baron", Toast.LENGTH_LONG).show();
+            dieTotal = 7;
+        }
+        //give resources for two roads
+        else if (developmentCard.equals("Road Building")) {
+            Toast.makeText(this, "Road Building: Build Two Roads", Toast.LENGTH_SHORT).show();
+
+            boardModel.getPlayer().getBrickCard().setCardNumber(boardModel.getPlayer().getBrickCard().getCardNumber() + 2);
+            boardModel.getPlayer().getLumberCard().setCardNumber(boardModel.getPlayer().getLumberCard().getCardNumber() + 2);
+        }
+        //give victory point
+        else if (developmentCard.equals("Victory Point")) {
+            Toast.makeText(this, "Victory Point", Toast.LENGTH_SHORT).show();
+
+            boardModel.getPlayer().setVictoryPoints(boardModel.getPlayer().getVictoryPoints() + 1);
+            updateVictoryPointCounter();
+        }
+
+        buyer.getOreCard().setCardNumber(buyer.getOreCard().getCardNumber() - 1);
+        buyer.getGrainCard().setCardNumber(buyer.getGrainCard().getCardNumber() - 1);
+        buyer.getWoolCard().setCardNumber(buyer.getWoolCard().getCardNumber() - 1);
+
+        updatePlayerCards(buyer);
+
+
+    }
+
+    private void updateVictoryPointCounter() {
+        TextView victoryPointTemp = findViewById(boardModel.getPlayer().getVictoryPointViewID());
+        victoryPointTemp.setText(Integer.toString(boardModel.getPlayer().getVictoryPoints()));
+    }
+
+    private void updatePlayerCards(Player player) {
+        TextView cardBrickToChange = findViewById(player.getBrickCard().getViewID());
+        TextView cardLumberToChange = findViewById(player.getLumberCard().getViewID());
+        TextView cardOreToChange = findViewById(player.getOreCard().getViewID());
+        TextView cardGrainToChange = findViewById(player.getGrainCard().getViewID());
+        TextView cardWoolToChange = findViewById(player.getWoolCard().getViewID());
+
+
+        cardBrickToChange.setText(Integer.toString(player.getBrickCard().getCardNumber()));
+        cardLumberToChange.setText(Integer.toString(player.getLumberCard().getCardNumber()));
+        cardOreToChange.setText(Integer.toString(player.getOreCard().getCardNumber()));
+        cardGrainToChange.setText(Integer.toString(player.getGrainCard().getCardNumber()));
+        cardWoolToChange.setText(Integer.toString(player.getWoolCard().getCardNumber()));
+
+    }
+
     private void exchange() {
         Card card0 = boardModel.findCardByID(cardSelection0.getId());
         Card card1 = boardModel.findCardByID(cardSelection1.getId());
@@ -1365,9 +1455,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
         }
 
-
-
-
         TextView brickCard = findViewById(playerDiscarding.getBrickCard().getViewID());
         TextView grainCard = findViewById(playerDiscarding.getGrainCard().getViewID());
         TextView woolCard = findViewById(playerDiscarding.getWoolCard().getViewID());
@@ -1592,6 +1679,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         boardModel.getSettlementFromViewID(v).setCity(true);
         buildSelection = null;
         city_build.setBackgroundResource(drawable);
+        addVictoryPoint();
 
     }
 
@@ -1711,9 +1799,32 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         boardModel.getSettlementFromViewID(v).setColor(boardModel.getPlayerTurn());
         buildSelection = null;
         settlementBuild.setBackgroundResource(drawable);
+        addVictoryPoint();
     }
 
+    private void addVictoryPoint() {
+        if (boardModel.getPlayerTurn() == 'b') {
+            boardModel.getBluePlayer().setVictoryPoints(boardModel.getBluePlayer().getVictoryPoints() + 1);
+        }
+        if (boardModel.getPlayerTurn() == 'o') {
+            boardModel.getOrangePlayer().setVictoryPoints(boardModel.getOrangePlayer().getVictoryPoints() + 1);
+        }
+        if (boardModel.getPlayerTurn() == 'p') {
+            boardModel.getPurplePlayer().setVictoryPoints(boardModel.getPurplePlayer().getVictoryPoints() + 1);
+        }
+        if (boardModel.getPlayerTurn() == 'w') {
+            boardModel.getWhitePlayer().setVictoryPoints(boardModel.getWhitePlayer().getVictoryPoints() + 1);
+        }
 
+        blue_victory_point_counter.setText(Integer.toString(boardModel.getBluePlayer().getVictoryPoints()));
+        orange_victory_point_counter.setText(Integer.toString(boardModel.getOrangePlayer().getVictoryPoints()));
+        purple_victory_point_counter.setText(Integer.toString(boardModel.getPurplePlayer().getVictoryPoints()));
+        white_victory_point_counter.setText(Integer.toString(boardModel.getWhitePlayer().getVictoryPoints()));
+
+
+
+
+    }
 
 
 }

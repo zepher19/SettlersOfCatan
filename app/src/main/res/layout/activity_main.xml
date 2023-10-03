@@ -9,16 +9,259 @@
     android:clickable="true"
     tools:context=".MainActivity">
 
+
     <TextView
-        android:id="@+id/build_selector_background_text_view"
-        android:layout_width="191dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="103dp"
-        android:layout_marginTop="653dp"
-        android:background="#52381E"
+        android:id="@+id/brick_cost_textView_10"
+        android:layout_width="25dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="320dp"
+        android:layout_marginTop="708dp"
+        android:background="@color/grain_yellow"
+        android:gravity="center"
+        android:text="1"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="#000000"
+        android:textColorHighlight="#000000"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <TextView
+        android:id="@+id/brick_cost_textView_9"
+        android:layout_width="25dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="344dp"
+        android:layout_marginTop="708dp"
+        android:background="@color/wool_green"
+        android:gravity="center"
+        android:text="1"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="#000000"
+        android:textColorHighlight="#000000"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/brick_cost_textView_8"
+        android:layout_width="25dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="368dp"
+        android:layout_marginTop="708dp"
+        android:background="@color/lumber_green"
+        android:gravity="center"
+        android:text="1"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="#000000"
+        android:textColorHighlight="#000000"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/brick_cost_textView_6"
+        android:layout_width="25dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="236dp"
+        android:layout_marginTop="708dp"
+        android:background="@color/yellow"
+        android:gravity="center"
+        android:text="2"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="#000000"
+        android:textColorHighlight="#000000"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/brick_cost_textView_7"
+        android:layout_width="25dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="260dp"
+        android:layout_marginTop="708dp"
+        android:background="@color/ore_gray"
+        android:gravity="center"
+        android:text="3"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="#000000"
+        android:textColorHighlight="#000000"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/brick_cost_textView_5"
+        android:layout_width="25dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="167dp"
+        android:layout_marginTop="708dp"
+        android:background="@color/lumber_green"
+        android:gravity="center"
+        android:text="1"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="#000000"
+        android:textColorHighlight="#000000"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/brick_cost_textView_4"
+        android:layout_width="25dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="142dp"
+        android:layout_marginTop="708dp"
+        android:background="@color/wool_green"
+        android:gravity="center"
+        android:text="1"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="#000000"
+        android:textColorHighlight="#000000"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/brick_cost_textView_3"
+        android:layout_width="25dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="117dp"
+        android:layout_marginTop="708dp"
+        android:background="@color/grain_yellow"
+        android:gravity="center"
+        android:text="1"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="#000000"
+        android:textColorHighlight="#000000"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/brick_cost_textView_2"
+        android:layout_width="25dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="92dp"
+        android:layout_marginTop="708dp"
+        android:background="@color/brick_red"
+        android:gravity="center"
+        android:text="1"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="#000000"
+        android:textColorHighlight="#000000"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/lumber_cost_textView_0"
+        android:layout_width="25dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="708dp"
+        android:background="@color/lumber_green"
+        android:gravity="center"
+        android:text="1"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="#000000"
+        android:textColorHighlight="#000000"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/brick_cost_textView_0"
+        android:layout_width="25dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="708dp"
+        android:background="@color/brick_red"
+        android:gravity="center"
+        android:text="1"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="#000000"
+        android:textColorHighlight="#000000"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/purple_victory_point_counter"
+        android:layout_width="30dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="336dp"
+        android:layout_marginTop="600dp"
+        android:background="@drawable/victory_point_counter"
+        android:gravity="center"
+        android:rotation="-30"
+        android:text="@string/zero"
+        android:textColor="#000000"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/white_victory_point_counter"
+        android:layout_width="30dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="604dp"
+        android:background="@drawable/victory_point_counter"
+        android:gravity="center"
+        android:rotation="30"
+        android:text="@string/zero"
+        android:textColor="#000000"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/blue_victory_point_counter"
+        android:layout_width="30dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="144dp"
+        android:background="@drawable/victory_point_counter"
+        android:gravity="center"
+        android:rotation="150"
+        android:text="@string/zero"
+        android:textColor="#000000"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/build_selector_background_text_view"
+        android:layout_width="400dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="652dp"
+        android:background="#52381E"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/city_build"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="248dp"
+        android:layout_marginTop="668dp"
+        android:background="@drawable/blue_city"
+        android:clickable="true"
+        android:rotation="0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/settlement_build"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="130dp"
+        android:layout_marginTop="668dp"
+        android:background="@drawable/blue_circle"
+        android:clickable="true"
+        android:rotation="0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/road_build"
+        android:layout_width="25dp"
+        android:layout_height="16dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="672dp"
+        android:background="@color/blue"
+        android:clickable="true"
+        android:rotation="0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/board_background"
@@ -30,18 +273,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/board_background" />
-
-    <TextView
-        android:id="@+id/city_build"
-        android:layout_width="25dp"
-        android:layout_height="25dp"
-        android:layout_marginStart="252dp"
-        android:layout_marginTop="668dp"
-        android:background="@drawable/blue_city"
-        android:clickable="true"
-        android:rotation="0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
         android:id="@+id/card_slots_white"
@@ -240,18 +471,6 @@
             android:textColor="#000000" />
 
     </LinearLayout>
-
-    <TextView
-        android:id="@+id/settlement_build"
-        android:layout_width="25dp"
-        android:layout_height="25dp"
-        android:layout_marginStart="184dp"
-        android:layout_marginTop="668dp"
-        android:background="@drawable/blue_circle"
-        android:clickable="true"
-        android:rotation="0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/tile_1"
@@ -1612,7 +1831,6 @@
         android:rotation="0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
 
 
     <TextView
@@ -2993,19 +3211,6 @@
         app:layout_constraintTop_toTopOf="parent" />
 
 
-
-    <TextView
-        android:id="@+id/road_build"
-        android:layout_width="25dp"
-        android:layout_height="16dp"
-        android:layout_marginStart="120dp"
-        android:layout_marginTop="672dp"
-        android:background="@color/blue"
-        android:clickable="true"
-        android:rotation="0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <LinearLayout
         android:id="@+id/card_slots_blue"
 
@@ -3172,6 +3377,31 @@
         android:layout_marginStart="288dp"
         android:layout_marginTop="64dp"
         android:text="Exchange"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/developement_card"
+        android:layout_width="45dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="335dp"
+        android:layout_marginTop="660dp"
+        android:background="@drawable/developement_card"
+        android:clickable="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/orange_victory_point_counter"
+        android:layout_width="30dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="332dp"
+        android:layout_marginTop="144dp"
+        android:background="@drawable/victory_point_counter"
+        android:gravity="center"
+        android:rotation="210"
+        android:text="@string/zero"
+        android:textColor="#000000"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
