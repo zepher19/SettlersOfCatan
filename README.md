@@ -2,7 +2,10 @@ Hello there!
 
 I'm currently looking for a coding job, so I decided to create a Settlers of Catan android app to showcase my skils. 
 
-Here's some pictures: (from top to bottom, icon on the homescreen, empty game board, game in progress)
+Here's some pictures: (from left to right, icon on the homescreen, splash screen, empty game board, game in progress)
+
+![catan4](https://github.com/zepher19/SettlersOfCatan/assets/108103331/b2da3b43-f2c0-40b8-9fbf-cf0a2449571c)
+
 
 
 
